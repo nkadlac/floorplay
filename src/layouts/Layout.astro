@@ -1,0 +1,145 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	keywords?: string[];
+	canonical?: string;
+	ogImage?: string;
+}
+
+const { 
+	title, 
+	description = "Professional epoxy floor coating for garages and basements in Springfield MA. Expert installation, 10-year warranty, free quotes.",
+	keywords = ["epoxy floor coating", "garage floor epoxy", "basement floor coating", "Springfield MA", "concrete floor resurfacing"],
+	canonical,
+	ogImage = "/images/og-default.jpg"
+} = Astro.props;
+
+const fullTitle = title.includes('Springfield') ? title : `${title} | Springfield Epoxy Pros`;
+const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https://floorplay.agency${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords.join(', ')} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{fullTitle}</title>
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonical || currentUrl} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={currentUrl} />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:site_name" content="FloorPlay Agency" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={currentUrl} />
+		<meta property="twitter:title" content={fullTitle} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={ogImage} />
+		
+		<!-- Local Business Schema -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "FloorPlay Agency",
+			"description": "Professional epoxy floor coating specialists serving Springfield MA and surrounding areas.",
+			"url": "https://floorplay.agency",
+			"telephone": "(413)555-3769",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "123 Main Street",
+				"addressLocality": "Springfield",
+				"addressRegion": "MA",
+				"postalCode": "01103",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": 42.1015,
+				"longitude": -72.5898
+			},
+			"areaServed": [
+				"Springfield, MA",
+				"Westfield, MA",
+				"Chicopee, MA",
+				"Holyoke, MA",
+				"Northampton, MA",
+				"East Longmeadow, MA"
+			],
+			"serviceType": [
+				"Epoxy Floor Coating",
+				"Garage Floor Coating",
+				"Basement Floor Resurfacing",
+				"Concrete Floor Coating"
+			],
+			"priceRange": "$$$",
+			"openingHours": [
+				"Mo-Fr 08:00-18:00",
+				"Sa 09:00-16:00"
+			]
+		}
+		</script>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	html {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		line-height: 1.6;
+		color: #333;
+	}
+	
+	body {
+		background-color: #ffffff;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.2;
+		margin-bottom: 1rem;
+	}
+	
+	p {
+		margin-bottom: 1rem;
+	}
+	
+	a {
+		color: #ff6b35;
+		text-decoration: none;
+	}
+	
+	a:hover {
+		text-decoration: underline;
+	}
+	
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

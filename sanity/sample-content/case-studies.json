@@ -1,0 +1,165 @@
+[
+  {
+    "_type": "caseStudy",
+    "title": "Springfield Family Garage Transformation",
+    "slug": { "current": "springfield-family-garage-transformation" },
+    "client": "The Johnson Family",
+    "location": "Springfield, MA",
+    "challenge": "The Johnson family had a 20-year-old concrete garage floor that was heavily stained with oil, cracked in multiple places, and constantly dusty. They wanted to transform their garage into a functional workshop space while protecting their new vehicles from concrete dust and stains.",
+    "solution": [
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "text": "We started with comprehensive concrete preparation, including diamond grinding to remove all oil stains and create proper surface profile. All cracks were filled with flexible polyurethane sealant to prevent future movement."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "text": "We applied our premium 100% solids epoxy system with decorative gray and black flakes, followed by a clear polyurethane topcoat for maximum durability and UV protection."
+          }
+        ]
+      }
+    ],
+    "results": [
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "text": "The transformation was dramatic. The new epoxy floor eliminated all dust issues, made cleanup effortless, and created a bright, professional-looking space. The family now uses their garage as both a workshop and parking area, with complete confidence in the floor's durability."
+          }
+        ]
+      }
+    ],
+    "projectDetails": {
+      "squareFootage": 600,
+      "duration": "3 days",
+      "materials": [
+        "100% Solids Epoxy Base",
+        "Decorative Color Flakes",
+        "Polyurethane Topcoat",
+        "Concrete Crack Filler"
+      ],
+      "techniques": [
+        "Diamond Grinding",
+        "Crack Repair",
+        "Professional Spray Application",
+        "Flake Broadcasting"
+      ]
+    },
+    "testimonial": {
+      "quote": "We can't believe this is the same garage! The floor looks amazing and makes cleaning so easy. Oil drips from our cars just wipe right up. Best investment we've made in our home.",
+      "clientName": "Sarah Johnson",
+      "rating": 5
+    },
+    "featured": true,
+    "seo": {
+      "metaTitle": "Garage Floor Epoxy Case Study - Springfield MA Transformation",
+      "metaDescription": "See how we transformed a stained, cracked garage floor into a beautiful, durable epoxy surface for the Johnson family in Springfield, MA.",
+      "keywords": [
+        "garage floor epoxy Springfield MA",
+        "garage transformation",
+        "epoxy floor before after",
+        "garage floor renovation Springfield"
+      ]
+    },
+    "aiContext": {
+      "summary": "600 sq ft garage transformation in Springfield MA - heavily stained and cracked concrete restored to beautiful epoxy finish",
+      "keyLearnings": [
+        "Proper preparation is critical for oil-stained concrete",
+        "Crack repair prevents future issues",
+        "Decorative flakes hide minor imperfections",
+        "Professional results dramatically improve garage functionality"
+      ],
+      "applicableScenarios": [
+        "When customers ask about oil stain removal",
+        "When discussing crack repair capabilities",
+        "When customers want to see local Springfield area work",
+        "When explaining the transformation possible with epoxy"
+      ]
+    }
+  },
+  {
+    "_type": "caseStudy",
+    "title": "Westfield Basement Recreation Room Floor",
+    "slug": { "current": "westfield-basement-recreation-room-floor" },
+    "client": "The Martinez Family", 
+    "location": "Westfield, MA",
+    "challenge": "The Martinez family wanted to finish their basement as a recreation room for their teenagers, but the concrete floor was cold, had moisture issues, and wasn't suitable for a living space. They needed a solution that would be comfortable underfoot and resist basement humidity.",
+    "solution": [
+      {
+        "_type": "block",
+        "children": [
+          {
+            "_type": "span",
+            "text": "We installed our moisture-resistant basement flooring system, starting with a vapor barrier primer to seal the concrete. Our specialized basement coating includes insulating properties and is designed specifically for below-grade applications."
+          }
+        ]
+      }
+    ],
+    "results": [
+      {
+        "_type": "block", 
+        "children": [
+          {
+            "_type": "span",
+            "text": "The basement is now a comfortable, functional recreation room. The floor stays dry, feels warmer underfoot, and has eliminated the musty basement smell. The family loves their new entertainment space."
+          }
+        ]
+      }
+    ],
+    "projectDetails": {
+      "squareFootage": 800,
+      "duration": "4 days", 
+      "materials": [
+        "Moisture Barrier Primer",
+        "Insulating Base Coat",
+        "Decorative Finish Coat",
+        "Anti-Microbial Additive"
+      ],
+      "techniques": [
+        "Moisture Testing",
+        "Vapor Barrier Application", 
+        "Multi-Coat System",
+        "Humidity Control"
+      ]
+    },
+    "testimonial": {
+      "quote": "Our basement went from a damp storage area to our favorite room in the house. The kids spend hours down there now, and we never worry about moisture or comfort.",
+      "clientName": "Carlos Martinez",
+      "rating": 5
+    },
+    "featured": true,
+    "seo": {
+      "metaTitle": "Basement Floor Coating Case Study - Westfield MA Recreation Room", 
+      "metaDescription": "See how we transformed a damp basement into a comfortable recreation room with moisture-resistant floor coating in Westfield, MA.",
+      "keywords": [
+        "basement floor coating Westfield MA",
+        "basement moisture control",
+        "finished basement floors",
+        "basement recreation room flooring"
+      ]
+    },
+    "aiContext": {
+      "summary": "800 sq ft basement in Westfield MA converted from damp storage to comfortable recreation room with moisture-resistant coating",
+      "keyLearnings": [
+        "Basement moisture control is essential for finished spaces",
+        "Insulating properties make floors more comfortable",
+        "Anti-microbial additives prevent mold and mildew",
+        "Proper vapor barriers are critical in basements"
+      ],
+      "applicableScenarios": [
+        "When customers ask about basement moisture issues",
+        "When discussing finished basement applications", 
+        "When explaining insulating properties of coatings",
+        "When customers want comfortable basement floors"
+      ]
+    }
+  }
+]

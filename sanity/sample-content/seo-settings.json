@@ -1,0 +1,66 @@
+{
+  "_type": "seoSettings",
+  "title": "Global SEO Settings",
+  "siteName": "Springfield Epoxy Pros",
+  "siteUrl": "https://springfieldepoxypros.com",
+  "defaultMetaTitle": "{title} | Springfield Epoxy Pros - Professional Floor Coating",
+  "defaultMetaDescription": "Professional epoxy floor coating for garages and basements in Springfield MA. Expert installation, 10-year warranty, free quotes. Transform your floors today!",
+  "keywords": [
+    "epoxy floor coating Springfield MA",
+    "garage floor epoxy",
+    "basement floor coating",
+    "concrete floor resurfacing",
+    "epoxy floor contractors",
+    "garage floor contractors Springfield",
+    "basement floor resurfacing Springfield MA"
+  ],
+  "businessInfo": {
+    "name": "Springfield Epoxy Pros",
+    "description": "Professional epoxy floor coating specialists serving Springfield MA and surrounding areas. We transform garages and basements with durable, beautiful epoxy coatings backed by a 10-year warranty.",
+    "phone": "(413) 555-EPOXY",
+    "email": "info@springfieldepoxypros.com",
+    "address": {
+      "street": "123 Main Street",
+      "city": "Springfield",
+      "state": "MA",
+      "zip": "01103",
+      "country": "United States"
+    },
+    "serviceAreas": [
+      "Springfield, MA",
+      "Westfield, MA", 
+      "Chicopee, MA",
+      "Holyoke, MA",
+      "Northampton, MA",
+      "East Longmeadow, MA",
+      "Ludlow, MA",
+      "Palmer, MA",
+      "Wilbraham, MA",
+      "Hampden County, MA"
+    ],
+    "hours": {
+      "monday": "8:00 AM - 6:00 PM",
+      "tuesday": "8:00 AM - 6:00 PM", 
+      "wednesday": "8:00 AM - 6:00 PM",
+      "thursday": "8:00 AM - 6:00 PM",
+      "friday": "8:00 AM - 6:00 PM",
+      "saturday": "9:00 AM - 4:00 PM",
+      "sunday": "Closed"
+    }
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/springfieldepoxypros",
+    "instagram": "https://instagram.com/springfieldepoxypros",
+    "linkedin": "https://linkedin.com/company/springfield-epoxy-pros"
+  },
+  "analytics": {
+    "googleAnalyticsId": "GA-XXXXXXXXX",
+    "googleTagManagerId": "GTM-XXXXXXX"
+  },
+  "aiChatbotSettings": {
+    "welcomeMessage": "Hi! I'm here to help with questions about epoxy floor coating for your garage or basement. What can I help you with today?",
+    "fallbackMessage": "I'm not sure about that specific question. Would you like me to connect you with one of our epoxy flooring experts for a detailed answer?",
+    "contactPrompt": "Ready for a free quote on your epoxy floor project? I can help you get started with an estimate!",
+    "businessContext": "Springfield Epoxy Pros has been providing professional epoxy floor coating services in the Springfield MA area since 2008. We specialize in garage floor epoxy coating and basement floor resurfacing using premium materials and professional installation techniques. Our services include proper surface preparation, crack repair, and application of 100% solids epoxy systems with decorative options. We serve Springfield and surrounding communities within 50 miles, offering free quotes and a 10-year warranty on all installations. Our expertise covers both residential and commercial applications, with particular strength in garage floors, basement floors, and concrete resurfacing projects."
+  }
+}

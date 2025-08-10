@@ -1,0 +1,374 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { sanityClient } from 'sanity:client';
+import { PortableText } from 'astro-portabletext';
+
+// Fetch homepage content and featured services
+const [pageData, services, faqs] = await Promise.all([
+  sanityClient.fetch(`
+    *[_type == "page" && slug.current == "home"][0]{
+      title,
+      seo,
+      hero,
+      content,
+      aiContext
+    }
+  `),
+  sanityClient.fetch(`
+    *[_type == "service"] | order(_createdAt desc)[0...2]{
+      name,
+      slug,
+      shortDescription,
+      pricing,
+      features,
+      "image": images[0]
+    }
+  `),
+  sanityClient.fetch(`
+    *[_type == "faq"] | order(priority desc)[0...3]{
+      question,
+      answer,
+      category
+    }
+  `)
+]);
+
+// Fallback content if Sanity content isn't available yet
+const defaultContent = {
+  title: "Professional Epoxy Floor Coating Services",
+  hero: {
+    headline: "Transform Your Floors with Professional Epoxy Coating",
+    subheadline: "Durable, beautiful floors that resist stains, chemicals, and daily wear. Serving Springfield MA and surrounding areas with expert installation and 10-year warranty.",
+    ctaText: "Get Free Quote",
+    ctaLink: "/contact"
+  },
+  seo: {
+    metaTitle: "Professional Epoxy Floor Coating - Springfield MA | Garage & Basement Floors",
+    metaDescription: "Transform your garage and basement floors with professional epoxy coating. Serving Springfield MA area. Free quotes, 10-year warranty, expert installation."
+  }
+};
+
+const content = pageData || defaultContent;
+---
+
+<Layout 
+  title={content.seo?.metaTitle || content.title}
+  description={content.seo?.metaDescription}
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>{content.hero?.headline || content.title}</h1>
+        <p class="hero-subtitle">
+          {content.hero?.subheadline || "Professional epoxy floor coating for garages and basements in Springfield MA area."}
+        </p>
+        <div class="hero-cta">
+          <a href={content.hero?.ctaLink || "/contact"} class="cta-button primary">
+            {content.hero?.ctaText || "Get Free Quote"}
+          </a>
+          <a href="tel:(413)555-3769" class="cta-button secondary">
+            Call (413) 555-EPOXY
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <h2>Our Expert Services</h2>
+      <div class="services-grid">
+        {services?.length > 0 ? (
+          services.map((service) => (
+            <div class="service-card">
+              <h3>{service.name}</h3>
+              <p>{service.shortDescription}</p>
+              <div class="service-features">
+                {service.features?.slice(0, 3).map((feature) => (
+                  <span class="feature">✓ {feature}</span>
+                ))}
+              </div>
+              <div class="service-pricing">
+                {service.pricing?.startingPrice && (
+                  <span class="price">Starting at ${service.pricing.startingPrice}{service.pricing.priceUnit}</span>
+                )}
+              </div>
+              <a href={`/services/${service.slug?.current}`} class="service-link">
+                Learn More →
+              </a>
+            </div>
+          ))
+        ) : (
+          <div class="service-card">
+            <h3>Garage Floor Epoxy Coating</h3>
+            <p>Transform your garage with durable, chemical-resistant epoxy floor coating. Perfect for protecting concrete from oil stains, chemicals, and daily wear.</p>
+            <div class="service-features">
+              <span class="feature">✓ Chemical and oil stain resistance</span>
+              <span class="feature">✓ Easy to clean and maintain</span>
+              <span class="feature">✓ 10-year warranty included</span>
+            </div>
+            <div class="service-pricing">
+              <span class="price">Starting at $4.50/sq ft</span>
+            </div>
+            <a href="/services/garage-floor-epoxy" class="service-link">Learn More →</a>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        {faqs?.length > 0 ? (
+          faqs.map((faq) => (
+            <div class="faq-item">
+              <h3>{faq.question}</h3>
+              <PortableText value={faq.answer} />
+            </div>
+          ))
+        ) : (
+          <div class="faq-item">
+            <h3>How long does epoxy floor coating last?</h3>
+            <p>Professional epoxy floor coating typically lasts 10-15 years with proper maintenance. Our installations come with a 10-year warranty.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Transform Your Floors?</h2>
+      <p>Get a free quote today and see why hundreds of Springfield area homeowners trust us with their epoxy floor projects.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="cta-button primary">Get Free Quote</a>
+        <a href="tel:(413)555-3769" class="cta-button secondary">Call Now</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button.primary {
+    background: #ff6b35;
+    color: white;
+  }
+
+  .cta-button.primary:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+  }
+
+  .cta-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .cta-button.secondary:hover {
+    background: white;
+    color: #1a1a1a;
+  }
+
+  .services {
+    padding: 4rem 0;
+    background: #f8f9fa;
+  }
+
+  .services h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .service-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature {
+    color: #2d5a27;
+    font-size: 0.9rem;
+  }
+
+  .service-pricing {
+    margin-bottom: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ff6b35;
+  }
+
+  .service-link {
+    color: #ff6b35;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .service-link:hover {
+    text-decoration: underline;
+  }
+
+  .faq {
+    padding: 4rem 0;
+  }
+
+  .faq h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .faq-item {
+    padding: 1.5rem;
+    border-left: 4px solid #ff6b35;
+    background: #f8f9fa;
+  }
+
+  .faq-item h3 {
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .faq-item p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .cta-section {
+    background: #1a1a1a;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .cta-section p {
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .services h2, .faq h2, .cta-section h2 {
+      font-size: 2rem;
+    }
+    
+    .cta-button {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+</style>
