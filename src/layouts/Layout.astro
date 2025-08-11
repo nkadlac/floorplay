@@ -9,13 +9,13 @@ export interface Props {
 
 const { 
 	title, 
-	description = "Professional epoxy floor coating for garages and basements in Springfield MA. Expert installation, 10-year warranty, free quotes.",
-	keywords = ["epoxy floor coating", "garage floor epoxy", "basement floor coating", "Springfield MA", "concrete floor resurfacing"],
+	description = "Professional epoxy floor coating for garages and basements in Mequon WI. Expert installation, 10-year warranty, free quotes.",
+	keywords = ["epoxy floor coating", "garage floor epoxy", "basement floor coating", "Mequon WI", "concrete floor resurfacing"],
 	canonical,
 	ogImage = "/images/og-default.jpg"
 } = Astro.props;
 
-const fullTitle = title.includes('Springfield') ? title : `${title} | Springfield Epoxy Pros`;
+const fullTitle = title.includes('Mequon') ? title : `${title} | Mequon Epoxy Pros`;
 const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https://floorplay.agency${Astro.url.pathname}`;
 ---
 
@@ -29,6 +29,11 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{fullTitle}</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
 		
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonical || currentUrl} />
@@ -54,29 +59,29 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 			"@context": "https://schema.org",
 			"@type": "LocalBusiness",
 			"name": "FloorPlay Agency",
-			"description": "Professional epoxy floor coating specialists serving Springfield MA and surrounding areas.",
+			"description": "Professional epoxy floor coating specialists serving Mequon WI and surrounding areas.",
 			"url": "https://floorplay.agency",
 			"telephone": "(413)555-3769",
 			"address": {
 				"@type": "PostalAddress",
 				"streetAddress": "123 Main Street",
-				"addressLocality": "Springfield",
-				"addressRegion": "MA",
-				"postalCode": "01103",
+				"addressLocality": "Mequon",
+				"addressRegion": "WI",
+				"postalCode": "53097",
 				"addressCountry": "US"
 			},
 			"geo": {
 				"@type": "GeoCoordinates",
-				"latitude": 42.1015,
-				"longitude": -72.5898
+				"latitude": 43.2261,
+				"longitude": -87.9734
 			},
 			"areaServed": [
-				"Springfield, MA",
-				"Westfield, MA",
-				"Chicopee, MA",
-				"Holyoke, MA",
-				"Northampton, MA",
-				"East Longmeadow, MA"
+				"Mequon, WI",
+				"Grafton, WI",
+				"Cedarburg, WI",
+				"Thiensville, WI",
+				"Germantown, WI",
+				"Menomonee Falls, WI"
 			],
 			"serviceType": [
 				"Epoxy Floor Coating",
@@ -84,7 +89,6 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 				"Basement Floor Resurfacing",
 				"Concrete Floor Coating"
 			],
-			"priceRange": "$$$",
 			"openingHours": [
 				"Mo-Fr 08:00-18:00",
 				"Sa 09:00-16:00"

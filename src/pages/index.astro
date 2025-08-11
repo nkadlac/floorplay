@@ -19,7 +19,6 @@ const [pageData, services, faqs] = await Promise.all([
       name,
       slug,
       shortDescription,
-      pricing,
       features,
       "image": images[0]
     }
@@ -35,340 +34,552 @@ const [pageData, services, faqs] = await Promise.all([
 
 // Fallback content if Sanity content isn't available yet
 const defaultContent = {
-  title: "Professional Epoxy Floor Coating Services",
-  hero: {
-    headline: "Transform Your Floors with Professional Epoxy Coating",
-    subheadline: "Durable, beautiful floors that resist stains, chemicals, and daily wear. Serving Springfield MA and surrounding areas with expert installation and 10-year warranty.",
-    ctaText: "Get Free Quote",
-    ctaLink: "/contact"
-  },
+  title: "Stop Losing $5k+ Epoxy Jobs to Competitors Online | Floorplay",
   seo: {
-    metaTitle: "Professional Epoxy Floor Coating - Springfield MA | Garage & Basement Floors",
-    metaDescription: "Transform your garage and basement floors with professional epoxy coating. Serving Springfield MA area. Free quotes, 10-year warranty, expert installation."
+    metaTitle: "FloorPlay Agency - Lead Generation for Floor Coating Contractors",
+    metaDescription: "The only no-nonsense marketing agency built for garage & basement flooring contractors. Stop losing $5k+ epoxy jobs to competitors online."
   }
 };
 
 const content = pageData || defaultContent;
+
+// Image constants
+const imgImage2 = "http://localhost:3845/assets/16b88758a3f19b45f534bf2bc205e26664404521.png";
+const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
 ---
 
 <Layout 
   title={content.seo?.metaTitle || content.title}
   description={content.seo?.metaDescription}
 >
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Background Image -->
+  <div class="background-pattern"></div>
+
+  <!-- Top Section -->
+  <section class="top-section">
     <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo-nav">
+          <div class="logo">
+            <h1>Floorplay</h1>
+          </div>
+          <nav class="nav">
+            <!-- Navigation links removed temporarily -->
+          </nav>
+        </div>
+        <div class="divider"></div>
+        <div class="tagline">
+          <p>Where Specialty Flooring Contractors Go to Grow</p>
+        </div>
+      </div>
+      
+      <!-- Hero Content -->
       <div class="hero-content">
-        <h1>{content.hero?.headline || content.title}</h1>
-        <p class="hero-subtitle">
-          {content.hero?.subheadline || "Professional epoxy floor coating for garages and basements in Springfield MA area."}
+        <h1 class="headline">Stop Losing $5k+ Epoxy Jobs to Competitors Online</h1>
+        <p class="subheadline">
+          Floorplay is the Only No-Nonsense Marketing Agency Built for Garage & Basement Flooring Contractors.
         </p>
         <div class="hero-cta">
-          <a href={content.hero?.ctaLink || "/contact"} class="cta-button primary">
-            {content.hero?.ctaText || "Get Free Quote"}
+          <a href="mailto:nate@floorplay.agency" class="cta-button primary">
+            Claim Your Free Epoxy Lead Audit
           </a>
-          <a href="tel:(413)555-3769" class="cta-button secondary">
-            Call (413) 555-EPOXY
-          </a>
+          <p class="cta-subtitle">
+            And see exactly how many $5k+ jobs you're losing to competitors online
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="services">
+  <!-- Value Proposition Section -->
+  <section class="value-section">
     <div class="container">
-      <h2>Our Expert Services</h2>
-      <div class="services-grid">
-        {services?.length > 0 ? (
-          services.map((service) => (
-            <div class="service-card">
-              <h3>{service.name}</h3>
-              <p>{service.shortDescription}</p>
-              <div class="service-features">
-                {service.features?.slice(0, 3).map((feature) => (
-                  <span class="feature">✓ {feature}</span>
-                ))}
-              </div>
-              <div class="service-pricing">
-                {service.pricing?.startingPrice && (
-                  <span class="price">Starting at ${service.pricing.startingPrice}{service.pricing.priceUnit}</span>
-                )}
-              </div>
-              <a href={`/services/${service.slug?.current}`} class="service-link">
-                Learn More →
-              </a>
-            </div>
-          ))
-        ) : (
-          <div class="service-card">
-            <h3>Garage Floor Epoxy Coating</h3>
-            <p>Transform your garage with durable, chemical-resistant epoxy floor coating. Perfect for protecting concrete from oil stains, chemicals, and daily wear.</p>
-            <div class="service-features">
-              <span class="feature">✓ Chemical and oil stain resistance</span>
-              <span class="feature">✓ Easy to clean and maintain</span>
-              <span class="feature">✓ 10-year warranty included</span>
-            </div>
-            <div class="service-pricing">
-              <span class="price">Starting at $4.50/sq ft</span>
-            </div>
-            <a href="/services/garage-floor-epoxy" class="service-link">Learn More →</a>
-          </div>
-        )}
+      <p class="value-text">
+        While other agencies spread thin across every contractor type, we exclusively serve epoxy, concrete garage flooring, and basement specialists. Result? We know exactly what makes homeowners choose YOU for their $5k+ flooring investment.
+      </p>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="problem-section">
+    <div class="container">
+      <h2 class="problem-headline">Are You Losing $5k+ Epoxy Jobs Every Month?</h2>
+      <div class="problem-cards">
+        <div class="problem-card">
+          <p>Competitors rank #1 for 'epoxy garage floor [city]'</p>
+        </div>
+        <div class="problem-card">
+          <p>You're stuck on page 2+ of Google searches</p>
+        </div>
+        <div class="problem-card">
+          <p>Premium customers choose whoever they see first</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="faq">
+  <!-- Solution Section -->
+  <section class="solution-section">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-grid">
-        {faqs?.length > 0 ? (
-          faqs.map((faq) => (
-            <div class="faq-item">
-              <h3>{faq.question}</h3>
-              <PortableText value={faq.answer} />
-            </div>
-          ))
-        ) : (
-          <div class="faq-item">
-            <h3>How long does epoxy floor coating last?</h3>
-            <p>Professional epoxy floor coating typically lasts 10-15 years with proper maintenance. Our installations come with a 10-year warranty.</p>
-          </div>
-        )}
+      <h2 class="solution-headline">The Only Marketing Agency Built for Epoxy & Concrete Contractors</h2>
+      <div class="solution-list">
+        <ol>
+          <li>
+            <span class="list-label">Local Search Domination:</span>
+            <span>"Rank #1 for 'epoxy garage floor [your city]'</span>
+          </li>
+          <li>
+            <span class="list-label">Qualified Lead Generation:</span>
+            <span>"5-8 premium jobs monthly, not tire-kickers"</span>
+          </li>
+          <li>
+            <span class="list-label">Industry Expertise:</span>
+            <span>"We speak garage flooring, not generic contractor"</span>
+          </li>
+        </ol>
+      </div>
+      <div class="solution-cta">
+        <a href="mailto:nate@floorplay.agency" class="cta-button secondary">
+          Claim Your Free Epoxy Lead Audit
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
+  <!-- Footer Section -->
+  <section class="footer-section">
     <div class="container">
-      <h2>Ready to Transform Your Floors?</h2>
-      <p>Get a free quote today and see why hundreds of Springfield area homeowners trust us with their epoxy floor projects.</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="cta-button primary">Get Free Quote</a>
-        <a href="tel:(413)555-3769" class="cta-button secondary">Call Now</a>
-      </div>
+      <h3 class="footer-logo">Floorplay</h3>
+      <p class="footer-text">All rights reserved.</p>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
+  /* Background Pattern */
+  .background-pattern {
+    position: absolute;
+    top: 1px;
+    left: -194px;
+    width: 1900px;
+    height: 1065px;
+    background-image: url('http://localhost:3845/assets/16b88758a3f19b45f534bf2bc205e26664404521.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    mix-blend-mode: color-burn;
+    transform: scaleY(-1);
+    z-index: -1;
   }
 
+  /* Container */
   .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+  /* Top Section */
+  .top-section {
+    background: #ffffff;
+    padding: 72px 0;
+    position: relative;
+    z-index: 1;
   }
 
-  .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  /* Header */
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 80px;
+  }
+
+  .logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .logo h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 1.6px;
+    margin: 0;
+    line-height: 0.831;
+    color: #000000;
+  }
+
+  .nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #6bb77e;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 0.831;
+  }
+
+  .nav-link:hover {
+    opacity: 0.8;
+  }
+
+  .divider {
+    height: 1px;
+    background: url('http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg') repeat-x;
+    width: 100%;
+  }
+
+  .tagline {
+    text-align: right;
+  }
+
+  .tagline p {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    max-width: 250px;
+    margin: 0 0 0 auto;
+  }
+
+  /* Hero Content */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: #000000;
+    letter-spacing: -1.12px;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .subheadline {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: #000000;
+    letter-spacing: -0.56px;
+    line-height: 1.3;
+    margin: 0;
   }
 
   .hero-cta {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
   }
 
   .cta-button {
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    padding: 24px 32px;
     text-decoration: none;
-    font-weight: 600;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    line-height: 1.3;
     transition: all 0.3s ease;
+    white-space: nowrap;
   }
 
   .cta-button.primary {
-    background: #ff6b35;
-    color: white;
+    background: #6bb77e;
+    color: #000000;
   }
 
   .cta-button.primary:hover {
-    background: #e55a2b;
+    background: #5fa36f;
     transform: translateY(-2px);
   }
 
   .cta-button.secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+    background: #ffffff;
+    color: #000000;
   }
 
   .cta-button.secondary:hover {
-    background: white;
-    color: #1a1a1a;
-  }
-
-  .services {
-    padding: 4rem 0;
     background: #f8f9fa;
+    transform: translateY(-2px);
   }
 
-  .services h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: #1a1a1a;
+  .cta-subtitle {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    margin: 0;
+    max-width: 329px;
   }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  /* Value Section */
+  .value-section {
+    background: #6bb77e;
+    padding: 60px 0;
+    margin-top: 0;
   }
 
-  .service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  .value-text {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 38px;
+    color: #000000;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0;
   }
 
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* Problem Section */
+  .problem-section {
+    background: #6bb77e;
+    padding: 50px 0;
+    margin-top: 0;
   }
 
-  .service-card h3 {
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+  .problem-headline {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 47px;
+    color: #000000;
+    letter-spacing: -0.94px;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+    font-variation-settings: 'opsz' 14, 'wdth' 100;
   }
 
-  .service-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .service-features {
+  .problem-cards {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 24px;
+    margin-top: 12px;
+    width: 100%;
   }
 
-  .feature {
-    color: #2d5a27;
-    font-size: 0.9rem;
-  }
-
-  .service-pricing {
-    margin-bottom: 1.5rem;
-  }
-
-  .price {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #ff6b35;
-  }
-
-  .service-link {
-    color: #ff6b35;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .service-link:hover {
-    text-decoration: underline;
-  }
-
-  .faq {
-    padding: 4rem 0;
-  }
-
-  .faq h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: #1a1a1a;
-  }
-
-  .faq-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  .faq-item {
-    padding: 1.5rem;
-    border-left: 4px solid #ff6b35;
-    background: #f8f9fa;
-  }
-
-  .faq-item h3 {
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-  }
-
-  .faq-item p {
-    color: #666;
-    line-height: 1.6;
-  }
-
-  .cta-section {
-    background: #1a1a1a;
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
-  }
-
-  .cta-section h2 {
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-  }
-
-  .cta-section p {
-    margin-bottom: 2rem;
-    font-size: 1.25rem;
-    opacity: 0.9;
-  }
-
-  .cta-buttons {
+  .problem-card {
+    flex: 1;
+    background: #000000;
+    padding: 24px;
+    min-height: 100px;
     display: flex;
-    gap: 1rem;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
   }
 
+  .problem-card p {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: -0.48px;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Solution Section */
+  .solution-section {
+    background: #6bb77e;
+    padding: 50px 0;
+    margin-top: 0;
+  }
+
+  .solution-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #000000;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+
+  .solution-list {
+    margin: 12px 0 16px 0;
+  }
+
+  .solution-list ol {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: -0.48px;
+    line-height: 1.4;
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .solution-list li {
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .solution-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .list-label {
+    font-weight: 700;
+  }
+
+  .solution-cta {
+    margin-top: 40px;
+  }
+
+  /* Footer Section */
+  .footer-section {
+    background: #000000;
+    padding: 112px 0;
+  }
+
+  .footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #ffffff;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+
+  .footer-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
   @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
+    .background-pattern {
+      display: none;
+    }
+
+    .top-section {
+      padding: 40px 0;
     }
     
-    .hero-subtitle {
-      font-size: 1.1rem;
+    .header {
+      margin-bottom: 40px;
     }
     
-    .services h2, .faq h2, .cta-section h2 {
-      font-size: 2rem;
+    .logo-nav {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    
+    .logo h1 {
+      font-size: 28px;
+    }
+    
+    .nav {
+      gap: 16px;
+    }
+    
+    .nav-link {
+      font-size: 18px;
+    }
+    
+    .tagline {
+      text-align: center;
+    }
+    
+    .tagline p {
+      margin: 0 auto;
+      max-width: none;
+    }
+    
+    .headline {
+      font-size: 36px;
+      letter-spacing: -0.72px;
+    }
+    
+    .subheadline {
+      font-size: 22px;
+      letter-spacing: -0.44px;
+    }
+    
+    .hero-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
     }
     
     .cta-button {
-      padding: 0.75rem 1.5rem;
+      padding: 20px 28px;
+      font-size: 16px;
+    }
+    
+    .cta-subtitle {
+      font-size: 14px;
+      max-width: none;
+    }
+
+    .value-text {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .problem-headline {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+    }
+
+    .problem-cards {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .problem-card {
+      min-height: 80px;
+    }
+
+    .problem-card p {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+      text-align: center;
+    }
+
+    .solution-headline {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .solution-list ol {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .footer-section {
+      padding: 60px 0;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .footer-text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
     }
   }
 </style>
