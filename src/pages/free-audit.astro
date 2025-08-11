@@ -1,22 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { sanityClient } from 'sanity:client';
+import { PortableText } from 'astro-portabletext';
 
-// SEO content for the audit page
-const pageData = {
-  title: "Free Epoxy Lead Audit - See How Many $5k+ Jobs You're Losing Online",
+// Fetch free-audit page content from Sanity
+const pageData = await sanityClient.fetch(`
+  *[_type == "page" && slug.current == "free-audit"][0]{
+    title,
+    seo,
+    hero,
+    content,
+    aiContext
+  }
+`);
+
+// Fallback content if Sanity content isn't available yet
+const defaultContent = {
+  title: "Get Your Free Epoxy Lead Audit",
   seo: {
     metaTitle: "Free Epoxy Lead Audit | Floorplay Agency - Find Your Lost Leads",
     metaDescription: "Get a free audit showing exactly how many $5k+ epoxy jobs you're losing to competitors online. See where your leads are going and how to get them back."
-  }
+  },
+  hero: {
+    headline: "Get Your Free Epoxy Lead Audit",
+    subheadline: "See exactly how many $5k+ jobs you're losing to competitors online and get a personalized action plan to capture them.",
+    benefits: [
+      "Competitor analysis for your local market",
+      "Search ranking gaps costing you leads", 
+      "Custom strategy to dominate local searches"
+    ]
+  },
+  content: []
 };
+
+const content = pageData || defaultContent;
 
 // Image constants (reusing from homepage)
 const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
 ---
 
 <Layout 
-  title={pageData.seo.metaTitle}
-  description={pageData.seo.metaDescription}
+  title={content.seo?.metaTitle || content.title}
+  description={content.seo?.metaDescription}
 >
   <!-- Background Pattern -->
   <div class="background-pattern"></div>
@@ -47,23 +72,17 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     <div class="container">
       <!-- Header Content -->
       <div class="form-header">
-        <h1 class="form-headline">Get Your Free Epoxy Lead Audit</h1>
+        <h1 class="form-headline">{content.hero?.headline || content.title}</h1>
         <p class="form-subheadline">
-          See exactly how many $5k+ jobs you're losing to competitors online and get a personalized action plan to capture them.
+          {content.hero?.subheadline || "See exactly how many $5k+ jobs you're losing to competitors online and get a personalized action plan to capture them."}
         </p>
         <div class="benefits-list">
-          <div class="benefit-item">
-            <span class="benefit-check">✓</span>
-            <span>Competitor analysis for your local market</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-check">✓</span>
-            <span>Search ranking gaps costing you leads</span>
-          </div>
-          <div class="benefit-item">
-            <span class="benefit-check">✓</span>
-            <span>Custom strategy to dominate local searches</span>
-          </div>
+          {(content.hero?.benefits || defaultContent.hero.benefits).map((benefit) => (
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>{benefit}</span>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -219,6 +238,17 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       </div>
     </div>
   </section>
+
+  <!-- Additional Content (if provided in Sanity) -->
+  {content.content && content.content.length > 0 && (
+    <section class="additional-content">
+      <div class="container">
+        <div class="content-blocks">
+          <PortableText value={content.content} />
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Trust Section -->
   <section class="trust-section">
@@ -543,6 +573,55 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     margin-right: auto;
   }
 
+  /* Additional Content Section */
+  .additional-content {
+    background: #ffffff;
+    padding: 60px 0;
+  }
+
+  .content-blocks {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.36px;
+    line-height: 1.4;
+  }
+
+  .content-blocks h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #000000;
+    letter-spacing: -0.64px;
+    line-height: 1.3;
+    margin: 0 0 24px 0;
+  }
+
+  .content-blocks h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: -0.48px;
+    line-height: 1.3;
+    margin: 32px 0 16px 0;
+  }
+
+  .content-blocks p {
+    margin: 0 0 16px 0;
+  }
+
+  .content-blocks ul,
+  .content-blocks ol {
+    margin: 16px 0;
+    padding-left: 24px;
+  }
+
+  .content-blocks li {
+    margin-bottom: 8px;
+  }
+
   /* Trust Section */
   .trust-section {
     background: #6bb77e;
@@ -658,6 +737,24 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     .submit-button {
       padding: 20px 32px;
       font-size: 18px;
+    }
+
+    .additional-content {
+      padding: 50px 0;
+    }
+
+    .content-blocks {
+      font-size: 16px;
+    }
+
+    .content-blocks h2 {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .content-blocks h3 {
+      font-size: 20px;
+      letter-spacing: -0.4px;
     }
 
     .trust-section {
