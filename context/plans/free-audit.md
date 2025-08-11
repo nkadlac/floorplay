@@ -76,7 +76,7 @@ Step 5: Follow-Up Automation
 
 ### Phase 1: Basic Form + Manual Process (Week 1)
 **Tech Stack:**
-- **Form Handler:** Netlify Forms (built into hosting) or Formspree
+- **Form Handler:** Netlify Forms
 - **Database:** Google Sheets (auto-populated via Zapier)
 - **Notifications:** Email alerts when form submitted
 - **Reports:** Google Docs template you duplicate & customize
@@ -113,9 +113,6 @@ Step 5: Follow-Up Automation
 # Option A: Netlify Forms (Simplest)
 # Add to your form: netlify
 # Forms automatically captured in Netlify dashboard
-
-# Option B: Formspree (More features)
-# Change form action to: https://formspree.io/f/your-id
 ```
 
 ### Day 3: Notification Setup

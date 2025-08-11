@@ -1,0 +1,730 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sanityClient } from 'sanity:client';
+
+// Fetch all services
+const services = await sanityClient.fetch(`
+  *[_type == "service"] | order(_createdAt desc){
+    name,
+    slug,
+    shortDescription,
+    features,
+    pricing,
+    "image": images[0],
+    seo
+  }
+`);
+
+// SEO content
+const pageData = {
+  title: "Marketing Services for Epoxy Contractors | FloorPlay Agency",
+  seo: {
+    metaTitle: "Marketing Services for Epoxy Contractors | FloorPlay Agency",
+    metaDescription: "Comprehensive marketing services designed specifically for epoxy and concrete coating contractors. Local SEO, lead generation, and growth strategies."
+  }
+};
+
+// Image constants (reusing from homepage)
+const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
+---
+
+<Layout 
+  title={pageData.seo.metaTitle}
+  description={pageData.seo.metaDescription}
+>
+  <!-- Background Pattern -->
+  <div class="background-pattern"></div>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="container">
+      <div class="header">
+        <div class="logo-nav">
+          <div class="logo">
+            <a href="/"><h1>Floorplay</h1></a>
+          </div>
+          <nav class="nav">
+            <a href="/services" class="nav-link active">Services</a>
+            <a href="/free-audit" class="nav-link">Free Audit</a>
+          </nav>
+        </div>
+        <div class="divider"></div>
+        <div class="tagline">
+          <p>Where Specialty Flooring Contractors Go to Grow</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Hero Section -->
+  <section class="services-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Marketing Services Built for Epoxy Contractors</h1>
+        <p class="hero-description">
+          Stop losing $5k+ jobs to competitors online. Our specialized marketing services help epoxy contractors dominate local searches and capture more premium leads.
+        </p>
+        <div class="hero-cta">
+          <a href="/free-audit" class="cta-button primary">
+            Get Your Free Strategy Audit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="services-grid-section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        {services.map((service) => (
+          <div class="service-card">
+            <div class="service-content">
+              <h3 class="service-name">
+                <a href={`/services/${service.slug.current}`}>{service.name}</a>
+              </h3>
+              <p class="service-description">{service.shortDescription}</p>
+              
+              {service.features && service.features.length > 0 && (
+                <div class="service-features">
+                  <h4 class="features-title">Key Features:</h4>
+                  <ul class="features-list">
+                    {service.features.slice(0, 3).map((feature) => (
+                      <li class="feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                    {service.features.length > 3 && (
+                      <li class="feature-more">
+                        + {service.features.length - 3} more features
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              )}
+              
+              {service.pricing && (
+                <div class="service-pricing">
+                  <span class="pricing-label">Starting at</span>
+                  <span class="pricing-amount">${service.pricing.startingPrice?.toLocaleString()}</span>
+                  <span class="pricing-unit">{service.pricing.priceUnit}</span>
+                </div>
+              )}
+              
+              <div class="service-cta">
+                <a href={`/services/${service.slug.current}`} class="service-link">
+                  Learn More →
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-section">
+    <div class="container">
+      <h2 class="section-title">Why Epoxy Contractors Choose FloorPlay</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <h3 class="benefit-title">Industry Specialization</h3>
+          <p class="benefit-description">We only work with epoxy, concrete, and flooring contractors. We know your market, customers, and challenges.</p>
+        </div>
+        <div class="benefit-item">
+          <h3 class="benefit-title">Proven Results</h3>
+          <p class="benefit-description">Our clients typically see 2-5 additional $5k+ jobs monthly within 6 months of working with us.</p>
+        </div>
+        <div class="benefit-item">
+          <h3 class="benefit-title">Local Focus</h3>
+          <p class="benefit-description">We help you dominate local searches for "epoxy garage floor [your city]" and capture premium homeowner leads.</p>
+        </div>
+        <div class="benefit-item">
+          <h3 class="benefit-title">No Long Contracts</h3>
+          <p class="benefit-description">Month-to-month service with transparent reporting. You see exactly where your investment is going.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Grow Your Epoxy Business?</h2>
+        <p class="cta-description">
+          Get your free audit and see exactly how many $5k+ jobs you're losing to competitors online.
+        </p>
+        <div class="cta-buttons">
+          <a href="/free-audit" class="cta-button primary">
+            Get Your Free Audit
+          </a>
+          <a href="mailto:nate@floorplay.agency" class="cta-button secondary">
+            Email Us Directly
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <section class="footer-section">
+    <div class="container">
+      <h3 class="footer-logo">Floorplay</h3>
+      <p class="footer-text">All rights reserved.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Background Pattern */
+  .background-pattern {
+    position: absolute;
+    top: 1px;
+    left: -194px;
+    width: 1900px;
+    height: 1065px;
+    background-image: url('http://localhost:3845/assets/16b88758a3f19b45f534bf2bc205e26664404521.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    mix-blend-mode: color-burn;
+    transform: scaleY(-1);
+    z-index: -1;
+  }
+
+  /* Container */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Header Section */
+  .header-section {
+    background: #ffffff;
+    padding: 40px 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .logo h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 1.6px;
+    margin: 0;
+    line-height: 0.831;
+    color: #000000;
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #6bb77e;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 0.831;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    opacity: 0.8;
+  }
+
+  .divider {
+    height: 1px;
+    background: url('http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg') repeat-x;
+    width: 100%;
+  }
+
+  .tagline {
+    text-align: right;
+  }
+
+  .tagline p {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    max-width: 250px;
+    margin: 0 0 0 auto;
+  }
+
+  /* Services Hero Section */
+  .services-hero {
+    background: #ffffff;
+    padding: 40px 0 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #000000;
+    letter-spacing: -0.96px;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+  }
+
+  .hero-description {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #000000;
+    letter-spacing: -0.44px;
+    line-height: 1.4;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    margin-top: 40px;
+  }
+
+  /* CTA Buttons */
+  .cta-button {
+    padding: 24px 32px;
+    text-decoration: none;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: inline-block;
+    border-radius: 4px;
+  }
+
+  .cta-button.primary {
+    background: #6bb77e;
+    color: #000000;
+  }
+
+  .cta-button.primary:hover {
+    background: #5fa36f;
+    transform: translateY(-2px);
+  }
+
+  .cta-button.secondary {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #6bb77e;
+    margin-left: 16px;
+  }
+
+  .cta-button.secondary:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+  }
+
+  /* Services Grid Section */
+  .services-grid-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #000000;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0 0 50px 0;
+    text-align: center;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .service-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  .service-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+    letter-spacing: -0.56px;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+  }
+
+  .service-name a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .service-name a:hover {
+    color: #6bb77e;
+  }
+
+  .service-description {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.36px;
+    line-height: 1.4;
+    margin: 0 0 24px 0;
+  }
+
+  .service-features {
+    margin-bottom: 24px;
+  }
+
+  .features-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    margin: 0 0 12px 0;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.4;
+  }
+
+  .feature-check {
+    color: #6bb77e;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-more {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6bb77e;
+    margin-top: 8px;
+  }
+
+  .service-pricing {
+    background: #6bb77e;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  .pricing-label {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .pricing-amount {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: -0.48px;
+  }
+
+  .pricing-unit {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    margin-left: 4px;
+  }
+
+  .service-cta {
+    margin-top: 24px;
+  }
+
+  .service-link {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #6bb77e;
+    text-decoration: none;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+  }
+
+  .service-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Why Choose Section */
+  .why-choose-section {
+    background: #6bb77e;
+    padding: 60px 0;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .benefit-item {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 8px;
+  }
+
+  .benefit-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #000000;
+    letter-spacing: -0.44px;
+    line-height: 1.3;
+    margin: 0 0 12px 0;
+  }
+
+  .benefit-description {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Final CTA Section */
+  .final-cta {
+    background: #ffffff;
+    padding: 80px 0;
+  }
+
+  .cta-content {
+    text-align: center;
+  }
+
+  .cta-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #000000;
+    letter-spacing: -0.84px;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+  }
+
+  .cta-description {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0 0 40px 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Footer Section */
+  .footer-section {
+    background: #000000;
+    padding: 80px 0;
+  }
+
+  .footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #ffffff;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+
+  .footer-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .background-pattern {
+      display: none;
+    }
+
+    .header-section {
+      padding: 30px 0 15px;
+    }
+
+    .logo-nav {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    
+    .logo h1 {
+      font-size: 28px;
+    }
+    
+    .nav {
+      gap: 16px;
+    }
+    
+    .nav-link {
+      font-size: 18px;
+    }
+    
+    .tagline {
+      text-align: center;
+    }
+    
+    .tagline p {
+      margin: 0 auto;
+      max-width: none;
+    }
+
+    .services-hero {
+      padding: 30px 0 50px;
+    }
+    
+    .hero-title {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+    }
+    
+    .hero-description {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .services-grid {
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 30px;
+    }
+
+    .service-name {
+      font-size: 24px;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .benefit-item {
+      padding: 24px;
+    }
+
+    .cta-title {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .cta-description {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cta-button.secondary {
+      margin-left: 0;
+    }
+
+    .footer-section {
+      padding: 50px 0;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .footer-text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+  }
+</style>
