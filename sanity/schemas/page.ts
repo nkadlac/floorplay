@@ -93,6 +93,13 @@ export const page = defineType({
           options: {
             hotspot: true
           }
+        },
+        {
+          name: 'benefits',
+          title: 'Benefits List',
+          type: 'array',
+          of: [{type: 'string'}],
+          description: 'List of benefits to display with checkmarks (for forms/landing pages)'
         }
       ]
     }),
