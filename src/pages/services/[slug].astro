@@ -12,7 +12,6 @@ export async function getStaticPaths() {
       fullDescription,
       features,
       process,
-      pricing,
       materials,
       serviceArea,
       duration,
@@ -74,14 +73,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         <h1 class="service-title">{service.name}</h1>
         <p class="service-description">{service.shortDescription}</p>
         
-        {service.pricing && (
-          <div class="pricing-highlight">
-            <span class="price-label">Starting at</span>
-            <span class="price-amount">${service.pricing.startingPrice?.toLocaleString()}</span>
-            <span class="price-unit">{service.pricing.priceUnit}</span>
-          </div>
-        )}
-        
         <div class="service-cta">
           <a href="/free-audit" class="cta-button primary">
             Get Your Free Strategy Audit
@@ -90,6 +81,17 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       </div>
     </div>
   </section>
+
+  <!-- Service Description Section -->
+  {service.fullDescription && service.fullDescription.length > 0 && (
+    <section class="description-section">
+      <div class="container">
+        <div class="description-content">
+          <PortableText value={service.fullDescription} />
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Service Features Section -->
   {service.features && service.features.length > 0 && (
@@ -177,34 +179,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     </section>
   )}
 
-  <!-- Pricing Section -->
-  {service.pricing && (
-    <section class="pricing-section">
-      <div class="container">
-        <h2 class="section-title">Investment</h2>
-        <div class="pricing-card">
-          <div class="pricing-main">
-            <div class="price-display">
-              <span class="price-amount">${service.pricing.startingPrice?.toLocaleString()}</span>
-              <span class="price-unit">{service.pricing.priceUnit}</span>
-            </div>
-            <p class="pricing-note">Starting price - final investment depends on several factors</p>
-          </div>
-          
-          {service.pricing.priceFactors && service.pricing.priceFactors.length > 0 && (
-            <div class="price-factors">
-              <h4 class="factors-title">Factors affecting investment:</h4>
-              <ul class="factors-list">
-                {service.pricing.priceFactors.map((factor) => (
-                  <li class="factor-item">{factor}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  )}
 
   <!-- FAQ Section -->
   {service.aiTrainingData?.commonQuestions && service.aiTrainingData.commonQuestions.length > 0 && (
@@ -227,16 +201,16 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   <section class="final-cta">
     <div class="container">
       <div class="cta-content">
-        <h2 class="cta-title">Ready to Get Started?</h2>
+        <h2 class="cta-title">Ready to Grow Your Business?</h2>
         <p class="cta-description">
-          Get your free audit and see exactly how we can help grow your epoxy business.
+          Book a free strategy call to discuss how we can help you dominate local searches and capture more $5k+ jobs.
         </p>
         <div class="cta-buttons">
-          <a href="/free-audit" class="cta-button primary">
-            Get Your Free Audit
+          <a href="mailto:nate@floorplay.agency" class="cta-button primary">
+            Schedule Your Free Call
           </a>
-          <a href="mailto:nate@floorplay.agency" class="cta-button secondary">
-            Email Us Directly
+          <a href="/free-audit" class="cta-button secondary">
+            Or Get Free Audit
           </a>
         </div>
       </div>
@@ -386,41 +360,58 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     margin-right: auto;
   }
 
-  .pricing-highlight {
-    background: #6bb77e;
-    padding: 20px 30px;
-    border-radius: 8px;
-    margin: 40px 0;
-    display: inline-block;
+
+  .service-cta {
+    margin-top: 40px;
   }
 
-  .price-label {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000000;
-    display: block;
-    margin-bottom: 8px;
+  /* Description Section */
+  .description-section {
+    background: #ffffff;
+    padding: 60px 0;
   }
 
-  .price-amount {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    color: #000000;
-    letter-spacing: -0.72px;
-  }
-
-  .price-unit {
+  .description-content {
     font-family: 'Sora', sans-serif;
     font-weight: 400;
     font-size: 18px;
     color: #000000;
-    margin-left: 8px;
+    letter-spacing: -0.36px;
+    line-height: 1.6;
   }
 
-  .service-cta {
-    margin-top: 40px;
+  .description-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #000000;
+    letter-spacing: -0.64px;
+    line-height: 1.3;
+    margin: 0 0 24px 0;
+  }
+
+  .description-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: -0.48px;
+    line-height: 1.3;
+    margin: 32px 0 16px 0;
+  }
+
+  .description-content p {
+    margin: 0 0 16px 0;
+  }
+
+  .description-content ul,
+  .description-content ol {
+    margin: 16px 0;
+    padding-left: 24px;
+  }
+
+  .description-content li {
+    margin-bottom: 8px;
   }
 
   /* CTA Buttons */
@@ -618,69 +609,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     font-size: 14px;
   }
 
-  /* Pricing Section */
-  .pricing-section {
-    background: #6bb77e;
-    padding: 60px 0;
-  }
-
-  .pricing-section .section-title {
-    color: #000000;
-  }
-
-  .pricing-card {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .pricing-main {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .price-display .price-amount {
-    font-size: 48px;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .pricing-note {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #666;
-    margin: 16px 0 0 0;
-  }
-
-  .factors-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: #000000;
-    margin: 0 0 16px 0;
-  }
-
-  .factors-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .factor-item {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000000;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .factor-item:last-child {
-    border-bottom: none;
-  }
 
   /* FAQ Section */
   .faq-section {
@@ -842,14 +770,24 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       margin-bottom: 30px;
     }
 
-    .pricing-highlight {
-      padding: 16px 24px;
-      margin: 30px 0;
+    .description-section {
+      padding: 50px 0;
     }
 
-    .price-amount {
-      font-size: 28px;
+    .description-content {
+      font-size: 16px;
     }
+
+    .description-content h2 {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .description-content h3 {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+    }
+
 
     .features-grid {
       grid-template-columns: 1fr;
@@ -879,13 +817,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       padding: 20px;
     }
 
-    .pricing-card {
-      padding: 30px 20px;
-    }
-
-    .price-display .price-amount {
-      font-size: 36px;
-    }
 
     .cta-title {
       font-size: 28px;
