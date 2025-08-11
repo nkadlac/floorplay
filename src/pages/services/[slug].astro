@@ -30,6 +30,7 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 
+
 // SEO settings
 const pageTitle = service.seo?.metaTitle || `${service.name} | FloorPlay Agency`;
 const pageDescription = service.seo?.metaDescription || service.shortDescription;
