@@ -31,6 +31,10 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
           <div class="logo">
             <a href="/"><h1>Floorplay</h1></a>
           </div>
+          <nav class="nav">
+            <a href="/services/local-seo" class="nav-link">Services</a>
+            <a href="/free-audit" class="nav-link">Free Audit</a>
+          </nav>
         </div>
         <div class="divider"></div>
         <div class="tagline">
@@ -159,6 +163,25 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   .logo a {
     text-decoration: none;
     color: inherit;
+  }
+
+  .nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #6bb77e;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 0.831;
+  }
+
+  .nav-link:hover {
+    opacity: 0.8;
   }
 
   .divider {
@@ -386,6 +409,14 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     
     .logo h1 {
       font-size: 28px;
+    }
+    
+    .nav {
+      gap: 16px;
+    }
+    
+    .nav-link {
+      font-size: 18px;
     }
     
     .tagline {
