@@ -1,9 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { sanityClient } from 'sanity:client';
+import { createClient } from '@sanity/client';
+
 import { PortableText } from 'astro-portabletext';
 
 export async function getStaticPaths() {
+  const sanityClient = createClient({
+    projectId: 'tvo5sug9',
+    dataset: 'production',
+    useCdn: true,
+    apiVersion: '2024-01-01',
+  });
+  
   const services = await sanityClient.fetch(`
     *[_type == "service"]{
       "slug": slug.current,
