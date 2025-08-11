@@ -1,0 +1,479 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// SEO content for the thank you page
+const pageData = {
+  title: "Thank You - Your Free Audit is Being Prepared",
+  seo: {
+    metaTitle: "Thank You | Free Audit Request Received - Floorplay Agency",
+    metaDescription: "Thank you for requesting your free epoxy lead audit. We're preparing your personalized report and will email it within 24 hours."
+  }
+};
+
+// Image constants (reusing from homepage)
+const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
+---
+
+<Layout 
+  title={pageData.seo.metaTitle}
+  description={pageData.seo.metaDescription}
+>
+  <!-- Background Pattern -->
+  <div class="background-pattern"></div>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="container">
+      <div class="header">
+        <div class="logo-nav">
+          <div class="logo">
+            <a href="/"><h1>Floorplay</h1></a>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="tagline">
+          <p>Where Specialty Flooring Contractors Go to Grow</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thank You Section -->
+  <section class="thank-you-section">
+    <div class="container">
+      <div class="thank-you-content">
+        <div class="success-icon">✓</div>
+        <h1 class="thank-you-headline">Your Free Audit Request Has Been Received!</h1>
+        <p class="thank-you-subheadline">
+          We're now preparing your personalized epoxy lead audit report. You'll receive it via email within the next 24 hours.
+        </p>
+        
+        <div class="what-happens-next">
+          <h2 class="next-steps-title">What Happens Next:</h2>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-number">1</span>
+              <div class="step-content">
+                <h3>Research Your Market</h3>
+                <p>We'll analyze your local competition and search rankings for epoxy-related keywords in your area.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-number">2</span>
+              <div class="step-content">
+                <h3>Identify Lost Opportunities</h3>
+                <p>We'll calculate exactly how many $5k+ jobs you're potentially missing each month.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-number">3</span>
+              <div class="step-content">
+                <h3>Create Your Action Plan</h3>
+                <p>You'll receive a personalized roadmap to dominate local epoxy searches in your market.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <p class="cta-text">
+            Questions? Want to discuss your audit results when they arrive?
+          </p>
+          <a href="mailto:nate@floorplay.agency" class="cta-button">
+            Email Us Directly
+          </a>
+        </div>
+
+        <div class="back-home">
+          <a href="/" class="back-link">← Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <section class="footer-section">
+    <div class="container">
+      <h3 class="footer-logo">Floorplay</h3>
+      <p class="footer-text">All rights reserved.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Background Pattern */
+  .background-pattern {
+    position: absolute;
+    top: 1px;
+    left: -194px;
+    width: 1900px;
+    height: 1065px;
+    background-image: url('http://localhost:3845/assets/16b88758a3f19b45f534bf2bc205e26664404521.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    mix-blend-mode: color-burn;
+    transform: scaleY(-1);
+    z-index: -1;
+  }
+
+  /* Container */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Header Section */
+  .header-section {
+    background: #ffffff;
+    padding: 40px 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  .logo h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 1.6px;
+    margin: 0;
+    line-height: 0.831;
+    color: #000000;
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .divider {
+    height: 1px;
+    background: url('http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg') repeat-x;
+    width: 100%;
+  }
+
+  .tagline {
+    text-align: right;
+  }
+
+  .tagline p {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    max-width: 250px;
+    margin: 0 0 0 auto;
+  }
+
+  /* Thank You Section */
+  .thank-you-section {
+    background: #ffffff;
+    padding: 40px 0 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .thank-you-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: #6bb77e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 auto 40px;
+  }
+
+  .thank-you-headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #000000;
+    letter-spacing: -0.84px;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+  }
+
+  .thank-you-subheadline {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0 0 60px 0;
+  }
+
+  .what-happens-next {
+    text-align: left;
+    margin-bottom: 60px;
+  }
+
+  .next-steps-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+    letter-spacing: -0.56px;
+    line-height: 1.3;
+    margin: 0 0 32px 0;
+    text-align: center;
+  }
+
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: #6bb77e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.4px;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+  }
+
+  .step-content p {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -0.32px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .cta-section {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+
+  .cta-text {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    letter-spacing: -0.36px;
+    line-height: 1.3;
+    margin: 0 0 24px 0;
+  }
+
+  .cta-button {
+    background: #6bb77e;
+    color: #000000;
+    padding: 16px 32px;
+    border-radius: 4px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #5fa36f;
+    transform: translateY(-2px);
+  }
+
+  .back-home {
+    margin-top: 40px;
+  }
+
+  .back-link {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #6bb77e;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer Section */
+  .footer-section {
+    background: #000000;
+    padding: 80px 0;
+  }
+
+  .footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #ffffff;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+
+  .footer-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .background-pattern {
+      display: none;
+    }
+
+    .header-section {
+      padding: 30px 0 15px;
+    }
+    
+    .logo h1 {
+      font-size: 28px;
+    }
+    
+    .tagline {
+      text-align: center;
+    }
+    
+    .tagline p {
+      margin: 0 auto;
+      max-width: none;
+    }
+
+    .thank-you-section {
+      padding: 30px 0 60px;
+    }
+
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .thank-you-headline {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+    
+    .thank-you-subheadline {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+      margin-bottom: 40px;
+    }
+
+    .what-happens-next {
+      margin-bottom: 40px;
+    }
+
+    .next-steps-title {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .steps-list {
+      gap: 24px;
+    }
+
+    .step-item {
+      gap: 16px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+    }
+
+    .step-content h3 {
+      font-size: 18px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+    }
+
+    .cta-section {
+      padding: 30px 20px;
+    }
+
+    .cta-text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      padding: 14px 28px;
+      font-size: 15px;
+    }
+
+    .footer-section {
+      padding: 50px 0;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      letter-spacing: -0.56px;
+    }
+
+    .footer-text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+  }
+</style>
