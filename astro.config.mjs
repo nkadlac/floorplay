@@ -13,6 +13,8 @@ export default defineConfig({
       useCdn: import.meta.env.PROD, // Use CDN in production for better performance
       apiVersion: '2024-01-01'
     }),
-    sitemap()
+    sitemap({
+      filter: (page) => page !== 'https://floorplay.agency/thank-you/'
+    })
   ]
 });

@@ -18,6 +18,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   title={pageData.seo.metaTitle}
   description={pageData.seo.metaDescription}
 >
+  <!-- Prevent indexing of thank-you page -->
+  <meta slot="head" name="robots" content="noindex, nofollow" />
   <!-- Background Pattern -->
   <div class="background-pattern"></div>
 
