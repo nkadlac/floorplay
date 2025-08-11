@@ -7,6 +7,14 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://floorplay.agency',
+  vite: {
+    resolve: {
+      dedupe: ['sanity', '@sanity/ui']
+    },
+    optimizeDeps: {
+      exclude: ['sanity', '@sanity/ui']
+    }
+  },
   integrations: [
     react(),
     sanity({
@@ -14,7 +22,7 @@ export default defineConfig({
       dataset: 'production',
       useCdn: import.meta.env.PROD, // Use CDN in production for better performance
       apiVersion: '2024-01-01',
-      studioBasePath: 'studio',
+      studioBasePath: '/studio',
       studioRouterHistory: 'hash'
     }),
     sitemap({

@@ -16,7 +16,6 @@ export default defineConfig({
 
   projectId: 'tvo5sug9',
   dataset: 'production',
-  basePath: '/studio',
 
   plugins: [structureTool(), visionTool()],
 
