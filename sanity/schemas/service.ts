@@ -145,6 +145,38 @@ export const service = defineType({
       ]
     }),
     defineField({
+      name: 'faq',
+      title: 'Frequently Asked Questions',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          title: 'FAQ Item',
+          fields: [
+            {
+              name: 'question',
+              title: 'Question',
+              type: 'string',
+              validation: (rule) => rule.required()
+            },
+            {
+              name: 'answer',
+              title: 'Answer', 
+              type: 'text',
+              validation: (rule) => rule.required()
+            }
+          ],
+          preview: {
+            select: {
+              title: 'question',
+              subtitle: 'answer'
+            }
+          }
+        }
+      ],
+      description: 'Frequently asked questions to display on the service page'
+    }),
+    defineField({
       name: 'aiTrainingData',
       title: 'AI Training Data',
       type: 'object',

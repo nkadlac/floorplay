@@ -17,6 +17,7 @@ export async function getStaticPaths() {
       duration,
       images,
       seo,
+      faq,
       aiTrainingData
     }
   `);
@@ -181,12 +182,13 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
 
   <!-- FAQ Section -->
-  {service.aiTrainingData?.commonQuestions && service.aiTrainingData.commonQuestions.length > 0 && (
+  {(service.faq && service.faq.length > 0) || (service.aiTrainingData?.commonQuestions && service.aiTrainingData.commonQuestions.length > 0) ? (
     <section class="faq-section">
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="faq-list">
-          {service.aiTrainingData.commonQuestions.map((qa) => (
+          {/* Use dedicated FAQ field first, fallback to AI training data */}
+          {(service.faq && service.faq.length > 0 ? service.faq : service.aiTrainingData.commonQuestions).map((qa) => (
             <div class="faq-item">
               <h3 class="faq-question">{qa.question}</h3>
               <p class="faq-answer">{qa.answer}</p>
@@ -195,7 +197,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         </div>
       </div>
     </section>
-  )}
+  ) : null}
 
   <!-- CTA Section -->
   <section class="final-cta">
