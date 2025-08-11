@@ -1,0 +1,22 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Green background matching your brand -->
+  <rect width="180" height="180" fill="#6BB77E" rx="20"/>
+  
+  <!-- White F -->
+  <g fill="white">
+    <!-- Vertical bar of F -->
+    <rect x="45" y="55" width="16" height="70"/>
+    <!-- Top horizontal bar of F -->
+    <rect x="45" y="55" width="42" height="16"/>
+    <!-- Middle horizontal bar of F -->
+    <rect x="45" y="86" width="32" height="16"/>
+  </g>
+  
+  <!-- Black P -->
+  <g fill="black">
+    <!-- Vertical bar of P -->
+    <rect x="97" y="55" width="16" height="70"/>
+    <!-- Top curve of P -->
+    <path d="M113 55H140C150.493 55 159 63.507 159 74V86C159 96.493 150.493 105 140 105H113V55ZM129 71V89H140C141.657 89 143 87.657 143 86V74C143 72.343 141.657 71 140 71H129Z"/>
+  </g>
+</svg>
