@@ -1,7 +1,11 @@
 ---
-// Sanity Studio - use localhost in dev, hosted in production
+// Sanity Studio - use localhost in dev, Sanity Manage in production
 const isDev = import.meta.env.DEV;
-const studioUrl = isDev ? "http://localhost:3334/" : "https://tvo5sug9.sanity.studio/";
+
+if (!isDev) {
+  // In production, redirect to Sanity Manage
+  return Astro.redirect('https://www.sanity.io/manage/personal/project/tvo5sug9', 302);
+}
 ---
 
 <!DOCTYPE html>
@@ -34,6 +38,6 @@ const studioUrl = isDev ? "http://localhost:3334/" : "https://tvo5sug9.sanity.st
 </head>
 <body>
     <div class="loading" id="loading">Loading Sanity Studio...</div>
-    <iframe src={studioUrl} title="Sanity Studio" onload="document.getElementById('loading').style.display='none'"></iframe>
+    <iframe src="http://localhost:3334/" title="Sanity Studio" onload="document.getElementById('loading').style.display='none'"></iframe>
 </body>
 </html>
