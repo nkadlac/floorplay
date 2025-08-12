@@ -16,6 +16,7 @@ const { Content } = await service.render();
 // SEO settings
 const pageTitle = service.data.seo?.metaTitle || `${service.data.name} | FloorPlay Agency`;
 const pageDescription = service.data.seo?.metaDescription || service.data.shortDescription;
+const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
 
 // Image constants (reusing from homepage)
 const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
@@ -24,6 +25,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 <Layout 
   title={pageTitle}
   description={pageDescription}
+  canonical={canonicalUrl}
 >
 
   <!-- Header Section -->
