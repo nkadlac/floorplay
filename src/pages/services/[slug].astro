@@ -8,35 +8,54 @@ export async function getStaticPaths() {
   const sanityClient = createClient({
     projectId: 'tvo5sug9',
     dataset: 'production',
-    useCdn: true,
+    useCdn: false,
     apiVersion: '2024-01-01',
   });
-  
+
   const services = await sanityClient.fetch(`
     *[_type == "service"]{
-      "slug": slug.current,
-      name,
-      headline,
-      shortDescription,
-      fullDescription,
-      features,
-      process,
-      materials,
-      serviceArea,
-      images,
-      seo,
-      faq,
-      aiTrainingData
+      "slug": slug.current
     }
   `);
 
   return services.map((service) => ({
     params: { slug: service.slug },
-    props: { service },
   }));
 }
 
-const { service } = Astro.props;
+const sanityClient = createClient({
+  projectId: 'tvo5sug9',
+  dataset: 'production',
+  useCdn: false, // Disable CDN for live updates during development
+  apiVersion: '2024-01-01',
+});
+
+// Get the slug from the URL
+const { slug } = Astro.params;
+
+// Fetch fresh data for this specific service on each request
+const service = await sanityClient.fetch(`
+  *[_type == "service" && slug.current == $slug][0]{
+    "slug": slug.current,
+    name,
+    headline,
+    shortDescription,
+    fullDescription,
+    features,
+    process,
+    materials,
+    serviceArea,
+    images,
+    seo,
+    faq,
+    aiTrainingData
+  }
+`, { slug });
+
+// Return 404 if service not found
+if (!service) {
+  return Astro.redirect('/404');
+}
 
 
 // SEO settings
@@ -52,8 +71,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   description={pageDescription}
   keywords={service.seo?.keywords}
 >
-  <!-- Background Pattern -->
-  <div class="background-pattern"></div>
 
   <!-- Header Section -->
   <section class="header-section">
@@ -62,16 +79,14 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         <div class="logo-nav">
           <div class="logo">
             <a href="/"><h1>Floorplay</h1></a>
+            <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link">Services</a>
-            <a href="/free-audit" class="nav-link">Free Audit</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link active">Services</a>
+            <a href="/free-audit" class="nav-link">Free Local Audit</a>
           </nav>
         </div>
         <div class="divider"></div>
-        <div class="tagline">
-          <p>Where Specialty Flooring Contractors Go to Grow</p>
-        </div>
       </div>
     </div>
   </section>
@@ -84,7 +99,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         <p class="service-description">{service.shortDescription}</p>
         
         <div class="service-cta">
-          <a href="/free-audit" class="cta-button primary">
+          <a href="/free-audit" class="cta-button green">
             Get Your Free Strategy Audit
           </a>
         </div>
@@ -183,11 +198,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
           Book a free strategy call to discuss how we can help you dominate local searches and capture more $5k+ jobs.
         </p>
         <div class="cta-buttons">
-          <a href="mailto:nate@floorplay.agency" class="cta-button primary">
-            Schedule Your Free Call
-          </a>
-          <a href="/free-audit" class="cta-button secondary">
-            Or Get Free Audit
+          <a href="/free-audit" class="cta-button primary">
+            Get Free Audit
           </a>
         </div>
       </div>
@@ -196,29 +208,23 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   <!-- Footer Section -->
   <section class="footer-section">
-    <div class="container">
-      <h3 class="footer-logo">Floorplay</h3>
-      <p class="footer-text">All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-header">
+          <h3 class="footer-logo">Floorplay</h3>
+        </div>
+        <nav class="footer-nav">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/services/flooring-contractors-seo" class="footer-link">Local Search Marketing</a>
+          <a href="/free-audit" class="footer-link">Free SEO Audit</a>
+        </nav>
+        <p class="footer-copyright">All rights reserved. Copyright © 2025 Floorplay</p>
+      </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  /* Background Pattern */
-  .background-pattern {
-    position: absolute;
-    top: 1px;
-    left: -194px;
-    width: 1900px;
-    height: 1065px;
-    background-image: url('http://localhost:3845/assets/16b88758a3f19b45f534bf2bc205e26664404521.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.05;
-    mix-blend-mode: color-burn;
-    transform: scaleY(-1);
-    z-index: -1;
-  }
 
   /* Container */
   .container {
@@ -247,6 +253,12 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     align-items: end;
   }
 
+  .logo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .logo h1 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
@@ -262,23 +274,42 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     color: inherit;
   }
 
+  .logo-tagline {
+    font-family: 'Sora', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #626262;
+    letter-spacing: -0.28px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
   .nav {
     display: flex;
     gap: 24px;
+    align-items: center;
   }
 
   .nav-link {
     font-family: 'Sora', sans-serif;
     font-weight: 700;
-    font-size: 20px;
-    color: #6bb77e;
+    font-size: 16px;
+    color: #000000;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     line-height: 0.831;
+    padding: 8px 4px;
+    position: relative;
+  }
+
+  .nav-link.active {
+    color: #6bb77e;
+    border-bottom: 2px solid #6bb77e;
   }
 
   .nav-link:hover {
-    opacity: 0.8;
+    color: #6bb77e;
   }
 
   .divider {
@@ -407,12 +438,14 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-button.primary {
-    background: #6bb77e;
+    background: #ffffff;
     color: #000000;
+    border: 2px solid #6bb77e;
   }
 
   .cta-button.primary:hover {
-    background: #5fa36f;
+    background: #000000;
+    color: #ffffff;
     transform: translateY(-2px);
   }
 
@@ -425,6 +458,16 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   .cta-button.secondary:hover {
     background: #f8f9fa;
+    transform: translateY(-2px);
+  }
+
+  .cta-button.green {
+    background: #6bb77e;
+    color: #000000;
+  }
+
+  .cta-button.green:hover {
+    background: #5fa36f;
     transform: translateY(-2px);
   }
 
@@ -640,31 +683,67 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     padding: 80px 0;
   }
 
+  .footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-header {
+    padding-bottom: 40px;
+  }
+
   .footer-logo {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 49px;
     color: #ffffff;
-    letter-spacing: -0.76px;
+    letter-spacing: -0.98px;
     line-height: 1.4;
-    margin: 0 0 12px 0;
+    margin: 0;
   }
 
-  .footer-text {
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid #424242;
+  }
+
+  .footer-link {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
+    text-decoration: none;
     letter-spacing: -0.4px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #6bb77e;
+  }
+
+  .footer-copyright {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #838383;
+    letter-spacing: -0.28px;
     line-height: 1.4;
     margin: 0;
   }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
-    .background-pattern {
-      display: none;
-    }
 
     .header-section {
       padding: 30px 0 15px;
@@ -775,14 +854,27 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       padding: 50px 0;
     }
 
-    .footer-logo {
-      font-size: 28px;
-      letter-spacing: -0.56px;
+    .footer-header {
+      padding-bottom: 20px;
+    }
+    
+    .footer-nav {
+      padding-top: 20px;
     }
 
-    .footer-text {
-      font-size: 16px;
-      letter-spacing: -0.32px;
+    .footer-logo {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+    }
+
+    .footer-link {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .footer-copyright {
+      font-size: 12px;
+      letter-spacing: -0.24px;
     }
   }
 </style>
