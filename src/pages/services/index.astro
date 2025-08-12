@@ -16,7 +16,6 @@ const services = await sanityClient.fetch(`
     slug,
     shortDescription,
     features,
-    pricing,
     "image": images[0],
     seo
   }
@@ -109,14 +108,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
                       </li>
                     )}
                   </ul>
-                </div>
-              )}
-              
-              {service.pricing && (
-                <div class="service-pricing">
-                  <span class="pricing-label">Starting at</span>
-                  <span class="pricing-amount">${service.pricing.startingPrice?.toLocaleString()}</span>
-                  <span class="pricing-unit">{service.pricing.priceUnit}</span>
                 </div>
               )}
               
@@ -473,38 +464,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     margin-top: 8px;
   }
 
-  .service-pricing {
-    background: #6bb77e;
-    padding: 16px 20px;
-    border-radius: 8px;
-    margin: 24px 0;
-    text-align: center;
-  }
-
-  .pricing-label {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #000000;
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .pricing-amount {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: #000000;
-    letter-spacing: -0.48px;
-  }
-
-  .pricing-unit {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #000000;
-    margin-left: 4px;
-  }
 
   .service-cta {
     margin-top: 24px;

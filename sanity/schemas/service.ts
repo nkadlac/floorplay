@@ -9,7 +9,15 @@ export const service = defineType({
       name: 'name',
       title: 'Service Name',
       type: 'string',
+      description: 'Internal name for organization (not displayed as H1)',
       validation: (rule) => rule.required()
+    }),
+    defineField({
+      name: 'headline',
+      title: 'Headline',
+      type: 'string',
+      description: 'Main headline displayed as H1 on the service page',
+      validation: (rule) => rule.required().max(120)
     }),
     defineField({
       name: 'slug',
@@ -58,66 +66,11 @@ export const service = defineType({
       description: 'Step-by-step process for this service'
     }),
     defineField({
-      name: 'pricing',
-      title: 'Pricing Information',
-      type: 'object',
-      fields: [
-        {
-          name: 'startingPrice',
-          title: 'Starting Price',
-          type: 'number',
-          description: 'Base price per square foot'
-        },
-        {
-          name: 'priceUnit',
-          title: 'Price Unit',
-          type: 'string',
-          initialValue: 'per sq ft',
-          options: {
-            list: ['per sq ft', 'per hour', 'flat rate']
-          }
-        },
-        {
-          name: 'priceFactors',
-          title: 'Price Factors',
-          type: 'array',
-          of: [{type: 'string'}],
-          description: 'Factors that affect pricing (for AI chatbot)'
-        }
-      ]
-    }),
-    defineField({
-      name: 'materials',
-      title: 'Materials Used',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {name: 'name', type: 'string', title: 'Material Name'},
-            {name: 'description', type: 'text', title: 'Material Description'},
-            {name: 'benefits', type: 'array', of: [{type: 'string'}], title: 'Benefits'}
-          ]
-        }
-      ]
-    }),
-    defineField({
       name: 'serviceArea',
       title: 'Service Areas',
       type: 'array',
       of: [{type: 'string'}],
       description: 'Geographic areas where this service is offered'
-    }),
-    defineField({
-      name: 'duration',
-      title: 'Typical Duration',
-      type: 'object',
-      fields: [
-        {name: 'prep', type: 'string', title: 'Prep Time'},
-        {name: 'installation', type: 'string', title: 'Installation Time'},
-        {name: 'curing', type: 'string', title: 'Curing Time'},
-        {name: 'total', type: 'string', title: 'Total Project Time'}
-      ]
     }),
     defineField({
       name: 'images',

@@ -16,13 +16,13 @@ export async function getStaticPaths() {
     *[_type == "service"]{
       "slug": slug.current,
       name,
+      headline,
       shortDescription,
       fullDescription,
       features,
       process,
       materials,
       serviceArea,
-      duration,
       images,
       seo,
       faq,
@@ -80,7 +80,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   <section class="service-hero">
     <div class="container">
       <div class="service-header">
-        <h1 class="service-title">{service.name}</h1>
+        <h1 class="service-title">{service.headline || service.name}</h1>
         <p class="service-description">{service.shortDescription}</p>
         
         <div class="service-cta">
@@ -140,40 +140,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     </section>
   )}
 
-  <!-- Duration Section -->
-  {service.duration && (
-    <section class="duration-section">
-      <div class="container">
-        <h2 class="section-title">Timeline & Results</h2>
-        <div class="duration-grid">
-          {service.duration.prep && (
-            <div class="duration-item">
-              <h4 class="duration-label">Setup Phase</h4>
-              <p class="duration-time">{service.duration.prep}</p>
-            </div>
-          )}
-          {service.duration.installation && (
-            <div class="duration-item">
-              <h4 class="duration-label">Implementation</h4>
-              <p class="duration-time">{service.duration.installation}</p>
-            </div>
-          )}
-          {service.duration.curing && (
-            <div class="duration-item">
-              <h4 class="duration-label">Initial Results</h4>
-              <p class="duration-time">{service.duration.curing}</p>
-            </div>
-          )}
-          {service.duration.total && (
-            <div class="duration-item">
-              <h4 class="duration-label">Full Results</h4>
-              <p class="duration-time">{service.duration.total}</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  )}
 
   <!-- Service Areas Section -->
   {service.serviceArea && service.serviceArea.length > 0 && (
@@ -561,41 +527,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     margin: 0;
   }
 
-  /* Duration Section */
-  .duration-section {
-    background: #f8f9fa;
-    padding: 60px 0;
-  }
-
-  .duration-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 32px;
-  }
-
-  .duration-item {
-    text-align: center;
-    padding: 24px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-
-  .duration-label {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: #000000;
-    margin: 0 0 20px 0;
-  }
-
-  .duration-time {
-    font-family: 'Sora', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: #6bb77e;
-    margin: 0;
-  }
 
   /* Service Areas */
   .service-areas {
@@ -819,14 +750,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       font-size: 20px;
     }
 
-    .duration-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .duration-item {
-      padding: 20px;
-    }
 
 
     .cta-title {
