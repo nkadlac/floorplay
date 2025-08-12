@@ -9,17 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.5.6",
     "@astrojs/sitemap": "^3.4.2",
-    "@sanity/astro": "^3.2.10",
-    "@sanity/vision": "4.3.0",
-    "astro": "^5.12.9",
-    "astro-portabletext": "^0.11.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "sanity": "4.3.0"
-  },
-  "devDependencies": {
-    "@astrojs/react": "^4.3.0"
+    "astro": "^5.12.9"
   }
 }

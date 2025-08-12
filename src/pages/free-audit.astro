@@ -1,28 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { createClient } from '@sanity/client';
 
-const sanityClient = createClient({
-  projectId: 'tvo5sug9',
-  dataset: 'production',
-  useCdn: false, // Disable CDN for live updates
-  apiVersion: '2024-01-01',
-});
-import { PortableText } from 'astro-portabletext';
-
-// Fetch free-audit page content from Sanity
-const pageData = await sanityClient.fetch(`
-  *[_type == "page" && slug.current == "free-audit"][0]{
-    title,
-    seo,
-    hero,
-    content,
-    aiContext
-  }
-`);
-
-// Fallback content if Sanity content isn't available yet
-const defaultContent = {
+// Page content
+const content = {
   title: "Get Your Free Epoxy Lead Audit",
   seo: {
     metaTitle: "Free Epoxy Lead Audit | Floorplay Agency - Find Your Lost Leads",
@@ -36,11 +16,8 @@ const defaultContent = {
       "Search ranking gaps costing you leads", 
       "Custom strategy to dominate local searches"
     ]
-  },
-  content: []
+  }
 };
-
-const content = pageData || defaultContent;
 
 // Image constants (reusing from homepage)
 const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
@@ -80,7 +57,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
           {content.hero?.subheadline || "See exactly how many $5k+ jobs you're losing to competitors online and get a personalized action plan to capture them."}
         </p>
         <div class="benefits-list">
-          {(content.hero?.benefits || defaultContent.hero.benefits).map((benefit) => (
+          {content.hero.benefits.map((benefit) => (
             <div class="benefit-item">
               <span class="benefit-check">✓</span>
               <span>{benefit}</span>
@@ -242,16 +219,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     </div>
   </section>
 
-  <!-- Additional Content (if provided in Sanity) -->
-  {content.content && content.content.length > 0 && (
-    <section class="additional-content">
-      <div class="container">
-        <div class="content-blocks">
-          <PortableText value={content.content} />
-        </div>
-      </div>
-    </section>
-  )}
 
   <!-- Trust Section -->
   <section class="trust-section">
