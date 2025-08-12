@@ -14,7 +14,7 @@ seo:
   metaDescription: "Dominate local searches for epoxy garage flooring. Our specialized SEO gets epoxy contractors more $5k+ jobs from homeowners searching online."
 ---
 
-## Stop Losing $5k+ Jobs to Competitors Online
+## Why Local SEO & GBP Matter for Flooring Contractors
 
 When homeowners search for "epoxy garage floor [your city]", who shows up first? If it's not you, you're losing premium jobs to competitors every single day.
 
