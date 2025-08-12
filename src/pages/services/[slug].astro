@@ -4,6 +4,8 @@ import { createClient } from '@sanity/client';
 
 import { PortableText } from 'astro-portabletext';
 
+export const prerender = false;
+
 export async function getStaticPaths() {
   const sanityClient = createClient({
     projectId: 'tvo5sug9',
@@ -26,7 +28,7 @@ export async function getStaticPaths() {
 const sanityClient = createClient({
   projectId: 'tvo5sug9',
   dataset: 'production',
-  useCdn: false, // Disable CDN for live updates during development
+  useCdn: false, // Disable CDN for live updates
   apiVersion: '2024-01-01',
 });
 
