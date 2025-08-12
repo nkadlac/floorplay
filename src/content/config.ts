@@ -4,7 +4,6 @@ const services = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
-    slug: z.string(),
     headline: z.string().optional(),
     shortDescription: z.string(),
     features: z.array(z.string()).optional(),
