@@ -38,7 +38,7 @@ We exclusively serve epoxy, concrete, and flooring contractors. We know your ind
 
 **Quality Over Quantity**: We focus on attracting homeowners ready to invest $3k-$15k in quality flooring, not tire-kickers looking for the cheapest option.
 
-### Our Process
+## Our Process
 
 1. **Market Analysis**: We research your local competition and identify ranking opportunities.
 
@@ -50,7 +50,7 @@ We exclusively serve epoxy, concrete, and flooring contractors. We know your ind
 
 5. **Ongoing Optimization**: Monthly reporting and continuous improvement to maintain rankings.
 
-### Results You Can Expect
+## Results You Can Expect
 
 - **Rank #1** for "epoxy garage floor [your city]"
 - **5-8 qualified leads monthly** from homeowners ready to invest

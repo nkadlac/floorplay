@@ -280,9 +280,9 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   .service-description {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 24px;
     color: #000000;
-    letter-spacing: -0.44px;
+    letter-spacing: -0.48px;
     line-height: 1.4;
     margin: 0 0 40px 0;
     max-width: 600px;
@@ -312,20 +312,20 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .description-content h2 {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 48px !important;
     color: #000000;
-    letter-spacing: -0.64px;
+    letter-spacing: -0.96px;
     line-height: 1.3;
     margin: 32px 0 24px 0;
     text-wrap: balance;
   }
 
   .description-content h3 {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 32px !important;
     color: #000000;
     letter-spacing: -0.64px;
     line-height: 1.3;
@@ -333,12 +333,25 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     text-wrap: balance;
   }
 
+  /* Additional specificity rules */
+  div.description-content h2 {
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 48px !important;
+  }
+
+  div.description-content h3 {
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 32px !important;
+  }
+
   .description-content h4 {
-    font-family: 'Big Shoulders Display', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     color: #000000;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.48px;
     line-height: 1.3;
     margin: 24px 0 16px 0;
   }
@@ -449,9 +462,9 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   .section-title {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 48px;
     color: #ffffff;
-    letter-spacing: -0.76px;
+    letter-spacing: -0.96px;
     line-height: 1.4;
     margin: 0 0 40px 0;
     text-align: center;
@@ -507,9 +520,9 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   .cta-title {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
-    font-size: 42px;
+    font-size: 48px;
     color: #000000;
-    letter-spacing: -0.84px;
+    letter-spacing: -0.96px;
     line-height: 1.2;
     margin: 0 0 24px 0;
     text-wrap: balance;
@@ -741,5 +754,30 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   
   :global(h1 .highlight-blue) {
     color: #2563eb !important;
+  }
+
+  /* Global heading font overrides */
+  :global(.description-content h2) {
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 48px !important;
+  }
+
+  :global(.description-content h3) {
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 32px !important;
+  }
+
+  :global(div.description-content h2) {
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 48px !important;
+  }
+
+  :global(div.description-content h3) {
+    font-family: 'Big Shoulders Display', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 32px !important;
   }
 </style>
