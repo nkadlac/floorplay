@@ -34,12 +34,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       <div class="header">
         <div class="logo-nav">
           <div class="logo">
-            <a href="/"><h1>Floorplay</h1></a>
+            <a href="/"><div class="logo-text">Floorplay</div></a>
             <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link active">Services</a>
-            <a href="/free-audit" class="nav-link">Free Local Audit</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link services-link active">Services</a>
+            <a href="/free-audit" class="nav-link nav-cta">
+              <span class="nav-cta-text">Free Local Plan</span>
+              <span class="nav-cta-arrow">→</span>
+            </a>
           </nav>
         </div>
         <div class="divider"></div>
@@ -55,8 +58,9 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         <p class="service-description">{service.data.shortDescription}</p>
         
         <div class="service-cta">
-          <a href="/free-audit" class="cta-button green">
-            Get Your Free Strategy Audit
+          <a href="/free-audit" class="cta-button primary">
+            <span class="cta-text">Get Your Free Strategy Audit</span>
+            <span class="cta-arrow">→</span>
           </a>
         </div>
       </div>
@@ -158,8 +162,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     gap: 8px;
   }
 
-  .logo h1 {
-    font-family: 'Space Grotesk', sans-serif;
+  .logo-text {
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     letter-spacing: 1.6px;
@@ -174,7 +178,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .logo-tagline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #626262;
@@ -191,8 +195,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
     font-size: 16px;
     color: #000000;
     text-decoration: none;
@@ -204,12 +208,55 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link.active {
-    color: #6bb77e;
-    border-bottom: 2px solid #6bb77e;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
   }
 
   .nav-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
+  }
+
+  .services-link:hover {
+    color: #2563eb;
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta-text {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+  }
+
+  .nav-cta-arrow {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+  }
+
+  .nav-cta.active {
+    background: #1e293b;
+    border-bottom: none;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .divider {
@@ -231,17 +278,19 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .service-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 48px;
     color: #000000;
     letter-spacing: -0.96px;
     line-height: 1.2;
     margin: 0 0 24px 0;
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
   }
 
   .service-description {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 22px;
     color: #000000;
@@ -251,6 +300,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-wrap: pretty;
+    text-rendering: optimizeLegibility;
   }
 
   .service-cta {
@@ -264,7 +315,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .description-content {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
     color: #000000;
@@ -273,7 +324,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .description-content h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     color: #000000;
@@ -283,7 +334,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .description-content h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: #000000;
@@ -293,7 +344,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .description-content h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 20px;
     color: #000000;
@@ -318,53 +369,59 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   /* CTA Buttons */
   .cta-button {
-    padding: 24px 32px;
     text-decoration: none;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: -0.36px;
     line-height: 1.3;
     transition: all 0.3s ease;
     white-space: nowrap;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     border-radius: 4px;
     cursor: pointer;
+    overflow: hidden;
   }
 
   .cta-button.primary {
-    background: #ffffff;
-    color: #000000;
-    border: 2px solid #6bb77e;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0;
+  }
+
+  .cta-button.primary .cta-text {
+    padding: 24px 32px;
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .cta-button.primary .cta-arrow {
+    padding: 24px 32px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
   }
 
   .cta-button.primary:hover {
-    background: #000000;
-    color: #ffffff;
     transform: translateY(-2px);
-  }
-
-  .cta-button.green {
-    background: #6bb77e;
-    color: #000000;
-  }
-
-  .cta-button.green:hover {
-    background: #5fa36f;
-    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   /* Features Section */
   .features-section {
-    background: #6bb77e;
+    background: #2563eb;
     padding: 60px 0;
   }
 
   .section-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 38px;
-    color: #000000;
+    color: #ffffff;
     letter-spacing: -0.76px;
     line-height: 1.4;
     margin: 0 0 40px 0;
@@ -384,25 +441,32 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .feature-check {
-    color: #000000;
+    width: 24px;
+    height: 24px;
+    background: #ffffff;
+    border-radius: 50%;
+    color: #2563eb;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 2px;
   }
 
   .feature-text {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: #000000;
+    color: #ffffff;
     letter-spacing: -0.36px;
     line-height: 1.4;
   }
 
   /* Final CTA Section */
   .final-cta {
-    background: #6bb77e;
+    background: #2563eb;
     padding: 80px 0;
   }
 
@@ -411,7 +475,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 42px;
     color: #000000;
@@ -421,7 +485,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-description {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #000000;
@@ -464,7 +528,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 49px;
     color: #ffffff;
@@ -482,7 +546,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
@@ -493,11 +557,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
 
   .footer-copyright {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #838383;
@@ -518,7 +582,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       align-items: center;
     }
     
-    .logo h1 {
+    .logo-text {
       font-size: 28px;
     }
     

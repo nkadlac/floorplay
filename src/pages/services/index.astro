@@ -30,12 +30,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       <div class="header">
         <div class="logo-nav">
           <div class="logo">
-            <a href="/"><h1>Floorplay</h1></a>
+            <a href="/"><div class="logo-text">Floorplay</div></a>
             <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link active">Services</a>
-            <a href="/free-audit" class="nav-link">Free Local Audit</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link services-link active">Services</a>
+            <a href="/free-audit" class="nav-link nav-cta">
+              <span class="nav-cta-text">Free Local Plan</span>
+              <span class="nav-cta-arrow">→</span>
+            </a>
           </nav>
         </div>
         <div class="divider"></div>
@@ -53,7 +56,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         </p>
         <div class="hero-cta">
           <a href="/free-audit" class="cta-button primary">
-            Get My Free Local SEO Audit
+            <span class="cta-text">Get My Free Local SEO Audit</span>
+            <span class="cta-arrow">→</span>
           </a>
         </div>
       </div>
@@ -139,7 +143,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
         </p>
         <div class="cta-buttons">
           <a href="/free-audit" class="cta-button primary">
-            Get Your Free Audit
+            <span class="cta-text">Get Your Free Audit</span>
+            <span class="cta-arrow">→</span>
           </a>
           <a href="mailto:nate@floorplay.agency" class="cta-button secondary">
             Email Us Directly
@@ -201,8 +206,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     gap: 8px;
   }
 
-  .logo h1 {
-    font-family: 'Space Grotesk', sans-serif;
+  .logo-text {
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     letter-spacing: 1.6px;
@@ -217,7 +222,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .logo-tagline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #626262;
@@ -234,8 +239,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
     font-size: 16px;
     color: #000000;
     text-decoration: none;
@@ -247,12 +252,51 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link.active {
-    color: #6bb77e;
-    border-bottom: 2px solid #6bb77e;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
   }
 
   .nav-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta-text {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+  }
+
+  .nav-cta-arrow {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+  }
+
+  .nav-cta.active {
+    background: #1e293b;
+    border-bottom: none;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .divider {
@@ -274,17 +318,19 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .hero-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 48px;
     color: #000000;
     letter-spacing: -0.96px;
     line-height: 1.2;
     margin: 0 0 24px 0;
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
   }
 
   .hero-description {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 22px;
     color: #000000;
@@ -294,6 +340,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-wrap: pretty;
+    text-rendering: optimizeLegibility;
   }
 
   .hero-cta {
@@ -302,34 +350,52 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   /* CTA Buttons */
   .cta-button {
-    padding: 24px 32px;
     text-decoration: none;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: -0.36px;
     line-height: 1.3;
     transition: all 0.3s ease;
     white-space: nowrap;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     border-radius: 4px;
     cursor: pointer;
+    overflow: hidden;
   }
 
   .cta-button.primary {
-    background: #6bb77e;
-    color: #000000;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0;
+  }
+
+  .cta-button.primary .cta-text {
+    padding: 24px 32px;
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .cta-button.primary .cta-arrow {
+    padding: 24px 32px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
   }
 
   .cta-button.primary:hover {
-    background: #5fa36f;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .cta-button.secondary {
     background: #ffffff;
     color: #000000;
-    border: 2px solid #6bb77e;
+    border: 2px solid #2563eb;
     margin-left: 16px;
   }
 
@@ -345,7 +411,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .section-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 38px;
     color: #000000;
@@ -375,7 +441,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .service-name {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #000000;
@@ -390,11 +456,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .service-name a:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
 
   .service-description {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
     color: #000000;
@@ -408,7 +474,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .features-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: #000000;
@@ -426,7 +492,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     align-items: flex-start;
     gap: 8px;
     margin-bottom: 1rem;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -435,17 +501,17 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .feature-check {
-    color: #6bb77e;
+    color: #2563eb;
     font-weight: 700;
     flex-shrink: 0;
     margin-top: 2px;
   }
 
   .feature-more {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 14px;
-    color: #6bb77e;
+    color: #2563eb;
     margin-top: 8px;
   }
 
@@ -454,10 +520,10 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .service-link {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 16px;
-    color: #6bb77e;
+    color: #2563eb;
     text-decoration: none;
     letter-spacing: -0.32px;
     line-height: 1.3;
@@ -469,7 +535,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   /* Why Choose Section */
   .why-choose-section {
-    background: #6bb77e;
+    background: #2563eb;
     padding: 60px 0;
   }
 
@@ -486,7 +552,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .benefit-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 22px;
     color: #000000;
@@ -496,7 +562,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .benefit-description {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -516,7 +582,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 42px;
     color: #000000;
@@ -526,7 +592,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-description {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #000000;
@@ -569,7 +635,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 49px;
     color: #ffffff;
@@ -587,7 +653,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
@@ -598,11 +664,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
 
   .footer-copyright {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #838383;
@@ -627,7 +693,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       text-align: center;
     }
     
-    .logo h1 {
+    .logo-text {
       font-size: 28px;
     }
     

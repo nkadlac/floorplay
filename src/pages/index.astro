@@ -5,14 +5,19 @@ import Layout from '../layouts/Layout.astro';
 const content = {
   title: "Stop Losing $5k+ Epoxy Jobs to Competitors Online | Floorplay",
   seo: {
-    metaTitle: "FloorPlay Agency - Lead Generation for Floor Coating Contractors",
-    metaDescription: "The only no-nonsense marketing agency built for garage & basement flooring contractors. Stop losing $5k+ epoxy jobs to competitors online."
+    metaTitle: "Milwaukee Garage Epoxy Leads | Google Maps & Reviews - Floorplay Marketing",
+    metaDescription: "Show up in the top spots on Google Maps. I set up your Google profile, build town pages, and grow real reviews—so you book more garage and basement jobs across Milwaukee and nearby."
   }
 };
 
 // Image constants
-const imgImage2 = "http://localhost:3845/assets/16b88758a3f19b45f534bf2bc205e26664404521.png";
+const imgRectangle = "http://localhost:3845/assets/159ca53f4d815a4c2a5804ecf3cc09884cdbc779.png";
+const imgVector = "http://localhost:3845/assets/0264591a8b7e1137e4a480a5ca47983857b90028.svg";
 const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
+const img44 = "http://localhost:3845/assets/dfc4f91c9c812bd4c6b7c25017afb90a4bfa51a1.svg";
+const img45 = "http://localhost:3845/assets/390c2492817697f59a0c9354ccb5207d60179c80.svg";
+const img46 = "http://localhost:3845/assets/51ad13b827a01f4c5e95d58b341c85eb6676086d.svg";
+const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f268409faac78.svg";
 ---
 
 <Layout 
@@ -28,12 +33,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       <div class="header">
         <div class="logo-nav">
           <div class="logo">
-            <h1>Floorplay</h1>
+            <div class="logo-text">Floorplay</div>
             <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link">Services</a>
-            <a href="/free-audit" class="nav-link">Free Local Audit</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link services-link">Services</a>
+            <a href="/free-audit" class="nav-link nav-cta">
+              <span class="nav-cta-text">Free Local Plan</span>
+              <span class="nav-cta-arrow">→</span>
+            </a>
           </nav>
         </div>
         <div class="divider"></div>
@@ -41,73 +49,200 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       
       <!-- Hero Content -->
       <div class="hero-content">
-        <h1 class="headline">Stop Losing $5k+ Epoxy Jobs to Competitors Online</h1>
+        <h1 class="headline">STOP LOSING <span class="highlight-blue">$5K+ EPOXY JOBS</span> TO LOCAL COMPETITION.</h1>
         <p class="subheadline">
-          Floorplay is the Only No-Nonsense Marketing Agency Built for Garage & Basement Flooring Contractors.
+          We set up your Google business profile, build local pages, and grow real reviews—so the phone rings.
         </p>
         <div class="hero-cta">
           <a href="/free-audit" class="cta-button primary">
-            Claim Your Free Epoxy Lead Audit
+            <div class="cta-text-section">
+              <div class="cta-main-text">Get your free local plan</div>
+              <div class="cta-subtitle-text">And see what business you're missing out on.</div>
+            </div>
+            <div class="cta-arrow-section">
+              <span class="cta-arrow">→</span>
+            </div>
           </a>
-          <p class="cta-subtitle">
-            And see exactly how many $5k+ jobs you're losing to competitors online
-          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Value Proposition Section -->
-  <section class="value-section">
+  <!-- Why You're Not Getting Calls Section -->
+  <section class="calls-section">
     <div class="container">
-      <p class="value-text">
-        While other agencies spread thin across every contractor type, we exclusively serve epoxy, concrete garage flooring, and basement specialists. Result? We know exactly what makes homeowners choose YOU for their $5k+ flooring investment.
-      </p>
-    </div>
-  </section>
-
-  <!-- Problem Section -->
-  <section class="problem-section">
-    <div class="container">
-      <h2 class="problem-headline">Are You Losing $5k+ Epoxy Jobs Every Month?</h2>
-      <div class="problem-cards">
-        <div class="problem-card">
-          <p>Competitors rank #1 for 'epoxy garage floor [city]'</p>
+      <div class="calls-content">
+        <div class="calls-image-section">
+          <div class="phone-mockup" style={`background-image: url('${imgRectangle}')`}></div>
+          <div class="magnifying-glass">
+            <img src={imgVector} alt="Magnifying glass" />
+          </div>
+          <div class="annotation">
+            <p class="annotation-text">
+              (There are 6 missed opportunities in this Google Business Profile.)
+            </p>
+            <p class="annotation-question">
+              Can you spot them?
+            </p>
+          </div>
         </div>
-        <div class="problem-card">
-          <p>You're stuck on page 2+ of Google searches</p>
-        </div>
-        <div class="problem-card">
-          <p>Premium customers choose whoever they see first</p>
+        <div class="calls-text-section">
+          <h2 class="calls-headline">Why You're Not Getting Enough Calls (yet)</h2>
+          <div class="calls-description">
+            <p>If you're not in the top results on Google Maps, most people never see you.</p>
+            <ul>
+              <li>
+                <strong>Your Google profile might be half-done:</strong> wrong category, few photos, not enough reviews.
+              </li>
+              <li>
+                <strong>Your website</strong> doesn't speak to each town you serve.
+              </li>
+              <li>
+                <strong>Price shoppers waste time</strong> because the site doesn't set clear expectations.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Solution Section -->
-  <section class="solution-section">
+  <!-- What You Get Section -->
+  <section class="what-you-get-section">
     <div class="container">
-      <h2 class="solution-headline">The Only Marketing Agency Built for Epoxy & Concrete Contractors</h2>
-      <div class="solution-list">
-        <ol>
-          <li>
-            <span class="list-label">Local Search Domination:</span>
-            <span>"Rank #1 for 'epoxy garage floor [your city]'</span>
-          </li>
-          <li>
-            <span class="list-label">Qualified Lead Generation:</span>
-            <span>"5-8 premium jobs monthly, not tire-kickers"</span>
-          </li>
-          <li>
-            <span class="list-label">Industry Expertise:</span>
-            <span>"We speak garage flooring, not generic contractor"</span>
-          </li>
-        </ol>
+      <div class="what-you-get-card">
+        <div class="what-you-get-content">
+          <h2 class="what-you-get-headline">What You Get With Me (simple and focused)</h2>
+          <div class="what-you-get-list">
+            <ul>
+              <li>
+                <strong>Show up in more towns:</strong> Short, clean pages for each city you serve with real photos, reviews, and a clear "get a quote."
+              </li>
+              <li>
+                <strong>A stronger Google profile:</strong> Correct setup, fresh photos from every job, and answers to common questions.
+              </li>
+              <li>
+                <strong>Steady reviews:</strong> Easy text and email requests that customers actually complete.
+              </li>
+              <li>
+                <strong>Fewer tire-kickers:</strong> Clear price ranges and "what to expect" so serious buyers step forward.
+              </li>
+              <li>
+                <strong>Winter help:</strong> Offers and pages that speak to salt, snow, and moisture—so work doesn't dry up.
+              </li>
+              <li>
+                <strong>Simple tracking:</strong> See which calls and forms came from which town or page.
+              </li>
+            </ul>
+          </div>
+          <a href="https://cal.com/floorplay/15min" class="what-you-get-cta">
+            <div class="cta-main-text">Book a 15-Minute Call</div>
+            <div class="cta-subtitle-text">Hassle-Free!</div>
+          </a>
+        </div>
       </div>
-      <div class="solution-cta">
-        <a href="/free-audit" class="cta-button secondary">
-          Claim Your Free Epoxy Lead Audit
-        </a>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works-section">
+    <div class="container">
+      <div class="how-it-works-content">
+        <h2 class="how-it-works-headline">How It Works</h2>
+        <div class="timeline-cards">
+          <div class="timeline-row">
+            <div class="timeline-card">
+              <div class="card-timeline">WEEK 1</div>
+              <div class="card-title">CHECKUP</div>
+              <div class="card-description">
+                We tune your Google profile, switch on a review system, and publish your first set of local pages.
+              </div>
+            </div>
+            <div class="timeline-card">
+              <div class="card-timeline">WEEK 1-2</div>
+              <div class="card-title">FIX & BUILD</div>
+              <div class="card-description">
+                We tune your Google profile, switch on a review system, and publish your first set of local pages.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-row">
+            <div class="timeline-card">
+              <div class="card-timeline">WEEK 3-4</div>
+              <div class="card-title">PROVE IT</div>
+              <div class="card-description">
+                Add job photos, answer common questions, tighten your forms, and highlight your warranty.
+              </div>
+            </div>
+            <div class="timeline-card">
+              <div class="card-timeline">ONGOING</div>
+              <div class="card-title">GROW IT</div>
+              <div class="card-description">
+                Add more towns, add more finishes (flake, quartz, metallic), and keep the photos and reviews rolling.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real-World Benefits Section -->
+  <section class="real-world-benefits-section">
+    <div class="container">
+      <div class="benefits-card">
+        <div class="benefits-content">
+          <h2 class="benefits-headline">Real-World Benefits (why this works)</h2>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <img src={imgCheckmark} alt="Checkmark" />
+              </div>
+              <div class="benefit-text">More calls from the towns you actually want</div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <img src={imgCheckmark} alt="Checkmark" />
+              </div>
+              <div class="benefit-text">Less "is this a DIY kit?" talk, more "when can you start?"</div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <img src={imgCheckmark} alt="Checkmark" />
+              </div>
+              <div class="benefit-text">Reviews that build trust fast</div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <img src={imgCheckmark} alt="Checkmark" />
+              </div>
+              <div class="benefit-text">Shorter time from quote to install</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Success Looks Like Section -->
+  <section class="success-section">
+    <div class="container">
+      <div class="success-content">
+        <div class="success-left">
+          <h2 class="success-headline">What Success Looks Like</h2>
+          <a href="/free-audit" class="success-cta">
+            <div class="success-cta-main">Get your free local plan</div>
+            <div class="success-cta-sub">And see what you're missing</div>
+          </a>
+        </div>
+        <div class="success-right">
+          <ul class="success-list">
+            <li>3–5 good leads a week in season</li>
+            <li>Top spots on Google Maps in your target towns</li>
+            <li>A steady stream of fresh photos and 5-star reviews</li>
+            <li>Fewer price shoppers, more "book it"</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -198,8 +333,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     gap: 8px;
   }
 
-  .logo h1 {
-    font-family: 'Space Grotesk', sans-serif;
+  .logo-text {
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     letter-spacing: 1.6px;
@@ -209,7 +344,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .logo-tagline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #626262;
@@ -226,7 +361,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 16px;
     color: #000000;
@@ -239,13 +374,61 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link.active {
-    color: #6bb77e;
-    border-bottom: 2px solid #6bb77e;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
   }
 
   .nav-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
+
+  .services-link {
+    font-weight: 600;
+  }
+
+  .services-link:hover {
+    color: #2563eb;
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta.active {
+    background: #1e293b;
+    border-bottom: none;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+
+  .nav-cta-text {
+    padding: 12px 16px;
+    background: inherit;
+    color: #ffffff;
+  }
+
+  .nav-cta-arrow {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+  }
+
 
   .divider {
     height: 1px;
@@ -261,35 +444,42 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .headline {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
-    font-size: 56px;
+    font-size: 64px;
     color: #000000;
-    letter-spacing: -1.12px;
+    letter-spacing: -1.28px;
     line-height: 1.2;
     margin: 0;
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
+  }
+
+  .highlight-blue {
+    color: #2563eb;
   }
 
   .subheadline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 28px;
     color: #000000;
     letter-spacing: -0.56px;
     line-height: 1.3;
     margin: 0;
+    text-wrap: pretty;
   }
 
   .hero-cta {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
   }
 
   .cta-button {
     padding: 24px 32px;
     text-decoration: none;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: -0.36px;
@@ -300,13 +490,69 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-button.primary {
-    background: #6bb77e;
-    color: #000000;
+    background: #0040ff;
+    color: #ffffff;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    min-height: 103px;
   }
 
   .cta-button.primary:hover {
-    background: #5fa36f;
+    background: #0040ff;
     transform: translateY(-2px);
+  }
+
+  .cta-text-section {
+    background: #0040ff;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .cta-main-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #e7f2f1;
+    letter-spacing: -0.52px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .cta-subtitle-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #e7f2f1;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .cta-arrow-section {
+    background: #1a1309;
+    width: 99px;
+    height: 103px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cta-arrow {
+    font-size: 32px;
+    color: #e7f2f1;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover .cta-arrow {
+    transform: translateX(4px);
   }
 
   .cta-button.secondary {
@@ -319,126 +565,504 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     transform: translateY(-2px);
   }
 
-  .cta-subtitle {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000000;
-    letter-spacing: -0.32px;
-    line-height: 1.3;
-    margin: 0;
-    max-width: 329px;
-  }
 
-  /* Value Section */
-  .value-section {
-    background: #6bb77e;
-    padding: 60px 0;
+  /* Calls Section */
+  .calls-section {
+    background: #f9f6f0;
+    padding: 40px 0;
     margin-top: 0;
   }
 
-  .value-text {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
-    font-size: 38px;
-    color: #000000;
-    letter-spacing: -0.76px;
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  /* Problem Section */
-  .problem-section {
-    background: #6bb77e;
-    padding: 50px 0;
-    margin-top: 0;
-  }
-
-  .problem-headline {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 47px;
-    color: #000000;
-    letter-spacing: -0.94px;
-    line-height: 1.2;
-    margin: 0 0 12px 0;
-  }
-
-  .problem-cards {
+  .calls-content {
     display: flex;
-    gap: 24px;
-    margin-top: 12px;
-    width: 100%;
+    gap: 64px;
+    align-items: flex-start;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
-  .problem-card {
+  .calls-image-section {
     flex: 1;
-    background: #000000;
-    padding: 24px;
-    min-height: 100px;
+    position: relative;
+    height: 476px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
-  .problem-card p {
-    font-family: 'Sora', sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    color: #ffffff;
-    letter-spacing: -0.48px;
-    line-height: 1.4;
-    margin: 0;
+  .phone-mockup {
+    width: 414px;
+    height: 362px;
+    background-size: 311.76% 267.4%;
+    background-position: 50% 17.99%;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .magnifying-glass {
+    position: absolute;
+    top: -9px;
+    left: -27px;
+    width: 446px;
+    height: 315px;
+  }
+
+  .magnifying-glass img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .annotation {
+    position: absolute;
+    top: 368px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 314px;
     text-align: center;
   }
 
-  /* Solution Section */
-  .solution-section {
-    background: #6bb77e;
-    padding: 50px 0;
-    margin-top: 0;
-  }
-
-  .solution-headline {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 38px;
-    color: #000000;
-    letter-spacing: -0.76px;
-    line-height: 1.4;
-    margin: 0 0 12px 0;
-  }
-
-  .solution-list {
-    margin: 12px 0 16px 0;
-  }
-
-  .solution-list ol {
-    font-family: 'Sora', sans-serif;
-    font-weight: 400;
+  .annotation-text {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 600;
     font-size: 24px;
-    color: #000000;
+    color: #1a1309;
     letter-spacing: -0.48px;
-    line-height: 1.4;
-    margin: 0 0 1.5rem 0;
-    padding-left: 24px;
+    line-height: 1;
+    margin: 0 0 4px 0;
   }
 
-  .solution-list li {
-    margin-bottom: 24px;
-    line-height: 1.4;
+  .annotation-question {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #0040ff;
+    letter-spacing: -0.48px;
+    line-height: 1;
+    margin: 0;
   }
 
-  .solution-list li:last-child {
+  .calls-text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .calls-headline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1a1309;
+    letter-spacing: -0.96px;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .calls-description {
+    color: #1a1309;
+  }
+
+  .calls-description p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  .calls-description ul {
+    list-style: disc;
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .calls-description li {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
     margin-bottom: 0;
   }
 
-  .list-label {
+  .calls-description strong {
     font-weight: 700;
   }
 
-  .solution-cta {
-    margin-top: 40px;
+  /* What You Get Section */
+  .what-you-get-section {
+    background: #f9f6f0;
+    padding: 40px 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .what-you-get-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 72px 64px;
+    max-width: 892px;
+    width: 100%;
+  }
+
+  .what-you-get-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .what-you-get-headline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1a1309;
+    letter-spacing: -0.96px;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .what-you-get-list ul {
+    list-style: disc;
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .what-you-get-list li {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1a1309;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .what-you-get-list strong {
+    font-weight: 700;
+  }
+
+  .what-you-get-cta {
+    background: #0040ff;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .what-you-get-cta:hover {
+    transform: translateY(-2px);
+  }
+
+  .what-you-get-cta .cta-main-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #f8f9fa;
+    letter-spacing: -0.48px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .what-you-get-cta .cta-subtitle-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #e7f2f1;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* How It Works Section */
+  .how-it-works-section {
+    background: #f9f6f0;
+    padding: 72px 0;
+    margin-top: 0;
+  }
+
+  .how-it-works-content {
+    max-width: 892px;
+    margin: 0 auto;
+    padding: 0 64px;
+    position: relative;
+  }
+
+  .how-it-works-headline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1a1309;
+    letter-spacing: -0.96px;
+    line-height: 1.1;
+    margin: 0 0 40px 0;
+    text-wrap: balance;
+  }
+
+  .timeline-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .timeline-row {
+    display: flex;
+    gap: 16px;
+    height: 222px;
+  }
+
+  .timeline-card {
+    flex: 1;
+    background: #1a1309;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-timeline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #9eb6ff;
+    letter-spacing: -0.36px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .card-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #f8f9fa;
+    letter-spacing: -0.56px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .card-description {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #e7f2f1;
+    letter-spacing: -0.36px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .decorative-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .star-1 {
+    position: absolute;
+    top: 8%;
+    right: 12%;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .star-2 {
+    position: absolute;
+    bottom: 8%;
+    right: 8%;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .star-3 {
+    position: absolute;
+    top: 45%;
+    left: 8%;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  /* Real-World Benefits Section */
+  .real-world-benefits-section {
+    background: #f9f6f0;
+    padding: 40px 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .benefits-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 72px 64px;
+    max-width: 892px;
+    width: 100%;
+  }
+
+  .benefits-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .benefits-headline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1a1309;
+    letter-spacing: -0.96px;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .benefit-icon {
+    width: 32px;
+    height: 32px;
+    background: #000000;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .benefit-icon img {
+    width: 20px;
+    height: 14px;
+    object-fit: contain;
+  }
+
+  .benefit-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* What Success Looks Like Section */
+  .success-section {
+    background: #f9f6f0;
+    padding: 72px 0;
+    margin-top: 0;
+  }
+
+  .success-content {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    max-width: 892px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .success-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .success-headline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1a1309;
+    letter-spacing: -0.96px;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .success-cta {
+    background: #0040ff;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .success-cta:hover {
+    transform: translateY(-2px);
+  }
+
+  .success-cta-main {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #f8f9fa;
+    letter-spacing: -0.48px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .success-cta-sub {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #e7f2f1;
+    letter-spacing: -0.32px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .success-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .success-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .success-list li {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    margin-bottom: 0;
   }
 
   /* Footer Section */
@@ -465,7 +1089,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 49px;
     color: #ffffff;
@@ -481,7 +1105,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
@@ -492,11 +1116,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
 
   .footer-copyright {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #838383;
@@ -526,7 +1150,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       text-align: center;
     }
     
-    .logo h1 {
+    .logo-text {
       font-size: 28px;
     }
     
@@ -568,46 +1192,258 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     }
     
     .cta-button {
-      padding: 20px 28px;
-      font-size: 16px;
+      justify-content: center;
     }
-    
-    .cta-subtitle {
+
+    .cta-button.primary {
+      min-height: 80px;
+    }
+
+    .cta-text-section {
+      padding: 16px 24px;
+    }
+
+    .cta-main-text {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+    }
+
+    .cta-subtitle-text {
       font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+
+    .cta-arrow-section {
+      width: 80px;
+      height: 80px;
+    }
+
+    .cta-arrow {
+      font-size: 24px;
+    }
+
+    .nav-cta {
+      height: 40px;
+    }
+
+    .nav-cta-text {
+      padding: 10px 12px;
+      font-size: 14px;
+      letter-spacing: 0.7px;
+    }
+
+    .nav-cta-arrow {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+    }
+
+    .calls-section {
+      padding: 40px 0;
+    }
+
+    .calls-content {
+      flex-direction: column;
+      gap: 40px;
       max-width: none;
     }
 
-    .value-text {
-      font-size: 28px;
-      letter-spacing: -0.56px;
+    .calls-image-section {
+      height: auto;
+      order: 2;
     }
 
-    .problem-headline {
+    .phone-mockup {
+      width: 300px;
+      height: 262px;
+      background-size: 250% 200%;
+    }
+
+    .magnifying-glass {
+      width: 326px;
+      height: 235px;
+      top: -20px;
+      left: -13px;
+    }
+
+    .annotation {
+      top: 280px;
+      width: 280px;
+    }
+
+    .annotation-text, .annotation-question {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .calls-text-section {
+      order: 1;
+    }
+
+    .calls-headline {
       font-size: 32px;
       letter-spacing: -0.64px;
     }
 
-    .problem-cards {
+    .calls-description p {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .calls-description li {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .what-you-get-section {
+      padding: 40px 0;
+    }
+
+    .what-you-get-card {
+      border-radius: 16px;
+      padding: 40px 24px;
+      margin: 0 16px;
+    }
+
+    .what-you-get-headline {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+    }
+
+    .what-you-get-list li {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .what-you-get-cta {
+      padding: 20px 24px;
+    }
+
+    .what-you-get-cta .cta-main-text {
+      font-size: 20px;
+      letter-spacing: -0.4px;
+    }
+
+    .what-you-get-cta .cta-subtitle-text {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+
+    .how-it-works-section {
+      padding: 40px 0;
+    }
+
+    .how-it-works-content {
+      padding: 0 24px;
+    }
+
+    .how-it-works-headline {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+      margin-bottom: 24px;
+    }
+
+    .timeline-cards {
       flex-direction: column;
       gap: 16px;
     }
 
-    .problem-card {
-      min-height: 80px;
+    .timeline-row {
+      flex-direction: column;
+      height: auto;
+      gap: 16px;
     }
 
-    .problem-card p {
+    .timeline-card {
+      padding: 20px;
+    }
+
+    .card-timeline {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      letter-spacing: -0.48px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+
+    .decorative-stars {
+      display: none;
+    }
+
+    .real-world-benefits-section {
+      padding: 40px 0;
+    }
+
+    .benefits-card {
+      border-radius: 16px;
+      padding: 40px 24px;
+      margin: 0 16px;
+    }
+
+    .benefits-headline {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+      margin-bottom: 20px;
+    }
+
+    .benefits-list {
+      gap: 12px;
+    }
+
+    .benefit-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .benefit-icon img {
+      width: 16px;
+      height: 12px;
+    }
+
+    .benefit-text {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+      height: auto;
+    }
+
+    .success-section {
+      padding: 40px 0;
+    }
+
+    .success-content {
+      flex-direction: column;
+      gap: 32px;
+      padding: 0 24px;
+    }
+
+    .success-headline {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+    }
+
+    .success-cta {
+      padding: 20px 24px;
+      align-self: stretch;
+    }
+
+    .success-cta-main {
       font-size: 20px;
       letter-spacing: -0.4px;
-      text-align: center;
     }
 
-    .solution-headline {
-      font-size: 28px;
-      letter-spacing: -0.56px;
+    .success-cta-sub {
+      font-size: 14px;
+      letter-spacing: -0.28px;
     }
 
-    .solution-list ol {
+    .success-list li {
       font-size: 18px;
       letter-spacing: -0.36px;
     }

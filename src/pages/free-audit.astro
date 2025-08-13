@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 const content = {
   title: "Get Your Free Epoxy Lead Audit",
   seo: {
-    metaTitle: "Free Epoxy Lead Audit | Floorplay Agency - Find Your Lost Leads",
+    metaTitle: "Free Epoxy Lead Audit | Find Your Lost Leads - Floorplay Agency",
     metaDescription: "Get a free audit showing exactly how many $5k+ epoxy jobs you're losing to competitors online. See where your leads are going and how to get them back."
   },
   hero: {
@@ -35,12 +35,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       <div class="header">
         <div class="logo-nav">
           <div class="logo">
-            <a href="/"><h1>Floorplay</h1></a>
+            <a href="/"><div class="logo-text">Floorplay</div></a>
             <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link">Services</a>
-            <a href="/free-audit" class="nav-link active">Free Local Audit</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link services-link">Services</a>
+            <a href="/free-audit" class="nav-link nav-cta active">
+              <span class="nav-cta-text">Free Local Plan</span>
+              <span class="nav-cta-arrow">→</span>
+            </a>
           </nav>
         </div>
         <div class="divider"></div>
@@ -53,9 +56,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     <div class="container">
       <!-- Header Content -->
       <div class="form-header">
-        <h1 class="form-headline">{content.hero?.headline || content.title}</h1>
+        <h1 class="form-headline">
+          Get Your <span class="highlight-blue">Free</span> Local Search Plan
+        </h1>
         <p class="form-subheadline">
-          {content.hero?.subheadline || "See exactly how many $5k+ jobs you're losing to competitors online and get a personalized action plan to capture them."}
+          See exactly how many $5k+ jobs you're losing to competitors online and get a personalized action plan to capture them.
         </p>
         <div class="benefits-list">
           {content.hero.benefits.map((benefit) => (
@@ -209,7 +214,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
           <div class="form-submit">
             <button type="submit" class="submit-button">
-              Get My Free Audit Report
+              <span class="submit-text">Get My Free Audit Report</span>
+              <span class="submit-arrow">→</span>
             </button>
             <p class="form-disclaimer">
               * We'll email your personalized audit within 24 hours. No spam, just actionable insights.
@@ -314,8 +320,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     gap: 8px;
   }
 
-  .logo h1 {
-    font-family: 'Space Grotesk', sans-serif;
+  .logo-text {
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     letter-spacing: 1.6px;
@@ -330,7 +336,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .logo-tagline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #626262;
@@ -347,8 +353,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
     font-size: 16px;
     color: #000000;
     text-decoration: none;
@@ -360,12 +366,55 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link.active {
-    color: #6bb77e;
-    border-bottom: 2px solid #6bb77e;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
   }
 
   .nav-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
+  }
+
+  .services-link:hover {
+    color: #2563eb;
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta.active {
+    background: #1e293b;
+    border-bottom: none;
+  }
+
+  .nav-cta-text {
+    padding: 12px 16px;
+    background: inherit;
+    color: #ffffff;
+  }
+
+  .nav-cta-arrow {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .divider {
@@ -379,7 +428,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .tagline p {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -403,60 +452,78 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .form-headline {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
-    font-size: 48px;
-    color: #000000;
-    letter-spacing: -0.96px;
-    line-height: 1.2;
+    font-size: 64px;
+    color: #1a1309;
+    letter-spacing: -1.28px;
+    line-height: 1.1;
     margin: 0 0 24px 0;
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
+  }
+
+  .highlight-blue {
+    color: #0040ff;
   }
 
   .form-subheadline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 28px;
     color: #000000;
-    letter-spacing: -0.44px;
-    line-height: 1.4;
-    margin: 0 0 40px 0;
+    letter-spacing: -0.56px;
+    line-height: 1.3;
+    margin: 0 0 32px 0;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-wrap: pretty;
+    text-rendering: optimizeLegibility;
   }
 
   .benefits-list {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    max-width: 500px;
+    max-width: 596px;
     margin: 0 auto;
   }
 
   .benefit-item {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'Sora', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
+    align-items: flex-start;
+    gap: 8px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
     color: #000000;
-    letter-spacing: -0.36px;
-    line-height: 1.3;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
   }
 
   .benefit-check {
-    color: #6bb77e;
+    width: 32px;
+    height: 32px;
+    background: #000000;
+    border-radius: 0;
+    color: #ffffff;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 14px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
   }
 
   /* Form Styles */
   .audit-form {
     background: #f8f9fa;
-    padding: 50px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 72px 64px;
+    border-radius: 24px;
+    border: 4px solid #000000;
   }
 
   .form-grid {
@@ -477,7 +544,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .form-label {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #000000;
@@ -489,7 +556,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     padding: 16px 20px;
     border: 2px solid #e5e7eb;
     border-radius: 4px;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -499,7 +566,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   .form-input:focus, .form-select:focus {
     outline: none;
-    border-color: #6bb77e;
+    border-color: #2563eb;
   }
 
   .form-input::placeholder {
@@ -517,7 +584,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     align-items: center;
     gap: 12px;
     cursor: pointer;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -540,8 +607,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .checkbox-item input[type="checkbox"]:checked + .checkmark {
-    background: #6bb77e;
-    border-color: #6bb77e;
+    background: #2563eb;
+    border-color: #2563eb;
   }
 
   .checkbox-item input[type="checkbox"]:checked + .checkmark::after {
@@ -560,12 +627,12 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .submit-button {
-    background: #6bb77e;
-    color: #000000;
-    padding: 24px 48px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0;
     border: none;
     border-radius: 4px;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 20px;
     letter-spacing: -0.4px;
@@ -573,16 +640,34 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .submit-text {
+    padding: 24px 32px;
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .submit-arrow {
+    padding: 24px 32px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
   }
 
   .submit-button:hover {
-    background: #5fa36f;
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(107, 183, 126, 0.3);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .form-disclaimer {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #6b7280;
@@ -601,7 +686,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .content-blocks {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
     color: #000000;
@@ -610,7 +695,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .content-blocks h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     color: #000000;
@@ -620,7 +705,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .content-blocks h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: #000000;
@@ -645,15 +730,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   /* Trust Section */
   .trust-section {
-    background: #6bb77e;
+    background: #2563eb;
     padding: 50px 0;
   }
 
   .trust-text {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 24px;
-    color: #000000;
+    color: #ffffff;
     letter-spacing: -0.48px;
     line-height: 1.4;
     margin: 0;
@@ -683,7 +768,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 49px;
     color: #ffffff;
@@ -701,7 +786,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
@@ -712,11 +797,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
 
   .footer-copyright {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #838383;
@@ -732,7 +817,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       padding: 30px 0 15px;
     }
     
-    .logo h1 {
+    .logo-text {
       font-size: 28px;
     }
     
@@ -792,8 +877,16 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     }
 
     .submit-button {
-      padding: 20px 32px;
       font-size: 18px;
+    }
+
+    .submit-text {
+      padding: 20px 28px;
+    }
+
+    .submit-arrow {
+      padding: 20px 28px;
+      min-width: 50px;
     }
 
     .additional-content {

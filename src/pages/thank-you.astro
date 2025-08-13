@@ -28,12 +28,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       <div class="header">
         <div class="logo-nav">
           <div class="logo">
-            <a href="/"><h1>Floorplay</h1></a>
+            <a href="/"><div class="logo-text">Floorplay</div></a>
             <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link">Services</a>
-            <a href="/free-audit" class="nav-link">Free Local Audit</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link services-link">Services</a>
+            <a href="/free-audit" class="nav-link nav-cta">
+              <span class="nav-cta-text">Free Local Plan</span>
+              <span class="nav-cta-arrow">→</span>
+            </a>
           </nav>
         </div>
         <div class="divider"></div>
@@ -83,7 +86,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
             Questions? Want to discuss your audit results when they arrive?
           </p>
           <a href="mailto:nate@floorplay.agency" class="cta-button">
-            Email Us Directly
+            <span class="button-text">Email Us Directly</span>
+            <span class="button-arrow">→</span>
           </a>
         </div>
 
@@ -178,8 +182,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     gap: 8px;
   }
 
-  .logo h1 {
-    font-family: 'Space Grotesk', sans-serif;
+  .logo-text {
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 32px;
     letter-spacing: 1.6px;
@@ -194,7 +198,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .logo-tagline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #626262;
@@ -211,8 +215,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
     font-size: 16px;
     color: #000000;
     text-decoration: none;
@@ -224,12 +228,55 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .nav-link.active {
-    color: #6bb77e;
-    border-bottom: 2px solid #6bb77e;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
   }
 
   .nav-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
+  }
+
+  .services-link:hover {
+    color: #2563eb;
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .nav-cta-text {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+  }
+
+  .nav-cta-arrow {
+    padding: 12px 16px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+  }
+
+  .nav-cta.active {
+    background: #1e293b;
+    border-bottom: none;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .divider {
@@ -243,7 +290,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .tagline p {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -270,7 +317,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   .success-icon {
     width: 80px;
     height: 80px;
-    background: #6bb77e;
+    background: #2563eb;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -282,23 +329,27 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .thank-you-headline {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 42px;
     color: #000000;
     letter-spacing: -0.84px;
     line-height: 1.2;
     margin: 0 0 24px 0;
+    text-wrap: balance;
+    text-rendering: optimizeLegibility;
   }
 
   .thank-you-subheadline {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #000000;
     letter-spacing: -0.4px;
     line-height: 1.4;
     margin: 0 0 60px 0;
+    text-wrap: pretty;
+    text-rendering: optimizeLegibility;
   }
 
   .what-happens-next {
@@ -307,7 +358,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .next-steps-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #000000;
@@ -332,12 +383,12 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   .step-number {
     width: 40px;
     height: 40px;
-    background: #6bb77e;
+    background: #2563eb;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: #000000;
@@ -345,7 +396,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .step-content h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
     font-size: 20px;
     color: #000000;
@@ -355,7 +406,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .step-content p {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -372,7 +423,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-text {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 18px;
     color: #000000;
@@ -382,24 +433,42 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .cta-button {
-    background: #6bb77e;
-    color: #000000;
-    padding: 16px 32px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 0;
     border-radius: 4px;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: -0.32px;
     line-height: 1.3;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    overflow: hidden;
+  }
+
+  .button-text {
+    padding: 16px 24px;
+    background: #2563eb;
+    color: #ffffff;
+  }
+
+  .button-arrow {
+    padding: 16px 24px;
+    background: #1e293b;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
   }
 
   .cta-button:hover {
-    background: #5fa36f;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }
 
   .back-home {
@@ -407,10 +476,10 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .back-link {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: #6bb77e;
+    color: #2563eb;
     letter-spacing: -0.32px;
     line-height: 1.3;
     text-decoration: none;
@@ -443,7 +512,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-logo {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 49px;
     color: #ffffff;
@@ -461,7 +530,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #ffffff;
@@ -472,11 +541,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-link:hover {
-    color: #6bb77e;
+    color: #2563eb;
   }
 
   .footer-copyright {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #838383;
@@ -492,7 +561,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       padding: 30px 0 15px;
     }
     
-    .logo h1 {
+    .logo-text {
       font-size: 28px;
     }
     
@@ -576,8 +645,16 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     }
 
     .cta-button {
-      padding: 14px 28px;
       font-size: 15px;
+    }
+
+    .button-text {
+      padding: 14px 20px;
+    }
+
+    .button-arrow {
+      padding: 14px 20px;
+      min-width: 44px;
     }
 
     .footer-section {
