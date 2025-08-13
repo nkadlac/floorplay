@@ -75,8 +75,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
       <!-- Audit Form -->
       <div class="audit-form">
-        <form id="auditForm" name="audit-request" method="POST" netlify action="/thank-you">
+                <form id="auditForm" name="audit-request" method="POST" netlify action="/thank-you">
           <input type="hidden" name="form-name" value="audit-request" />
+          <div style="display: none;">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </div>
           <div class="form-grid">
             <div class="form-group">
               <label for="firstName" class="form-label">First Name *</label>
