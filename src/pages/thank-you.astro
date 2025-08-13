@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 
 // SEO content for the thank you page
 const pageData = {
@@ -98,22 +99,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <section class="footer-section">
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-header">
-          <h3 class="footer-logo">Floorplay</h3>
-        </div>
-        <nav class="footer-nav">
-          <a href="/" class="footer-link">Home</a>
-          <a href="/services/flooring-contractors-seo" class="footer-link">Local Search Marketing</a>
-          <a href="/free-audit" class="footer-link">Free SEO Audit</a>
-        </nav>
-        <p class="footer-copyright">All rights reserved. Copyright © 2025 Floorplay</p>
-      </div>
-    </div>
-  </section>
+  <Footer />
 </Layout>
 
 <style>
@@ -497,19 +483,26 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   }
 
   .footer-container {
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     padding: 0 1rem;
   }
 
   .footer-content {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 860px;
+    margin: 0 auto;
+    gap: 200px;
   }
 
-  .footer-header {
-    padding-bottom: 40px;
+  .footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .footer-logo {
@@ -522,12 +515,22 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     margin: 0;
   }
 
+  .footer-tagline {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    letter-spacing: -0.32px;
+    line-height: 1.4;
+    margin: 0;
+    text-wrap: balance;
+  }
+
   .footer-nav {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding-top: 24px;
-    border-top: 1px solid #424242;
   }
 
   .footer-link {
@@ -539,6 +542,20 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     letter-spacing: -0.4px;
     line-height: 1.4;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .footer-arrow {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .footer-link span {
+    flex: 1;
   }
 
   .footer-link:hover {
@@ -662,12 +679,9 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       padding: 50px 0;
     }
 
-    .footer-header {
-      padding-bottom: 20px;
-    }
-    
-    .footer-nav {
-      padding-top: 20px;
+    .footer-content {
+      flex-direction: column;
+      gap: 24px;
     }
 
     .footer-logo {
@@ -678,6 +692,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     .footer-link {
       font-size: 18px;
       letter-spacing: -0.36px;
+    }
+
+    .footer-arrow {
+      width: 28px;
+      height: 28px;
     }
 
     .footer-copyright {

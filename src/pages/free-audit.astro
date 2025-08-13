@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 
 // Page content
 const content = {
@@ -227,31 +228,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   </section>
 
 
-  <!-- Trust Section -->
-  <section class="trust-section">
-    <div class="container">
-      <p class="trust-text">
-        Get a comprehensive analysis of your local market and discover exactly where your potential customers are going instead.
-      </p>
-    </div>
-  </section>
 
-  <!-- Footer Section -->
-  <section class="footer-section">
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-header">
-          <h3 class="footer-logo">Floorplay</h3>
-        </div>
-        <nav class="footer-nav">
-          <a href="/" class="footer-link">Home</a>
-          <a href="/services/flooring-contractors-seo" class="footer-link">Local Search Marketing</a>
-          <a href="/free-audit" class="footer-link">Free SEO Audit</a>
-        </nav>
-        <p class="footer-copyright">All rights reserved. Copyright © 2025 Floorplay</p>
-      </div>
-    </div>
-  </section>
+  <Footer />
 </Layout>
 
 <style>
@@ -746,70 +724,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     text-align: center;
   }
 
-  /* Footer Section */
-  .footer-section {
-    background: #000000;
-    padding: 80px 0;
-  }
-
-  .footer-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .footer-header {
-    padding-bottom: 40px;
-  }
-
-  .footer-logo {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 700;
-    font-size: 49px;
-    color: #ffffff;
-    letter-spacing: -0.98px;
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  .footer-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-top: 24px;
-    border-top: 1px solid #424242;
-  }
-
-  .footer-link {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: -0.4px;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-  }
-
-  .footer-link:hover {
-    color: #2563eb;
-  }
-
-  .footer-copyright {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #838383;
-    letter-spacing: -0.28px;
-    line-height: 1.4;
-    margin: 0;
-  }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
@@ -917,32 +831,6 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       letter-spacing: -0.4px;
     }
 
-    .footer-section {
-      padding: 50px 0;
-    }
-
-    .footer-header {
-      padding-bottom: 20px;
-    }
-    
-    .footer-nav {
-      padding-top: 20px;
-    }
-
-    .footer-logo {
-      font-size: 32px;
-      letter-spacing: -0.64px;
-    }
-
-    .footer-link {
-      font-size: 18px;
-      letter-spacing: -0.36px;
-    }
-
-    .footer-copyright {
-      font-size: 12px;
-      letter-spacing: -0.24px;
-    }
   }
 </style>
 

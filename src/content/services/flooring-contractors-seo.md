@@ -1,6 +1,6 @@
 ---
 name: "Local Search Marketing for Epoxy Contractors"
-headline: "Dominate Local Search & Book More $5k+ Epoxy Jobs"
+headline: "<span class='highlight-blue'>Dominate Local Search</span> & Book More $5k+ Epoxy Jobs"
 shortDescription: "The only marketing service built specifically for epoxy and concrete coating contractors. Stop losing premium jobs to competitors who rank higher on Google."
 features:
   - "Local SEO optimization for 'epoxy garage floor [city]' keywords"

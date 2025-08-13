@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
 
 // Content data
 const content = {
@@ -14,10 +15,6 @@ const content = {
 const imgRectangle = "http://localhost:3845/assets/159ca53f4d815a4c2a5804ecf3cc09884cdbc779.png";
 const imgVector = "http://localhost:3845/assets/0264591a8b7e1137e4a480a5ca47983857b90028.svg";
 const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
-const img44 = "http://localhost:3845/assets/dfc4f91c9c812bd4c6b7c25017afb90a4bfa51a1.svg";
-const img45 = "http://localhost:3845/assets/390c2492817697f59a0c9354ccb5207d60179c80.svg";
-const img46 = "http://localhost:3845/assets/51ad13b827a01f4c5e95d58b341c85eb6676086d.svg";
-const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f268409faac78.svg";
 ---
 
 <Layout 
@@ -37,7 +34,7 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
             <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
           </div>
           <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link services-link">Services</a>
+            <a href="/services/flooring-contractors-seo" class="nav-link">Services</a>
             <a href="/free-audit" class="nav-link nav-cta">
               <span class="nav-cta-text">Free Local Plan</span>
               <span class="nav-cta-arrow">→</span>
@@ -49,7 +46,7 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
       
       <!-- Hero Content -->
       <div class="hero-content">
-        <h1 class="headline">STOP LOSING <span class="highlight-blue">$5K+ EPOXY JOBS</span> TO LOCAL COMPETITION.</h1>
+        <h1 class="headline">Stop Losing <span class="highlight-blue">$5K+ Epoxy Jobs</span> to Local Competition.</h1>
         <p class="subheadline">
           We set up your Google business profile, build local pages, and grow real reviews—so the phone rings.
         </p>
@@ -147,122 +144,97 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
   <!-- How It Works Section -->
   <section class="how-it-works-section">
     <div class="container">
-      <div class="how-it-works-content">
-        <h2 class="how-it-works-headline">How It Works</h2>
-        <div class="timeline-cards">
-          <div class="timeline-row">
-            <div class="timeline-card">
-              <div class="card-timeline">WEEK 1</div>
-              <div class="card-title">CHECKUP</div>
-              <div class="card-description">
-                We tune your Google profile, switch on a review system, and publish your first set of local pages.
-              </div>
-            </div>
-            <div class="timeline-card">
-              <div class="card-timeline">WEEK 1-2</div>
-              <div class="card-title">FIX & BUILD</div>
-              <div class="card-description">
-                We tune your Google profile, switch on a review system, and publish your first set of local pages.
-              </div>
-            </div>
+      <h2 class="how-it-works-headline">How It Works</h2>
+      <div class="how-it-works-grid">
+        <div class="how-it-works-card">
+          <div class="card-header">
+            <span class="card-period">WEEK 1</span>
+            <h3 class="card-title">CHECKUP</h3>
           </div>
-          <div class="timeline-row">
-            <div class="timeline-card">
-              <div class="card-timeline">WEEK 3-4</div>
-              <div class="card-title">PROVE IT</div>
-              <div class="card-description">
-                Add job photos, answer common questions, tighten your forms, and highlight your warranty.
-              </div>
-            </div>
-            <div class="timeline-card">
-              <div class="card-timeline">ONGOING</div>
-              <div class="card-title">GROW IT</div>
-              <div class="card-description">
-                Add more towns, add more finishes (flake, quartz, metallic), and keep the photos and reviews rolling.
-              </div>
-            </div>
+          <p class="card-description">
+            We tune your Google profile, switch on a review system, and publish your first set of local pages.
+          </p>
+        </div>
+        <div class="how-it-works-card">
+          <div class="card-header">
+            <span class="card-period">WEEK 1-2</span>
+            <h3 class="card-title">FIX & BUILD</h3>
           </div>
+          <p class="card-description">
+            We tune your Google profile, switch on a review system, and publish your first set of local pages.
+          </p>
+        </div>
+        <div class="how-it-works-card">
+          <div class="card-header">
+            <span class="card-period">WEEK 3-4</span>
+            <h3 class="card-title">PROVE IT</h3>
+          </div>
+          <p class="card-description">
+            Add job photos, answer common questions, tighten your forms, and highlight your warranty.
+          </p>
+        </div>
+        <div class="how-it-works-card">
+          <div class="card-header">
+            <span class="card-period">ONGOING</span>
+            <h3 class="card-title">GROW IT</h3>
+          </div>
+          <p class="card-description">
+            Add more towns, add more finishes (flake, quartz, metallic), and keep the photos and reviews rolling.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Real-World Benefits Section -->
-  <section class="real-world-benefits-section">
+  <section class="benefits-section">
     <div class="container">
-      <div class="benefits-card">
-        <div class="benefits-content">
-          <h2 class="benefits-headline">Real-World Benefits (why this works)</h2>
-          <div class="benefits-list">
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <img src={imgCheckmark} alt="Checkmark" />
-              </div>
-              <div class="benefit-text">More calls from the towns you actually want</div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <img src={imgCheckmark} alt="Checkmark" />
-              </div>
-              <div class="benefit-text">Less "is this a DIY kit?" talk, more "when can you start?"</div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <img src={imgCheckmark} alt="Checkmark" />
-              </div>
-              <div class="benefit-text">Reviews that build trust fast</div>
-            </div>
-            <div class="benefit-item">
-              <div class="benefit-icon">
-                <img src={imgCheckmark} alt="Checkmark" />
-              </div>
-              <div class="benefit-text">Shorter time from quote to install</div>
-            </div>
-          </div>
+      <h2 class="benefits-headline">Real-World Benefits (why this works)</h2>
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span class="benefit-text">More calls from the towns you actually want</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span class="benefit-text">Less "is this a DIY kit?" talk, more "when can you start?"</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span class="benefit-text">Reviews that build trust fast</span>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check">✓</div>
+          <span class="benefit-text">Shorter time from quote to install</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What Success Looks Like Section -->
+  <!-- Success Section -->
   <section class="success-section">
     <div class="container">
       <div class="success-content">
-        <div class="success-left">
+        <div class="success-text">
           <h2 class="success-headline">What Success Looks Like</h2>
-          <a href="/free-audit" class="success-cta">
-            <div class="success-cta-main">Get your free local plan</div>
-            <div class="success-cta-sub">And see what you're missing</div>
-          </a>
-        </div>
-        <div class="success-right">
           <ul class="success-list">
-            <li>3–5 good leads a week in season</li>
+            <li>3-5 good leads a week in season</li>
             <li>Top spots on Google Maps in your target towns</li>
             <li>A steady stream of fresh photos and 5-star reviews</li>
             <li>Fewer price shoppers, more "book it"</li>
           </ul>
         </div>
+        <div class="success-cta">
+          <a href="/free-audit" class="success-button">
+            <div class="success-button-text">Get your free local plan</div>
+            <div class="success-button-subtitle">And see what you're missing</div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <section class="footer-section">
-    <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-header">
-          <h3 class="footer-logo">Floorplay</h3>
-          <nav class="footer-nav">
-            <a href="/" class="footer-link">Home</a>
-            <a href="/services/flooring-contractors-seo" class="footer-link">Local Search Marketing</a>
-            <a href="/free-audit" class="footer-link">Free SEO Audit</a>
-          </nav>
-        </div>
-        <p class="footer-copyright">All rights reserved. Copyright © 2025 Floorplay</p>
-      </div>
-    </div>
-  </section>
+  <Footer />
 </Layout>
 
 <style>
@@ -374,19 +346,11 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
   }
 
   .nav-link.active {
-    color: #2563eb;
-    border-bottom: 2px solid #2563eb;
+    color: #6bb77e;
+    border-bottom: 2px solid #6bb77e;
   }
 
   .nav-link:hover {
-    color: #2563eb;
-  }
-
-  .services-link {
-    font-weight: 600;
-  }
-
-  .services-link:hover {
     color: #2563eb;
   }
 
@@ -401,11 +365,6 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-  }
-
-  .nav-cta.active {
-    background: #1e293b;
-    border-bottom: none;
   }
 
   .nav-cta:hover {
@@ -429,6 +388,9 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
     min-width: 44px;
   }
 
+  .nav-cta:hover .nav-cta-arrow {
+    transform: translateX(2px);
+  }
 
   .divider {
     height: 1px;
@@ -446,13 +408,11 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
   .headline {
     font-family: 'Big Shoulders Display', sans-serif;
     font-weight: 700;
-    font-size: 64px;
+    font-size: 56px;
     color: #000000;
-    letter-spacing: -1.28px;
-    line-height: 1.1;
+    letter-spacing: -1.12px;
+    line-height: 1.2;
     margin: 0;
-    text-wrap: balance;
-    text-rendering: optimizeLegibility;
   }
 
   .highlight-blue {
@@ -467,7 +427,6 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
     letter-spacing: -0.56px;
     line-height: 1.3;
     margin: 0;
-    text-wrap: pretty;
   }
 
   .hero-cta {
@@ -569,7 +528,7 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
   /* Calls Section */
   .calls-section {
     background: #f9f6f0;
-    padding: 40px 0;
+    padding: 80px 0;
     margin-top: 0;
   }
 
@@ -650,13 +609,12 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
 
   .calls-headline {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 48px;
     color: #1a1309;
     letter-spacing: -0.96px;
     line-height: 1.1;
     margin: 0;
-    text-wrap: balance;
   }
 
   .calls-description {
@@ -694,7 +652,7 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
   /* What You Get Section */
   .what-you-get-section {
     background: #f9f6f0;
-    padding: 40px 0;
+    padding: 80px 0;
     margin-top: 0;
     display: flex;
     justify-content: center;
@@ -716,13 +674,12 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
 
   .what-you-get-headline {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 48px;
     color: #1a1309;
     letter-spacing: -0.96px;
     line-height: 1.1;
     margin: 0;
-    text-wrap: balance;
   }
 
   .what-you-get-list ul {
@@ -782,257 +739,235 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
 
   /* How It Works Section */
   .how-it-works-section {
-    background: #f9f6f0;
-    padding: 72px 0;
+    background: #ffffff;
+    padding: 80px 0;
     margin-top: 0;
-  }
-
-  .how-it-works-content {
-    max-width: 892px;
-    margin: 0 auto;
-    padding: 0 64px;
-    position: relative;
   }
 
   .how-it-works-headline {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 48px;
     color: #1a1309;
     letter-spacing: -0.96px;
     line-height: 1.1;
-    margin: 0 0 40px 0;
-    text-wrap: balance;
+    margin: 0 0 48px 0;
+    text-align: center;
   }
 
-  .timeline-cards {
+  .how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .how-it-works-grid::before {
+    content: "✦";
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    font-size: 32px;
+    color: #0040ff;
+    transform: rotate(-15deg);
+  }
+
+  .how-it-works-grid::after {
+    content: "✦";
+    position: absolute;
+    bottom: -20px;
+    right: -40px;
+    font-size: 32px;
+    color: #0040ff;
+    transform: rotate(15deg);
+  }
+
+  .how-it-works-card {
+    background: #1a1309;
+    border-radius: 24px;
+    padding: 32px 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 100%;
   }
 
-  .timeline-row {
-    display: flex;
-    gap: 16px;
-    height: 222px;
-  }
-
-  .timeline-card {
-    flex: 1;
-    background: #1a1309;
-    border-radius: 16px;
-    padding: 24px;
+  .card-header {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 
-  .card-timeline {
-    font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: #9eb6ff;
-    letter-spacing: -0.36px;
-    line-height: 1.3;
+  .card-period {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #0040ff;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
     margin: 0;
   }
 
   .card-title {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: #f8f9fa;
-    letter-spacing: -0.56px;
-    line-height: 1.3;
+    font-weight: 900;
+    font-size: 32px;
+    color: #ffffff;
+    letter-spacing: -0.64px;
+    line-height: 1.1;
     margin: 0;
+    text-transform: uppercase;
   }
 
   .card-description {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 18px;
-    color: #e7f2f1;
+    color: #ffffff;
     letter-spacing: -0.36px;
-    line-height: 1.3;
+    line-height: 1.4;
     margin: 0;
   }
 
-  .decorative-stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-  }
-
-  .star-1 {
-    position: absolute;
-    top: 8%;
-    right: 12%;
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-  }
-
-  .star-2 {
-    position: absolute;
-    bottom: 8%;
-    right: 8%;
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
-
-  .star-3 {
-    position: absolute;
-    top: 45%;
-    left: 8%;
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-  }
-
-  /* Real-World Benefits Section */
-  .real-world-benefits-section {
+  /* Benefits Section */
+  .benefits-section {
     background: #f9f6f0;
-    padding: 40px 0;
+    padding: 80px 0;
     margin-top: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .benefits-card {
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 72px 64px;
-    max-width: 892px;
-    width: 100%;
-  }
-
-  .benefits-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
   }
 
   .benefits-headline {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 48px;
     color: #1a1309;
     letter-spacing: -0.96px;
     line-height: 1.1;
-    margin: 0;
-    text-wrap: balance;
+    margin: 0 0 48px 0;
+    text-align: center;
   }
 
   .benefits-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .benefit-item {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 16px;
   }
 
-  .benefit-icon {
+  .benefit-check {
     width: 32px;
     height: 32px;
-    background: #000000;
-    border-radius: 4px;
+    background: #1a1309;
+    border-radius: 0;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .benefit-icon img {
-    width: 20px;
-    height: 14px;
-    object-fit: contain;
+    margin-top: 2px;
   }
 
   .benefit-text {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 20px;
-    color: #000000;
-    letter-spacing: -0.4px;
-    line-height: 1.5;
-    margin: 0;
-    flex: 1;
-    height: 30px;
-    display: flex;
-    align-items: center;
+    font-size: 24px;
+    color: #1a1309;
+    letter-spacing: -0.48px;
+    line-height: 1.4;
   }
 
-  /* What Success Looks Like Section */
+  /* Success Section */
   .success-section {
-    background: #f9f6f0;
-    padding: 72px 0;
+    background: #ffffff;
+    padding: 80px 0;
     margin-top: 0;
   }
 
   .success-content {
     display: flex;
-    gap: 24px;
+    gap: 64px;
     align-items: flex-start;
-    max-width: 892px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 64px;
   }
 
-  .success-left {
+  .success-text {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
   }
 
   .success-headline {
     font-family: 'Big Shoulders Display', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 48px;
     color: #1a1309;
     letter-spacing: -0.96px;
     line-height: 1.1;
+    margin: 0 0 32px 0;
+  }
+
+  .success-list {
+    list-style: disc;
     margin: 0;
-    text-wrap: balance;
+    padding-left: 24px;
+  }
+
+  .success-list li {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1a1309;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .success-list li:last-child {
+    margin-bottom: 0;
   }
 
   .success-cta {
+    flex-shrink: 0;
+  }
+
+  .success-button {
     background: #0040ff;
-    padding: 24px 32px;
+    padding: 32px 40px;
+    border-radius: 0;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    text-decoration: none;
-    cursor: pointer;
     transition: all 0.3s ease;
-    align-self: flex-start;
+    min-width: 280px;
   }
 
-  .success-cta:hover {
+  .success-button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 64, 255, 0.3);
   }
 
-  .success-cta-main {
+  .success-button-text {
     font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     font-size: 24px;
-    color: #f8f9fa;
+    color: #ffffff;
     letter-spacing: -0.48px;
     line-height: 1.3;
-    margin: 0;
+    margin: 0 0 8px 0;
   }
 
-  .success-cta-sub {
+  .success-button-subtitle {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -1042,92 +977,55 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
     margin: 0;
   }
 
-  .success-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  /* Solution Section */
+  .solution-section {
+    background: #6bb77e;
+    padding: 50px 0;
+    margin-top: 0;
   }
 
-  .success-list {
-    list-style: disc;
-    margin: 0;
-    padding-left: 30px;
+  .solution-headline {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: #000000;
+    letter-spacing: -0.76px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
   }
 
-  .success-list li {
+  .solution-list {
+    margin: 12px 0 16px 0;
+  }
+
+  .solution-list ol {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 24px;
     color: #000000;
-    letter-spacing: -0.4px;
-    line-height: 1.5;
+    letter-spacing: -0.48px;
+    line-height: 1.4;
+    margin: 0 0 1.5rem 0;
+    padding-left: 24px;
+  }
+
+  .solution-list li {
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .solution-list li:last-child {
     margin-bottom: 0;
   }
 
-  /* Footer Section */
-  .footer-section {
-    background: #000000;
-    padding: 112px 0;
-  }
-
-  .footer-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .footer-header {
-    padding-bottom: 40px;
-    border-bottom: 1px solid #424242;
-  }
-
-  .footer-logo {
-    font-family: 'Big Shoulders Display', sans-serif;
+  .list-label {
     font-weight: 700;
-    font-size: 49px;
-    color: #ffffff;
-    letter-spacing: -0.98px;
-    line-height: 1.4;
-    margin: 0 0 24px 0;
   }
 
-  .footer-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  .solution-cta {
+    margin-top: 40px;
   }
 
-  .footer-link {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: #ffffff;
-    text-decoration: none;
-    letter-spacing: -0.4px;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-  }
-
-  .footer-link:hover {
-    color: #2563eb;
-  }
-
-  .footer-copyright {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #838383;
-    letter-spacing: -0.28px;
-    line-height: 1.4;
-    margin: 0;
-  }
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
@@ -1329,38 +1227,39 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
       letter-spacing: -0.28px;
     }
 
-    .how-it-works-section {
-      padding: 40px 0;
+    .solution-headline {
+      font-size: 28px;
+      letter-spacing: -0.56px;
     }
 
-    .how-it-works-content {
-      padding: 0 24px;
+    .solution-list ol {
+      font-size: 18px;
+      letter-spacing: -0.36px;
+    }
+
+    .how-it-works-section {
+      padding: 40px 0;
     }
 
     .how-it-works-headline {
       font-size: 32px;
       letter-spacing: -0.64px;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
-    .timeline-cards {
-      flex-direction: column;
-      gap: 16px;
+    .how-it-works-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: none;
     }
 
-    .timeline-row {
-      flex-direction: column;
-      height: auto;
-      gap: 16px;
+    .how-it-works-grid::before,
+    .how-it-works-grid::after {
+      display: none;
     }
 
-    .timeline-card {
-      padding: 20px;
-    }
-
-    .card-timeline {
-      font-size: 16px;
-      letter-spacing: -0.32px;
+    .how-it-works-card {
+      padding: 24px 20px;
     }
 
     .card-title {
@@ -1373,44 +1272,24 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
       letter-spacing: -0.32px;
     }
 
-    .decorative-stars {
-      display: none;
-    }
-
-    .real-world-benefits-section {
+    .benefits-section {
       padding: 40px 0;
-    }
-
-    .benefits-card {
-      border-radius: 16px;
-      padding: 40px 24px;
-      margin: 0 16px;
     }
 
     .benefits-headline {
       font-size: 32px;
       letter-spacing: -0.64px;
-      margin-bottom: 20px;
+      margin-bottom: 32px;
     }
 
     .benefits-list {
-      gap: 12px;
-    }
-
-    .benefit-icon {
-      width: 28px;
-      height: 28px;
-    }
-
-    .benefit-icon img {
-      width: 16px;
-      height: 12px;
+      max-width: none;
+      gap: 20px;
     }
 
     .benefit-text {
-      font-size: 18px;
-      letter-spacing: -0.36px;
-      height: auto;
+      font-size: 20px;
+      letter-spacing: -0.4px;
     }
 
     .success-section {
@@ -1420,59 +1299,35 @@ const imgCheckmark = "http://localhost:3845/assets/6ad3d280c0ead982d688006d847f2
     .success-content {
       flex-direction: column;
       gap: 32px;
-      padding: 0 24px;
+      max-width: none;
     }
 
     .success-headline {
       font-size: 32px;
       letter-spacing: -0.64px;
-    }
-
-    .success-cta {
-      padding: 20px 24px;
-      align-self: stretch;
-    }
-
-    .success-cta-main {
-      font-size: 20px;
-      letter-spacing: -0.4px;
-    }
-
-    .success-cta-sub {
-      font-size: 14px;
-      letter-spacing: -0.28px;
+      margin-bottom: 24px;
     }
 
     .success-list li {
       font-size: 18px;
       letter-spacing: -0.36px;
+      margin-bottom: 12px;
     }
 
-    .footer-section {
-      padding: 60px 0;
+    .success-button {
+      padding: 24px 32px;
+      min-width: 100%;
     }
 
-    .footer-header {
-      padding-bottom: 20px;
-    }
-    
-    .footer-nav {
-      padding-top: 20px;
+    .success-button-text {
+      font-size: 20px;
+      letter-spacing: -0.4px;
     }
 
-    .footer-logo {
-      font-size: 32px;
-      letter-spacing: -0.64px;
+    .success-button-subtitle {
+      font-size: 14px;
+      letter-spacing: -0.28px;
     }
 
-    .footer-link {
-      font-size: 18px;
-      letter-spacing: -0.36px;
-    }
-
-    .footer-copyright {
-      font-size: 12px;
-      letter-spacing: -0.24px;
-    }
   }
 </style>
