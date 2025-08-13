@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+import magnifyingGlass from '../assets/magnifying-glass.svg';
+import phoneMockup from '../assets/phone-mockup.png';
 
 // Content data
 const content = {
@@ -11,9 +13,7 @@ const content = {
   }
 };
 
-// Image constants
-const imgRectangle = "http://localhost:3845/assets/159ca53f4d815a4c2a5804ecf3cc09884cdbc779.png";
-const imgVector = "http://localhost:3845/assets/0264591a8b7e1137e4a480a5ca47983857b90028.svg";
+// Image constants - keeping imgDivider for now as it's used in CSS
 const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
 ---
 
@@ -70,9 +70,9 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     <div class="container">
       <div class="calls-content">
         <div class="calls-image-section">
-          <div class="phone-mockup" style={`background-image: url('${imgRectangle}')`}></div>
+          <div class="phone-mockup" style={`background-image: url('${phoneMockup.src}')`}></div>
           <div class="magnifying-glass">
-            <img src={imgVector} alt="Magnifying glass" />
+            <img src={magnifyingGlass.src} alt="Magnifying glass" />
           </div>
           <div class="annotation">
             <p class="annotation-text">
