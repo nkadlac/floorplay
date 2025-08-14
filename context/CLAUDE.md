@@ -29,6 +29,10 @@ npm run build
 npm run preview
 ```
 
+## SEO BEST PRACTICES
+- Meta Titles should not be more than 60 characters
+- Meta Description text should not be more than 155 characters
+
 ## Content Management
 - Edit content through Sanity Studio
 - Schemas defined in `/sanity/schemas/`
