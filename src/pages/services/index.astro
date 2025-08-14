@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 
 // Fetch all services
@@ -28,22 +29,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   <!-- Header Section -->
   <section class="header-section">
     <div class="container">
-      <div class="header">
-        <div class="logo-nav">
-          <div class="logo">
-            <a href="/"><div class="logo-text">Floorplay</div></a>
-            <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
-          </div>
-          <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link services-link active">Services</a>
-            <a href="/free-audit" class="nav-link nav-cta">
-              <span class="nav-cta-text">Free Local Plan</span>
-              <span class="nav-cta-arrow">→</span>
-            </a>
-          </nav>
-        </div>
-        <div class="divider"></div>
-      </div>
+      <Navigation currentPage="services" />
     </div>
   </section>
 
@@ -169,7 +155,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   /* Header Section */
   .header-section {
     background: #ffffff;
-    padding: 72px 0 20px;
+    padding: 72px 0;
     position: relative;
     z-index: 1;
   }
@@ -702,17 +688,18 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   /* Mobile Responsive */
   @media (max-width: 768px) {
     .header-section {
-      padding: 30px 0 15px;
+      padding: 40px 0;
     }
 
     .logo-nav {
-      flex-direction: column;
-      gap: 16px;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
     
     .logo {
-      text-align: center;
+      text-align: left;
     }
     
     .logo-text {
@@ -736,13 +723,15 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     }
     
     .hero-title {
-      font-size: 36px;
-      letter-spacing: -0.72px;
+      font-size: 48px;
+      letter-spacing: -0.96px;
+      text-align: left;
     }
     
     .hero-description {
       font-size: 18px;
       letter-spacing: -0.36px;
+      text-align: left;
     }
 
     .services-grid {
@@ -767,8 +756,8 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     }
 
     .cta-title {
-      font-size: 28px;
-      letter-spacing: -0.56px;
+      font-size: 48px;
+      letter-spacing: -0.96px;
     }
 
     .cta-description {
@@ -813,5 +802,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       font-size: 12px;
       letter-spacing: -0.24px;
     }
+
   }
 </style>
+

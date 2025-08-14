@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 
 // Page content
@@ -33,22 +34,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   <!-- Header Section -->
   <section class="header-section">
     <div class="container">
-      <div class="header">
-        <div class="logo-nav">
-          <div class="logo">
-            <a href="/"><div class="logo-text">Floorplay</div></a>
-            <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
-          </div>
-          <nav class="nav">
-            <a href="/services/flooring-contractors-seo" class="nav-link services-link">Services</a>
-            <a href="/free-audit" class="nav-link nav-cta active">
-              <span class="nav-cta-text">Free Local Plan</span>
-              <span class="nav-cta-arrow">→</span>
-            </a>
-          </nav>
-        </div>
-        <div class="divider"></div>
-      </div>
+      <Navigation />
     </div>
   </section>
 
@@ -278,7 +264,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   /* Header Section */
   .header-section {
     background: #ffffff;
-    padding: 72px 0 20px;
+    padding: 72px 0;
     position: relative;
     z-index: 1;
   }
@@ -733,7 +719,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
   @media (max-width: 768px) {
 
     .header-section {
-      padding: 30px 0 15px;
+      padding: 40px 0;
     }
     
     .logo-text {
@@ -766,14 +752,16 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
     }
     
     .form-headline {
-      font-size: 32px;
-      letter-spacing: -0.64px;
+      font-size: 48px;
+      letter-spacing: -0.96px;
+      text-align: left;
     }
     
     .form-subheadline {
       font-size: 18px;
       letter-spacing: -0.36px;
       margin-bottom: 30px;
+      text-align: left;
     }
 
     .benefit-item {
@@ -835,12 +823,11 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
       letter-spacing: -0.4px;
     }
 
-  }
 </style>
 
 <script>
-  // Form validation and submission handling
   document.addEventListener('DOMContentLoaded', function() {
+    // Form validation and submission handling
     const form = document.getElementById('auditForm');
     
     if (form) {

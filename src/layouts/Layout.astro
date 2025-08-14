@@ -106,6 +106,30 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 	</head>
 	<body>
 		<slot />
+		
+		<!-- Global Mobile Menu Overlay -->
+		<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+			<div class="mobile-menu-header">
+				<div class="mobile-logo">
+					<div class="mobile-logo-text">Floorplay</div>
+					<p class="mobile-logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
+				</div>
+				<button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close mobile menu">
+					<span class="close-line"></span>
+					<span class="close-line"></span>
+				</button>
+			</div>
+			<nav class="mobile-nav">
+				<a href="/services/flooring-contractors-seo" class="mobile-nav-link">
+					<span>Local Search Marketing</span>
+					<span class="mobile-nav-arrow">→</span>
+				</a>
+				<a href="/free-audit" class="mobile-nav-link">
+					<span>Free SEO Audit</span>
+					<span class="mobile-nav-arrow">→</span>
+				</a>
+			</nav>
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -159,4 +183,100 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 			Courier New,
 			monospace;
 	}
+
+	/* Global Mobile Menu Styles */
+	.mobile-menu-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: #2563eb;
+		z-index: 99999;
+		display: none;
+	}
+
+	.mobile-menu-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 40px 1rem 20px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.mobile-logo-text {
+		font-family: 'Big Shoulders Display', sans-serif;
+		font-weight: 700;
+		font-size: 28px;
+		letter-spacing: 1.6px;
+		color: #ffffff;
+		line-height: 0.831;
+		margin: 0;
+	}
+
+	.mobile-logo-tagline {
+		font-family: 'Work Sans', sans-serif;
+		font-weight: 400;
+		font-size: 12px;
+		color: #ffffff;
+		letter-spacing: -0.28px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		margin: 8px 0 0 0;
+	}
+
+	.mobile-close-btn {
+		background: none;
+		border: none;
+		width: 24px;
+		height: 24px;
+		position: relative;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	.close-line {
+		display: block;
+		position: absolute;
+		width: 24px;
+		height: 2px;
+		background-color: #ffffff;
+		top: 50%;
+		left: 50%;
+		transform-origin: center;
+	}
+
+	.close-line:first-child {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	.close-line:last-child {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+
+	.mobile-nav {
+		padding: 40px 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.mobile-nav-link {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+		color: #ffffff;
+		font-family: 'Big Shoulders Display', sans-serif;
+		font-weight: 700;
+		font-size: 32px;
+		letter-spacing: -0.64px;
+		line-height: 1.1;
+	}
+
+	.mobile-nav-arrow {
+		font-size: 32px;
+		line-height: 1;
+	}
+
 </style>
