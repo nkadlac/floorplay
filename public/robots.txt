@@ -45,4 +45,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://floorplay.agency/sitemap.xml
+Sitemap: https://floorplay.agency/sitemap-index.xml
