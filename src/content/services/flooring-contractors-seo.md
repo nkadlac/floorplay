@@ -10,7 +10,7 @@ features:
   - "Monthly ranking and lead tracking reports"
   - "Industry-specific website optimization"
 seo:
-  metaTitle: "Local SEO for Epoxy Contractors | FloorPlay Marketing Agency"
+  metaTitle: "Local SEO for Epoxy Flooring Contractors | FloorPlay Marketing Agency"
   metaDescription: "Dominate local searches for epoxy garage flooring. Our specialized SEO gets epoxy contractors more $5k+ jobs from homeowners searching online."
 ---
 
