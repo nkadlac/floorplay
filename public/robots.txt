@@ -1,26 +1,13 @@
 # Allow all crawlers access to all content
+
 User-agent: *
 Allow: /
 
-# Block access to admin and private areas (if any exist)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /_astro/
-Disallow: /node_modules/
+# Do NOT block assets needed for rendering
+# (no disallow for /_astro/)
 
-# Block common files that shouldn't be crawled
-Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /package.json
-Disallow: /package-lock.json
-Disallow: /tsconfig.json
-Disallow: /astro.config.mjs
-Disallow: /vercel.json
-Disallow: /netlify.toml
-
-# Allow sitemap and robots
-Allow: /sitemap.xml
-Allow: /robots.txt
+# Sitemaps
+Sitemap: https://floorplay.agency/sitemap.xml
 
 # Specifically allow AI crawlers
 User-agent: GPTBot
@@ -40,9 +27,3 @@ Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
-
-# Set crawl delay to be respectful
-Crawl-delay: 1
-
-# Sitemap location
-Sitemap: https://floorplay.agency/sitemap.xml
