@@ -6,8 +6,8 @@ Allow: /
 # Do NOT block assets needed for rendering
 # (no disallow for /_astro/)
 
-# Sitemaps
-Sitemap: https://floorplay.agency/sitemap.xml
+# Sitemaps  
+Sitemap: https://floorplay.agency/sitemap-index.xml
 
 # Specifically allow AI crawlers
 User-agent: GPTBot
