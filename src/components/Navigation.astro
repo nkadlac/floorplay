@@ -5,8 +5,7 @@ export interface Props {
 
 const { currentPage } = Astro.props;
 
-// Image constants
-const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
+// Image constants removed - using CSS borders instead
 ---
 
 <!-- Header -->
@@ -151,7 +150,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   .divider {
     height: 1px;
-    background: url('http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg') repeat-x;
+    background: #e5e7eb;
     width: 100%;
   }
 

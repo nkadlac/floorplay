@@ -20,8 +20,7 @@ const pageTitle = service.data.seo?.metaTitle || `${service.data.name} | FloorPl
 const pageDescription = service.data.seo?.metaDescription || service.data.shortDescription;
 const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
 
-// Image constants (reusing from homepage)
-const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg";
+// Image constants removed - using CSS borders instead
 ---
 
 <Layout 
@@ -234,7 +233,7 @@ const imgDivider = "http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5c
 
   .divider {
     height: 1px;
-    background: url('http://localhost:3845/assets/5234c6adb3e005f5c06592e41b6fc5cb71a97964.svg') repeat-x;
+    background: #e5e7eb;
     width: 100%;
   }
 
