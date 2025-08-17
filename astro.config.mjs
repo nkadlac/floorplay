@@ -5,10 +5,10 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://floorplay.agency',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => page !== 'https://floorplay.agency/thank-you',
+      filter: (page) => page !== 'https://floorplay.agency/thank-you/',
     })
   ]
 });
