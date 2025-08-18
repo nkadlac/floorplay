@@ -38,3 +38,6 @@ logs
 *.temp
 # Local Netlify folder
 .netlify
+
+# Claude agents directory
+.claude/
