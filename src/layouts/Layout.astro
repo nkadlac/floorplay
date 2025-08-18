@@ -123,6 +123,10 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 				</button>
 			</div>
 			<nav class="mobile-nav">
+				<a href="/services/" class="mobile-nav-link">
+					<span>All Services</span>
+					<span class="mobile-nav-arrow">→</span>
+				</a>
 				<a href="/services/flooring-contractors-seo/" class="mobile-nav-link">
 					<span>Local Search Marketing</span>
 					<span class="mobile-nav-arrow">→</span>
@@ -194,7 +198,7 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		background: #2563eb;
+		background: #0040ff;
 		z-index: 99999;
 		display: none;
 	}
