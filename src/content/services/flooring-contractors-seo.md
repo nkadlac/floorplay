@@ -10,7 +10,7 @@ features:
   - "Monthly ranking and lead tracking reports"
   - "Industry-specific website optimization"
 seo:
-  metaTitle: "Local SEO for Epoxy Flooring Contractors | FloorPlay Marketing Agency"
+  metaTitle: "Local SEO for Epoxy Flooring Contractors | Floorplay Marketing Agency"
   metaDescription: "Dominate local searches for epoxy garage flooring. Our specialized SEO gets epoxy contractors more $5k+ jobs from homeowners searching online."
 ---
 
@@ -32,7 +32,7 @@ We exclusively serve epoxy, concrete, and flooring contractors. We know your ind
 
 #### What Makes Us Different
 
-**Industry Specialization**: We only work with flooring contractors. We understand your market, pricing, and what motivates homeowners to invest in premium flooring.
+**Industry Specialization**: We only work with epoxy, concrete surfacing, and basement resurfacing contractors. We understand your specialized market, pricing, and what motivates homeowners to invest in premium concrete coating services.
 
 **Local Focus**: Homeowners search for "epoxy garage floor near me" or "concrete coating [city]". We make sure you dominate these local searches.
 

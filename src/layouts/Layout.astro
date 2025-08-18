@@ -55,7 +55,7 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		<meta property="og:title" content={fullTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={ogImage} />
-		<meta property="og:site_name" content="FloorPlay Agency" />
+		<meta property="og:site_name" content="Floorplay Agency" />
 		
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
@@ -69,8 +69,8 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		{
 			"@context": "https://schema.org",
 			"@type": "LocalBusiness",
-			"name": "FloorPlay Agency",
-			"description": "Professional epoxy floor coating specialists serving Mequon WI and surrounding areas.",
+			"name": "Floorplay Agency",
+			"description": "Digital marketing agency specializing exclusively in epoxy, concrete surfacing, and basement resurfacing contractors.",
 			"url": "https://floorplay.agency",
 			"telephone": "(413)555-3769",
 			"address": {
@@ -95,10 +95,10 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 				"Menomonee Falls, WI"
 			],
 			"serviceType": [
-				"Epoxy Floor Coating",
-				"Garage Floor Coating",
-				"Basement Floor Resurfacing",
-				"Concrete Floor Coating"
+				"Digital Marketing for Epoxy Contractors",
+				"Local SEO for Concrete Coating Companies", 
+				"Google Business Profile for Basement Resurfacing",
+				"Lead Generation for Epoxy Floor Contractors"
 			],
 			"openingHours": [
 				"Mo-Fr 08:00-18:00",
@@ -106,6 +106,9 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 			]
 		}
 		</script>
+		
+		<!-- Allow additional head content via slots -->
+		<slot name="head" />
 	</head>
 	<body>
 		<slot />

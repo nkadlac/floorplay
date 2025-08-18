@@ -16,9 +16,49 @@ const { service } = Astro.props;
 const { Content } = await service.render();
 
 // SEO settings
-const pageTitle = service.data.seo?.metaTitle || `${service.data.name} | FloorPlay Agency`;
+const pageTitle = service.data.seo?.metaTitle || `${service.data.name} | Floorplay Agency`;
 const pageDescription = service.data.seo?.metaDescription || service.data.shortDescription;
 const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
+
+// FAQ Schema for flooring contractor marketing
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to see SEO results for epoxy contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most epoxy and concrete coating contractors see improved local search rankings within 30-60 days, with significant increases in qualified leads within 90 days. Full SEO results typically develop over 3-6 months as we build your online authority for searches like 'epoxy garage floor' and 'concrete resurfacing'."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "What makes Floorplay different from other marketing agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We exclusively serve epoxy, concrete surfacing, and basement resurfacing contractors. We understand your specialized industry, target keywords like 'epoxy garage floor [city]' and 'concrete resurfacing near me', and know exactly what motivates homeowners to invest in premium concrete coating services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with contractors outside of epoxy and concrete services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialize exclusively in epoxy flooring, concrete surfacing, and basement resurfacing contractors. We don't work with traditional flooring like LVP, tile, or carpet. Our expertise is in helping concrete coating specialists dominate their local markets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help my epoxy company rank for multiple cities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! We create location-specific pages optimized for 'epoxy garage floor [city]', 'concrete resurfacing [city]', and 'basement floor coating near me' searches across multiple cities in your service area."
+      }
+    }
+  ]
+};
 
 // Image constants removed - using CSS borders instead
 ---
@@ -28,6 +68,8 @@ const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
   description={pageDescription}
   canonical={canonicalUrl}
 >
+  <!-- FAQ Schema in head -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)}></script>
 
   <!-- Header Section -->
   <section class="header-section">
@@ -78,6 +120,23 @@ const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
       </div>
     </section>
   )}
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        {faqSchema.mainEntity.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.name}</summary>
+            <div class="faq-answer">
+              <p>{faq.acceptedAnswer.text}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- CTA Section -->
   <section class="final-cta">
@@ -492,6 +551,85 @@ const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
     line-height: 1.4;
   }
 
+  /* FAQ Section */
+  .faq-section {
+    background: #f9f6f0;
+    padding: 60px 0;
+  }
+
+  .faq-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1a1309;
+    letter-spacing: -0.96px;
+    line-height: 1.2;
+    margin: 0 0 40px 0;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+  }
+
+  .faq-question {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1a1309;
+    padding: 20px 24px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border: none;
+    background: #ffffff;
+  }
+
+  .faq-question:hover {
+    background: #f8f9fa;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 300;
+    color: #0040ff;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item[open] .faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 24px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .faq-answer p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1a1309;
+    line-height: 1.5;
+    margin: 16px 0 0 0;
+  }
+
   /* Final CTA Section */
   .final-cta {
     background: #2563eb;
@@ -693,6 +831,26 @@ const canonicalUrl = `https://floorplay.agency/services/${service.slug}/`;
     .features-grid {
       grid-template-columns: 1fr;
       gap: 20px;
+    }
+
+    .faq-section {
+      padding: 40px 0;
+    }
+
+    .faq-title {
+      font-size: 36px;
+      letter-spacing: -0.72px;
+      margin-bottom: 30px;
+    }
+
+    .faq-question {
+      font-size: 16px;
+      padding: 16px 20px;
+    }
+
+    .faq-answer p {
+      font-size: 15px;
+      margin-top: 12px;
     }
 
     .cta-title {
