@@ -1,0 +1,8 @@
+# Redirect www to non-www
+https://www.floorplay.agency/* https://floorplay.agency/:splat 301!
+
+# Force HTTPS for non-www (backup)
+http://floorplay.agency/* https://floorplay.agency/:splat 301!
+
+# Force HTTPS for www (backup)  
+http://www.floorplay.agency/* https://floorplay.agency/:splat 301!
