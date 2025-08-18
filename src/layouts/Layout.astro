@@ -1,4 +1,6 @@
 ---
+import floorplayLogo from '../assets/floorplay-logomark.svg';
+
 export interface Props {
 	title: string;
 	description?: string;
@@ -112,7 +114,7 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		<div class="mobile-menu-overlay" id="mobileMenuOverlay">
 			<div class="mobile-menu-header">
 				<div class="mobile-logo">
-					<div class="mobile-logo-text">Floorplay</div>
+					<img src={floorplayLogo.src} alt="Floorplay" class="mobile-logo-image" />
 					<p class="mobile-logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
 				</div>
 				<button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close mobile menu">
@@ -121,11 +123,11 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 				</button>
 			</div>
 			<nav class="mobile-nav">
-				<a href="/services/flooring-contractors-seo" class="mobile-nav-link">
+				<a href="/services/flooring-contractors-seo/" class="mobile-nav-link">
 					<span>Local Search Marketing</span>
 					<span class="mobile-nav-arrow">→</span>
 				</a>
-				<a href="/free-audit" class="mobile-nav-link">
+				<a href="/free-audit/" class="mobile-nav-link">
 					<span>Free SEO Audit</span>
 					<span class="mobile-nav-arrow">→</span>
 				</a>
@@ -203,6 +205,19 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		align-items: center;
 		padding: 40px 1rem 20px;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.mobile-logo {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+	}
+
+	.mobile-logo-image {
+		height: auto;
+		flex-shrink: 0;
+		filter: brightness(0) invert(1);
 	}
 
 	.mobile-logo-text {

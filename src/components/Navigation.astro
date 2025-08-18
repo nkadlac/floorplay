@@ -1,4 +1,6 @@
 ---
+import floorplayLogo from '../assets/floorplay-logomark.svg';
+
 export interface Props {
   currentPage?: string;
 }
@@ -12,13 +14,15 @@ const { currentPage } = Astro.props;
 <div class="header">
   <div class="logo-nav">
     <div class="logo">
-      <a href="/"><div class="logo-text">Floorplay</div></a>
+      <a href="/" class="logo-link">
+        <img src={floorplayLogo.src} alt="Floorplay" class="logo-image" />
+      </a>
       <p class="logo-tagline">LOCAL SEO BUILT FOR FLOORING PROS</p>
     </div>
     <!-- Desktop Navigation -->
     <nav class="nav desktop-nav">
-      <a href="/services/flooring-contractors-seo" class={`nav-link ${currentPage === 'services' ? 'active' : ''}`}>Services</a>
-      <a href="/free-audit" class="nav-link nav-cta">
+      <a href="/services/flooring-contractors-seo/" class={`nav-link ${currentPage === 'services' ? 'active' : ''}`}>Services</a>
+      <a href="/free-audit/" class="nav-link nav-cta">
         <span class="nav-cta-text">Free Local Plan</span>
         <span class="nav-cta-arrow">→</span>
       </a>
@@ -54,6 +58,17 @@ const { currentPage } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .logo-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo-image {
+    height: auto;
+    flex-shrink: 0;
   }
 
   .logo-text {
@@ -225,6 +240,10 @@ const { currentPage } = Astro.props;
     
     .logo {
       text-align: left;
+    }
+
+    .logo-image {
+      height: auto;
     }
     
     .logo-text {
