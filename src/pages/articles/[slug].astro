@@ -110,7 +110,7 @@ const articleSchema = {
       <div class="newsletter-hero-cta">
         <div class="cta-content">
           <h2 class="cta-title">JUST WANT THE WEEKLY TIPS EVERY MONDAY?</h2>
-          <form class="cta-form" action="https://app.kit.com/forms/8456136" method="post" target="_blank">
+          <form class="cta-form" action="https://app.kit.com/forms/8456136" method="post">
             <div class="form-row">
               <input 
                 type="email" 
@@ -120,6 +120,7 @@ const articleSchema = {
                 required
               />
               <input type="hidden" name="subscribe" value="1" />
+              <input type="hidden" name="redirect" value="https://floorplay.agency/newsletter-thank-you/" />
               <button type="submit" class="cta-button">
                 <span>SIGN ME UP</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="arrow-icon">
