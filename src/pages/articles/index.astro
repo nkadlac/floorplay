@@ -61,7 +61,7 @@ function formatDate(date: Date): string {
         <div class="newsletter-cta">
           <div class="cta-content">
             <h2 class="cta-title">JUST WANT THE WEEKLY TIPS EVERY MONDAY?</h2>
-            <form class="cta-form" action="https://app.kit.com/forms/8456136" method="post">
+            <form class="cta-form" action="https://app.kit.com/forms/8456136" method="post" target="_blank">
               <div class="form-row">
                 <input 
                   type="email" 
@@ -70,6 +70,7 @@ function formatDate(date: Date): string {
                   class="email-input"
                   required
                 />
+                <input type="hidden" name="subscribe" value="1" />
                 <button type="submit" class="cta-button">
                   <span>SIGN ME UP</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="arrow-icon">
