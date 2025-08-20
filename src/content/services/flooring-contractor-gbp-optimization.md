@@ -1,6 +1,6 @@
 ---
 name: "Google Business Profile Optimization for Flooring Contractors"
-headline: "<span class='highlight-blue'>Turn Your Google Profile</span> Into a Lead-Generating Machine"
+headline: "Turn Your Google Profile Into a <span class='highlight-blue'>Lead-Generating Machine</span>"
 shortDescription: "Most flooring contractors have a Google Business Profile — but very few have one that actually brings in steady jobs. We optimize your GBP so you dominate the map pack and win more $5k+ epoxy and concrete coating projects."
 features:
   - "Full GBP setup, cleanup, and duplicate removal"
