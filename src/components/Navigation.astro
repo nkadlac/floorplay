@@ -22,6 +22,7 @@ const { currentPage } = Astro.props;
     <!-- Desktop Navigation -->
     <nav class="nav desktop-nav">
       <a href="/services/" class={`nav-link ${currentPage === 'services' ? 'active' : ''}`}>Services</a>
+      <a href="/articles/" class={`nav-link ${currentPage === 'blog' ? 'active' : ''}`}>All Articles</a>
       <a href="/free-audit/" class="nav-link nav-cta">
         <span class="nav-cta-text">Free Local Plan</span>
         <span class="nav-cta-arrow">→</span>
@@ -187,10 +188,7 @@ const { currentPage } = Astro.props;
   }
 
   .mobile-menu-btn.active {
-    position: fixed !important;
-    top: 40px !important;
-    right: 1rem !important;
-    z-index: 100000 !important;
+    display: none !important;
   }
 
   .hamburger-line {
@@ -202,22 +200,6 @@ const { currentPage } = Astro.props;
     transform-origin: center;
   }
 
-  .mobile-menu-btn.active .hamburger-line {
-    background-color: #ffffff;
-  }
-
-  .mobile-menu-btn.active .hamburger-line:first-child {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .mobile-menu-btn.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-
-  .mobile-menu-btn.active .hamburger-line:last-child {
-    transform: translateY(-6px) rotate(-45deg);
-  }
 
 
 

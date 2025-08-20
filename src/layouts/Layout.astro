@@ -130,6 +130,10 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 					<span>All Services</span>
 					<span class="mobile-nav-arrow">→</span>
 				</a>
+				<a href="/articles/" class="mobile-nav-link">
+					<span>All Articles</span>
+					<span class="mobile-nav-arrow">→</span>
+				</a>
 				<a href="/services/flooring-contractors-seo/" class="mobile-nav-link">
 					<span>Local Search Marketing</span>
 					<span class="mobile-nav-arrow">→</span>
@@ -147,12 +151,35 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
+		counter-reset: none !important;
+	}
+	
+	*::before, *::after {
+		counter-increment: none !important;
+	}
+	
+	/* Hide any stray counter content */
+	body::before, html::before, div::before, section::before, header::before {
+		content: none !important;
+		display: none !important;
+	}
+	
+	/* Disable counters for TOC specifically */
+	.toc-no-counter, .toc-no-counter li, .toc-container ol, .toc-container li {
+		counter-reset: none !important;
+		counter-increment: none !important;
+	}
+	
+	.toc-no-counter li::before, .toc-container li::before {
+		content: none !important;
+		display: none !important;
 	}
 	
 	html {
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		line-height: 1.6;
 		color: #333;
+		scroll-behavior: smooth;
 	}
 	
 	body {
@@ -162,6 +189,13 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 	h1, h2, h3, h4, h5, h6 {
 		line-height: 1.2;
 		margin-bottom: 1rem;
+		font-family: 'Big Shoulders Display', sans-serif;
+		font-weight: 700;
+	}
+	
+	h2 {
+		font-family: 'Big Shoulders Display', sans-serif !important;
+		font-weight: 900 !important;
 	}
 	
 	p {
@@ -170,11 +204,67 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 
 	ul {
 		margin-bottom: 2rem;
-		list-style-position: inside;
+		list-style: none;
+		padding-left: 0;
+	}
+
+	ul li {
+		position: relative;
+		padding-left: 40px;
+		margin-bottom: 12px;
+	}
+
+	ul li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 2px;
+		width: 24px;
+		height: 24px;
+		background-color: #000000;
+		border-radius: 2px;
+		background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 4.5L6 12L2.5 8.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 16px 16px;
+	}
+
+	/* Ordered Lists - Custom Numbered Bullets - Only apply to content areas */
+	.article-content ol {
+		margin-bottom: 2rem;
+		list-style: none;
+		padding-left: 0;
+		counter-reset: custom-counter !important;
+	}
+
+	.article-content ol li {
+		position: relative;
+		padding-left: 40px;
+		margin-bottom: 12px;
+		counter-increment: custom-counter !important;
+	}
+
+	.article-content ol li::before {
+		content: counter(custom-counter);
+		position: absolute;
+		left: 0;
+		top: 2px;
+		width: 24px;
+		height: 24px;
+		background-color: #0040ff;
+		border-radius: 2px;
+		color: #ffffff;
+		font-family: 'Work Sans', sans-serif;
+		font-weight: 700;
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 1;
 	}
 	
 	a {
-		color: #ff6b35;
+		color: #0040ff;
 		text-decoration: none;
 	}
 	

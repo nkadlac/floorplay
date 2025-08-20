@@ -1,0 +1,320 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import floorplayLogo from '../assets/floorplay-logomark.svg';
+import graphTrends from '../assets/graph-trends.png';
+
+const pageData = {
+  title: "Thanks for Signing Up! | Floorplay Agency",
+  description: "Thank you for subscribing to our weekly marketing tips for flooring contractors. Check your inbox to confirm your email subscription."
+};
+---
+
+<Layout 
+  title={pageData.title}
+  description={pageData.description}
+  canonical="https://floorplay.agency/newsletter-thank-you/"
+>
+
+  <!-- Main Content Section -->
+  <section class="thank-you-section">
+    <div class="thank-you-container">
+      <div class="thank-you-content">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <h1 class="thank-you-title">THANKS FOR SIGNING UP!</h1>
+            
+            <div class="thank-you-text">
+              <p>Check your inbox to confirm our email.</p>
+              <p>On Monday, you'll get practical tips, growth ideas, and local SEO insights designed to help flooring and coating contractors win more high-value jobs.</p>
+            </div>
+            
+            <div class="thank-you-text">
+              <p>The demand for epoxy floors and specialty coatings is exploding. If your business isn't capturing those searches, you're leaving money on the table.</p>
+              <p>If you're ready to jump ahead, hit reply and let's talk about unlocking growth potential.</p>
+            </div>
+          </div>
+          
+          <!-- Chart/Image Section -->
+          <div class="chart-section">
+            <div class="chart-image-container">
+              <img src={graphTrends.src} alt="Epoxy floor coating search trends showing increasing demand over time" class="chart-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <section class="footer-section">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src={floorplayLogo.src} alt="Floorplay" class="footer-logo-image" />
+          </div>
+          <p class="footer-tagline">Floors are your craft. Getting you found is ours.</p>
+          <p class="footer-copyright">Copyright © 2025 Floorplay. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-links">
+          <a href="/" class="footer-link">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="footer-arrow">
+              <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Home</span>
+          </a>
+          <a href="/services/" class="footer-link">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="footer-arrow">
+              <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>All Services</span>
+          </a>
+          <a href="/free-audit/" class="footer-link">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="footer-arrow">
+              <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Free SEO Audit</span>
+          </a>
+          <a href="/blog/" class="footer-link">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" class="footer-arrow">
+              <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Free Resources</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Thank You Section */
+  .thank-you-section {
+    background: #0040ff;
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thank-you-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .thank-you-content {
+    max-width: 860px;
+    width: 100%;
+    border-radius: 24px;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 24px;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #ffffff;
+  }
+
+  .thank-you-title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    color: #ffffff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .thank-you-text {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ffffff;
+    letter-spacing: -0.48px;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .thank-you-text p {
+    margin: 0 0 20px 0;
+  }
+
+  .thank-you-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Chart Section */
+  .chart-section {
+    width: 100%;
+  }
+
+  .chart-image-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chart-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Footer Section */
+  .footer-section {
+    background: #000000;
+    padding: 112px 0;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 64px;
+  }
+
+  .footer-content {
+    display: flex;
+    gap: 88px;
+    align-items: center;
+    justify-content: space-between;
+    width: 892px;
+    max-width: 100%;
+  }
+
+  .footer-brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-logo-image {
+    height: 28.8px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .footer-copyright {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #838383;
+    letter-spacing: -0.28px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .footer-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+  }
+
+  .footer-link:hover {
+    color: #0040ff;
+  }
+
+  .footer-arrow {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-link:hover .footer-arrow {
+    transform: translateX(4px);
+    color: #0040ff;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .thank-you-section {
+      padding: 60px 0;
+    }
+
+    .thank-you-title {
+      font-size: 48px;
+    }
+
+    .thank-you-text {
+      font-size: 18px;
+    }
+
+    .chart-image-container {
+      padding: 12px;
+    }
+
+    .footer-section {
+      padding: 60px 0;
+    }
+
+    .footer-container {
+      padding: 0 1rem;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      align-items: center;
+    }
+
+    .footer-links {
+      align-items: center;
+    }
+
+    .footer-link {
+      font-size: 18px;
+    }
+  }
+</style>
