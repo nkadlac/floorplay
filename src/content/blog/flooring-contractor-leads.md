@@ -52,7 +52,9 @@ Your Google Business Profile (GBP) is the **#1 lead generator** for flooring con
 - Post weekly updates (offers, tips, new projects).  
 - Collect and respond to reviews consistently.  
 
-Doing this alone can increase calls within weeks.  
+Doing this alone can increase calls within weeks.
+
+👉 **Need help with GBP optimization?** [See our complete Google Business Profile service](/services/flooring-contractor-gbp-optimization/) — we handle the entire setup and optimization process for you.  
 
 
 
@@ -61,11 +63,13 @@ Doing this alone can increase calls within weeks.
 Most flooring websites are just digital business cards. To make your site generate calls:  
 
 - Create service + city pages (Epoxy Garage Floors Mequon, Basement Floor Coatings Milwaukee).  
-- Add strong CTAs like “Get a Free Estimate” or “Call Now.”  
+- Add strong CTAs like "Get a Free Estimate" or "Call Now."  
 - Showcase before/after work and testimonials.  
 - Optimize meta titles and headers with city keywords.  
 
-Your site doesn’t have to be fancy — it just needs to rank locally and convert.  
+Your site doesn't have to be fancy — it just needs to rank locally and convert.
+
+💡 **Want help with local SEO?** Our [Local Search Marketing service](/services/flooring-contractors-seo/) handles the complete website optimization, keyword strategy, and ranking process for epoxy contractors.  
 
 
 ## Step 3: Build Trust With Reviews
@@ -100,10 +104,16 @@ Great topics include:
 - How Much Does a Basement Floor Coating Cost in Milwaukee?  
 - 5 Mistakes to Avoid When Hiring a Flooring Contractor  
 
-Each blog builds authority, ranks for long-tail searches, and funnels visitors back to your service pages.  
+Each blog builds authority, ranks for long-tail searches, and funnels visitors back to your service pages.
+
+📝 **Need a complete content strategy?** Our [Local Search Marketing service](/services/flooring-contractors-seo/) includes ongoing content creation and SEO optimization to keep you ranking above competitors.  
 
 ## Ready to Get More Flooring Leads?
 
-Want to see how many jobs you’re missing right now?  
+Want to see how many jobs you're missing right now?  
 
-👉 [**Get Your Free Local Search Audit**](/free-audit/) — we’ll show you the exact opportunities to rank higher, get more calls, and book more $5k+ epoxy and coating projects.  
+👉 [**Get Your Free Local Search Audit**](/free-audit/) — we'll show you the exact opportunities to rank higher, get more calls, and book more $5k+ epoxy and coating projects.
+
+**Or explore our services:**
+- [Google Business Profile Optimization](/services/flooring-contractor-gbp-optimization/) - Dominate the local map pack
+- [Complete Local Search Marketing](/services/flooring-contractors-seo/) - Full SEO and content strategy  
