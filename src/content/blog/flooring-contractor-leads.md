@@ -3,7 +3,7 @@ title: "How Flooring Contractors Can Get More Leads Online Without Paid Ads"
 description: "Quick Summary: Flooring contractors can't rely on referrals alone. By optimizing your Google Business Profile, improving your website, building reviews, and publishing helpful content, you can turn Google into your most consistent source of new leads."
 publishDate: 2025-08-19
 author: "Nate Kadlac"
-category: "Get More Leads"
+topic: "Lead Generation"
 heroImage: "/images/blog/epoxy-coating.jpg"
 tags: ["flooring contractors", "local SEO", "epoxy marketing", "contractor leads"]
 featured: true
@@ -24,7 +24,6 @@ tableOfContents:
   - title: "Publish Helpful Content"
     anchor: "step-5-publish-helpful-content"
 ---
-
 
 When referrals dry up, so does your pipeline — and while you’re waiting on word-of-mouth, your competitors are showing up on Google and grabbing the big epoxy jobs.
 

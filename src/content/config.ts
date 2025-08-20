@@ -21,7 +21,7 @@ const blog = defineCollection({
     description: z.string(),
     publishDate: z.date(),
     author: z.string().default('Nate Kadlac'),
-    category: z.string(),
+    topic: z.string(),
     heroImage: z.string().optional(),
     tags: z.array(z.string()).optional(),
     featured: z.boolean().default(false),
