@@ -217,14 +217,14 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 
 	ul li {
 		position: relative;
-		padding-left: 0;
+		padding-left: 32px;
 		margin-bottom: 12px;
 	}
 
 	ul li::before {
 		content: '';
 		position: absolute;
-		left: -32px;
+		left: 0;
 		top: 2px;
 		width: 24px;
 		height: 24px;
