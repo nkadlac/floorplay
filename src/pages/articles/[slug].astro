@@ -57,6 +57,38 @@ const articleSchema = {
     "@id": canonicalUrl
   }
 };
+
+// FAQ Schema for better SERP features
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can flooring contractors get leads without paid ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flooring contractors can generate leads without paid ads by optimizing their Google Business Profile, improving their website for local search, building customer reviews, getting listed in local directories, and publishing helpful content that answers customer questions."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "What is the most effective local SEO strategy for epoxy contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most effective local SEO strategy for epoxy contractors is optimizing your Google Business Profile with accurate service areas, uploading before-and-after photos, posting weekly updates, and consistently collecting customer reviews."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do flooring contractors rank higher in local search results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flooring contractors rank higher in local search by creating service + city pages, optimizing meta titles with local keywords, building 20-30 consistent local citations, and publishing content that targets local search terms."
+      }
+    }
+  ]
+};
 ---
 
 <Layout 
@@ -67,6 +99,9 @@ const articleSchema = {
 >
   <!-- Article Schema -->
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)}></script>
+  
+  <!-- FAQ Schema for Better SERP Features -->
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)}></script>
 
   <!-- Header Section -->
   <section class="header-section">
@@ -81,7 +116,7 @@ const articleSchema = {
       <div class="breadcrumbs">
         <a href="/articles/">All Articles</a>
         <span class="breadcrumb-separator">→</span>
-        <span>Article</span>
+        <span>{post.data.topic}</span>
       </div>
       
       <div class="article-header">
@@ -96,7 +131,15 @@ const articleSchema = {
     <div class="container">
       <div class="article-image-container">
         {post.data.heroImage ? (
-          <img src={post.data.heroImage} alt={post.data.title} class="article-image" />
+          <img 
+            src={post.data.heroImage} 
+            alt={post.data.title} 
+            class="article-image"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="400"
+          />
         ) : (
           <div class="article-image-placeholder"></div>
         )}
