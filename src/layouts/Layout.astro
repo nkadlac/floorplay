@@ -198,6 +198,12 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		font-family: 'Big Shoulders Display', sans-serif !important;
 		font-weight: 900 !important;
 	}
+
+	/* Article content H2 override */
+	.article-content-section .container .article-content h2 {
+		margin-top: 32px !important;
+		margin-bottom: 8px !important;
+	}
 	
 	p {
 		margin-bottom: 1rem;
@@ -205,20 +211,20 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 
 	ul {
 		margin-bottom: 2rem;
-		list-style: none;
+		list-style: none !important;
 		padding-left: 0;
 	}
 
 	ul li {
 		position: relative;
-		padding-left: 40px;
+		padding-left: 0;
 		margin-bottom: 12px;
 	}
 
 	ul li::before {
 		content: '';
 		position: absolute;
-		left: 0;
+		left: -32px;
 		top: 2px;
 		width: 24px;
 		height: 24px;
@@ -231,21 +237,24 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 	}
 
 	/* Ordered Lists - Custom Numbered Bullets - Only apply to content areas */
-	.article-content ol {
+	.article-content ol,
+	ol {
 		margin-bottom: 2rem;
-		list-style: none;
+		list-style: none !important;
 		padding-left: 0;
 		counter-reset: custom-counter !important;
 	}
 
-	.article-content ol li {
+	.article-content ol li,
+	ol li {
 		position: relative;
 		padding-left: 40px;
 		margin-bottom: 12px;
 		counter-increment: custom-counter !important;
 	}
 
-	.article-content ol li::before {
+	.article-content ol li::before,
+	ol li::before {
 		content: counter(custom-counter);
 		position: absolute;
 		left: 0;
