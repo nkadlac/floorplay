@@ -53,8 +53,6 @@ While you're relying on word-of-mouth and basic epoxy jobs, your competitors are
 
 **The Impact:** Search engines can't match your premium services to premium searches. Homeowners assume you're another basic epoxy contractor competing on price.
 
-**Real Example:** ABC Coatings in Milwaukee was generating 3-4 leads monthly for $3,500 average jobs. After optimizing for "polyurea garage floor Milwaukee" and "decorative concrete coatings," they now average 18 leads monthly with $8,200 average project value.
-
 ### Mistake #2: Fighting for Generic Keywords Instead of Premium Terms
 
 **The Problem:** You're competing for "garage floor coating" (high competition, low value) instead of "polyurea garage floor installation" (lower competition, 3x higher value).
