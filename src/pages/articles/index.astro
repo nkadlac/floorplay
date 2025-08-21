@@ -4,9 +4,15 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
-// Get all blog posts, sorted by publish date (newest first)
+// Get all blog posts, featured first then by publish date (newest first)
 const allPosts = await getCollection('blog');
-const sortedPosts = allPosts.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+const sortedPosts = allPosts.sort((a, b) => {
+  // Featured articles come first
+  if (a.data.featured && !b.data.featured) return -1;
+  if (!a.data.featured && b.data.featured) return 1;
+  // If both are featured or both are not featured, sort by date
+  return b.data.publishDate.getTime() - a.data.publishDate.getTime();
+});
 
 // SEO content
 const pageData = {
@@ -91,29 +97,31 @@ function formatDate(date: Date): string {
     <div class="articles-container">
       <div class="articles-content">
         {sortedPosts.map((post, index) => (
-          <article class={`article-item ${post.data.featured ? 'featured-article' : ''}`}>
-            <div class="article-layout">
-              {post.data.heroImage ? (
-                <img src={post.data.heroImage} alt={post.data.title} class="article-thumbnail" />
-              ) : (
-                <div class="article-image-placeholder"></div>
-              )}
-              <div class="article-text-content">
-                {post.data.featured && (
-                  <div class="featured-label">FEATURED ARTICLE</div>
+          <a href={`/articles/${post.slug}/`} class="article-link">
+            <article class={`article-item ${post.data.featured ? 'featured-article' : ''}`}>
+              <div class="article-layout">
+                {post.data.heroImage ? (
+                  <img src={post.data.heroImage} alt={post.data.title} class="article-thumbnail" />
+                ) : (
+                  <div class="article-image-placeholder"></div>
                 )}
-                <h2 class="article-title">{post.data.title}</h2>
-                <a href={`/articles/${post.slug}/`} class="article-button">
-                  <span>{post.data.featured ? 'Read Featured Article' : 'Read Article'}</span>
-                  <div class="button-arrow">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                      <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div class="article-text-content">
+                  {post.data.featured && (
+                    <div class="featured-label">FEATURED ARTICLE</div>
+                  )}
+                  <h2 class="article-title">{post.data.title}</h2>
+                  <div class="article-button">
+                    <span>{post.data.featured ? 'Read Featured Article' : 'Read Article'}</span>
+                    <div class="button-arrow">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M6 16H26M26 16L20 10M26 16L20 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
-                </a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </a>
         ))}
       </div>
     </div>
@@ -304,9 +312,21 @@ function formatDate(date: Date): string {
     gap: 48px;
   }
 
+  .article-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .article-link:hover {
+    transform: translateY(-2px);
+  }
+
   .article-item {
     padding: 24px;
     background: transparent;
+    cursor: pointer;
   }
 
   .featured-article {
@@ -381,7 +401,6 @@ function formatDate(date: Date): string {
   .article-button {
     background: #0040ff;
     color: #ffffff;
-    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -389,9 +408,10 @@ function formatDate(date: Date): string {
     padding-right: 0;
     width: fit-content;
     transition: all 0.3s ease;
+    pointer-events: none;
   }
 
-  .article-button:hover {
+  .article-link:hover .article-button {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 64, 255, 0.3);
   }
@@ -420,7 +440,7 @@ function formatDate(date: Date): string {
     transition: transform 0.3s ease;
   }
 
-  .article-button:hover .button-arrow svg {
+  .article-link:hover .button-arrow svg {
     transform: translateX(2px);
   }
 

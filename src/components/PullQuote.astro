@@ -1,0 +1,95 @@
+---
+interface Props {
+  quote: string;
+}
+
+const { quote } = Astro.props;
+---
+
+<div class="pull-quote">
+  <div class="quote-icon">
+    <img src="/src/assets/quote-icon.svg" alt="" />
+  </div>
+  <blockquote class="quote-text">
+    <p>{quote}</p>
+  </blockquote>
+</div>
+
+<style>
+  .pull-quote {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 56px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .quote-icon {
+    flex-shrink: 0;
+    width: 138px;
+    height: 110.893px;
+    position: relative;
+  }
+
+  .quote-icon img {
+    display: block;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .quote-text {
+    flex: 1;
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 0;
+    color: #070707;
+    letter-spacing: -1.44px;
+    margin: 0;
+    min-width: 0;
+    min-height: 1px;
+    font-style: normal;
+    text-align: left;
+    position: relative;
+    flex-shrink: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .quote-text p {
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .pull-quote {
+      flex-direction: column;
+      gap: 24px;
+      padding: 40px 0;
+    }
+
+    .quote-icon {
+      width: 80px;
+      height: 64px;
+      align-self: flex-start;
+    }
+
+    .quote-text {
+      font-size: 48px;
+      letter-spacing: -0.96px;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .quote-text {
+      font-size: 32px;
+      letter-spacing: -0.64px;
+      text-align: left;
+    }
+  }
+</style>
