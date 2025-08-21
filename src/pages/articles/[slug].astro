@@ -3,16 +3,17 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog');
   return blogPosts.map((post) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: { post, allPosts: blogPosts },
   }));
 }
 
-const { post } = Astro.props;
+const { post, allPosts } = Astro.props;
 const { Content } = await post.render();
 
 // SEO settings
@@ -313,7 +314,8 @@ const faqSchema = {
     </div>
   </section>
 
-
+  <!-- Related Articles -->
+  <RelatedArticles currentSlug={post.slug} allArticles={allPosts} />
 
   <Footer />
 </Layout>
