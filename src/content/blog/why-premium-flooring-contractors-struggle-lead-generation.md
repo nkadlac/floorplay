@@ -112,6 +112,8 @@ The solution isn't more marketing tactics - it's systematic positioning for prem
 - Post weekly updates featuring premium project completions
 - Generate systematic reviews mentioning specific premium services
 
+**Need step-by-step GBP optimization?** [Our complete guide to getting more flooring contractor leads](/articles/flooring-contractor-leads/) covers the exact local SEO strategies that work, plus 4 other proven methods to generate steady leads without paid ads.
+
 ### Phase 4: Premium Lead Nurturing (Month 3)
 
 **Lead Magnet Examples:**
@@ -150,6 +152,8 @@ Stop counting total leads. Start tracking qualified premium leads.
 The contractors winning premium leads aren't better installers. They're better at positioning themselves for premium opportunities.
 
 ## Ready to Stop Losing Premium Jobs?
+
+**Ready to implement a complete lead generation system?** Start with [our proven 5-step process for generating flooring contractor leads](/articles/flooring-contractor-leads/) — it covers the foundation every premium contractor needs before specializing in high-value positioning.
 
 Want to see exactly which $10,000+ opportunities you're missing right now?
 

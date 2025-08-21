@@ -108,6 +108,8 @@ Great topics include:
 
 Each blog builds authority, ranks for long-tail searches, and funnels visitors back to your service pages.
 
+**Struggling to get premium polyurea and decorative concrete leads?** Most contractors focus on generic SEO but miss the high-value opportunities. [Learn why 89% of premium flooring contractors struggle with lead generation](/articles/why-premium-flooring-contractors-struggle-lead-generation/) and how to systematically position yourself for $10,000+ projects.
+
 📝 **Need a complete content strategy?** Our [Local Search Marketing service](/services/flooring-contractors-seo/) includes ongoing content creation and SEO optimization to keep you ranking above competitors.  
 
 ## Ready to Get More Flooring Leads?

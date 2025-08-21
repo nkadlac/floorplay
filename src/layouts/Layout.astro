@@ -44,8 +44,8 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		<!-- Google Fonts - Optimized Loading -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Caveat:wght@600&family=Space+Grotesk:wght@400;700&family=Work+Sans:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Caveat:wght@600&family=Space+Grotesk:wght@400;700&family=Work+Sans:wght@400;600;700&display=swap"></noscript>
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@400;700;900&family=Big+Shoulders+Display:wght@400;700;900&family=Caveat:wght@600&family=Space+Grotesk:wght@400;700&family=Work+Sans:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@400;700;900&family=Big+Shoulders+Display:wght@400;700;900&family=Caveat:wght@600&family=Space+Grotesk:wght@400;700&family=Work+Sans:wght@400;600;700&display=swap"></noscript>
 		
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonical || currentUrl} />
@@ -187,14 +187,21 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		background-color: #ffffff;
 	}
 	
-	h1, h2, h3, h4, h5, h6 {
+	/* Default heading styles for non-article pages */
+	h1:not(.article-content h1), 
+	h2:not(.article-content h2), 
+	h3:not(.article-content h3), 
+	h4:not(.article-content h4), 
+	h5:not(.article-content h5), 
+	h6:not(.article-content h6) {
 		line-height: 1.2;
 		margin-bottom: 1rem;
 		font-family: 'Big Shoulders Display', sans-serif;
 		font-weight: 700;
 	}
 	
-	h2 {
+	/* Default H2 style for non-article pages */
+	h2:not(.article-content h2) {
 		font-family: 'Big Shoulders Display', sans-serif !important;
 		font-weight: 900 !important;
 	}
