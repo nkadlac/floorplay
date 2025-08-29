@@ -65,46 +65,15 @@ const currentUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site) : `https
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={ogImage} />
 		
-		<!-- Local Business Schema -->
+		<!-- Organization Schema -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "LocalBusiness",
+			"@type": "Organization",
 			"name": "Floorplay Agency",
-			"description": "Digital marketing agency specializing exclusively in epoxy, concrete surfacing, and basement resurfacing contractors.",
 			"url": "https://floorplay.agency",
-			"telephone": "(413)555-3769",
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "123 Main Street",
-				"addressLocality": "Mequon",
-				"addressRegion": "WI",
-				"postalCode": "53097",
-				"addressCountry": "US"
-			},
-			"geo": {
-				"@type": "GeoCoordinates",
-				"latitude": 43.2261,
-				"longitude": -87.9734
-			},
-			"areaServed": [
-				"Mequon, WI",
-				"Grafton, WI",
-				"Cedarburg, WI",
-				"Thiensville, WI",
-				"Germantown, WI",
-				"Menomonee Falls, WI"
-			],
-			"serviceType": [
-				"Digital Marketing for Epoxy Contractors",
-				"Local SEO for Concrete Coating Companies", 
-				"Google Business Profile for Basement Resurfacing",
-				"Lead Generation for Epoxy Floor Contractors"
-			],
-			"openingHours": [
-				"Mo-Fr 08:00-18:00",
-				"Sa 09:00-16:00"
-			]
+			"description": "Digital marketing agency specializing in epoxy, concrete surfacing, and basement resurfacing contractors.",
+			"logo": "https://floorplay.agency/icon-512.png"
 		}
 		</script>
 		

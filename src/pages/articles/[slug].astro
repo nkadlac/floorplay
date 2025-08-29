@@ -20,6 +20,9 @@ const { Content } = await post.render();
 const pageTitle = post.data.seo?.metaTitle || `${post.data.title} | Floorplay Agency`;
 const pageDescription = post.data.seo?.metaDescription || post.data.description;
 const canonicalUrl = `https://floorplay.agency/articles/${post.slug}/`;
+const ogImageAbs = post.data.heroImage 
+  ? new URL(post.data.heroImage, 'https://floorplay.agency').toString() 
+  : 'https://floorplay.agency/images/og-default.jpg';
 
 // Format date helper
 function formatDate(date: Date): string {
@@ -38,7 +41,7 @@ const articleSchema = {
   "@type": "Article",
   "headline": post.data.title,
   "description": post.data.description,
-  "image": `https://floorplay.agency/og-${post.slug}.jpg`,
+  "image": ogImageAbs,
   "author": {
     "@type": "Person",
     "name": post.data.author
@@ -97,6 +100,7 @@ const faqSchema = {
   description={pageDescription}
   canonical={canonicalUrl}
   keywords={post.data.seo?.keywords}
+  ogImage={ogImageAbs}
 >
   <!-- Article Schema -->
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)}></script>

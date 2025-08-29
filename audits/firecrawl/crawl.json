@@ -1,0 +1,284 @@
+{
+  "root": "https://floorplay.agency",
+  "fetched": 10,
+  "results": [
+    {
+      "url": "https://floorplay.agency/",
+      "status": 200,
+      "title": "Epoxy Garage Floor Marketing for Specialty Pros | Floorplay",
+      "description": "We help epoxy &#38; concrete flooring contractors win $5k+ jobs. Dominate local search, attract premium leads, and stop losing to tire-kickers. Get your free audit.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/",
+      "h1Count": 1,
+      "og": {
+        "title": "Epoxy Garage Floor Marketing for Specialty Pros | Floorplay",
+        "description": "We help epoxy &#38; concrete flooring contractors win $5k+ jobs. Dominate local search, attract premium leads, and stop losing to tire-kickers. Get your free audit.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Epoxy Garage Floor Marketing for Specialty Pros | Floorplay",
+        "description": "We help epoxy &#38; concrete flooring contractors win $5k+ jobs. Dominate local search, attract premium leads, and stop losing to tire-kickers. Get your free audit.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/articles/",
+      "status": 200,
+      "title": "Marketing Articles for Epoxy Contractors | Floorplay Agency",
+      "description": "Expert marketing tips and strategies for epoxy, concrete coating, and basement resurfacing contractors. Learn how to dominate local search and book more $5k+ jobs.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/articles/",
+      "h1Count": 1,
+      "og": {
+        "title": "Marketing Articles for Epoxy Contractors | Floorplay Agency",
+        "description": "Expert marketing tips and strategies for epoxy, concrete coating, and basement resurfacing contractors. Learn how to dominate local search and book more $5k+ jobs.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Marketing Articles for Epoxy Contractors | Floorplay Agency",
+        "description": "Expert marketing tips and strategies for epoxy, concrete coating, and basement resurfacing contractors. Learn how to dominate local search and book more $5k+ jobs.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/articles/950m-polyurea-market-opportunity-contractors/",
+      "status": 200,
+      "title": "The $950M Polyurea Market Opportunity for Flooring Contractors | Floorplay",
+      "description": "Polyurea market projected to hit $950M by 2026. Most contractors miss this premium opportunity. Learn how to capture high-value polyurea and polyaspartic projects.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/articles/950m-polyurea-market-opportunity-contractors/",
+      "h1Count": 1,
+      "og": {
+        "title": "The $950M Polyurea Market Opportunity for Flooring Contractors | Floorplay",
+        "description": "Polyurea market projected to hit $950M by 2026. Most contractors miss this premium opportunity. Learn how to capture high-value polyurea and polyaspartic projects.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/950m-polyurea-market-opportunity-contractors/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "The $950M Polyurea Market Opportunity for Flooring Contractors | Floorplay",
+        "description": "Polyurea market projected to hit $950M by 2026. Most contractors miss this premium opportunity. Learn how to capture high-value polyurea and polyaspartic projects.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/950m-polyurea-market-opportunity-contractors/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness",
+        "Article",
+        "FAQPage"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/articles/flooring-contractor-leads/",
+      "status": 200,
+      "title": "Flooring Contractor Marketing | How to Get More Leads Without Ads | Floorplay Agency",
+      "description": "Discover 5 proven ways flooring and epoxy contractors can generate steady leads online without paid ads — from Google Business Profile optimization to review strategies.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/articles/flooring-contractor-leads/",
+      "h1Count": 1,
+      "og": {
+        "title": "Flooring Contractor Marketing | How to Get More Leads Without Ads | Floorplay Agency",
+        "description": "Discover 5 proven ways flooring and epoxy contractors can generate steady leads online without paid ads — from Google Business Profile optimization to review strategies.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/flooring-contractor-leads/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Flooring Contractor Marketing | How to Get More Leads Without Ads | Floorplay Agency",
+        "description": "Discover 5 proven ways flooring and epoxy contractors can generate steady leads online without paid ads — from Google Business Profile optimization to review strategies.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/flooring-contractor-leads/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness",
+        "Article",
+        "FAQPage"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/articles/why-premium-flooring-contractors-struggle-lead-generation/",
+      "status": 200,
+      "title": "Why Premium Flooring Contractors Struggle with Lead Generation | Floorplay",
+      "description": "89% of premium flooring contractors lose $10k+ polyurea jobs to competitors with better online visibility. Learn the 4 fatal mistakes and systematic solutions.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/articles/why-premium-flooring-contractors-struggle-lead-generation/",
+      "h1Count": 1,
+      "og": {
+        "title": "Why Premium Flooring Contractors Struggle with Lead Generation | Floorplay",
+        "description": "89% of premium flooring contractors lose $10k+ polyurea jobs to competitors with better online visibility. Learn the 4 fatal mistakes and systematic solutions.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/why-premium-flooring-contractors-struggle-lead-generation/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Why Premium Flooring Contractors Struggle with Lead Generation | Floorplay",
+        "description": "89% of premium flooring contractors lose $10k+ polyurea jobs to competitors with better online visibility. Learn the 4 fatal mistakes and systematic solutions.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/articles/why-premium-flooring-contractors-struggle-lead-generation/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness",
+        "Article",
+        "FAQPage"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/free-audit/",
+      "status": 200,
+      "title": "Free Local Search Audit — Recover Lost $5k+ Jobs | Floorplay",
+      "description": "See exactly how many $5k+ epoxy jobs you",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/free-audit/",
+      "h1Count": 1,
+      "og": {
+        "title": "Free Local Search Audit — Recover Lost $5k+ Jobs | Floorplay",
+        "description": "See exactly how many $5k+ epoxy jobs you",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/free-audit/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Free Local Search Audit — Recover Lost $5k+ Jobs | Floorplay",
+        "description": "See exactly how many $5k+ epoxy jobs you",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/free-audit/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/newsletter-thank-you/",
+      "status": 200,
+      "title": "Thanks for Signing Up! | Floorplay Agency",
+      "description": "Thank you for subscribing to our weekly marketing tips for flooring contractors. Check your inbox to confirm your email subscription.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/newsletter-thank-you/",
+      "h1Count": 1,
+      "og": {
+        "title": "Thanks for Signing Up! | Floorplay Agency",
+        "description": "Thank you for subscribing to our weekly marketing tips for flooring contractors. Check your inbox to confirm your email subscription.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/newsletter-thank-you/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Thanks for Signing Up! | Floorplay Agency",
+        "description": "Thank you for subscribing to our weekly marketing tips for flooring contractors. Check your inbox to confirm your email subscription.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/newsletter-thank-you/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/services/",
+      "status": 200,
+      "title": "Local SEO Services for Flooring Contractors | Floorplay Agency",
+      "description": "Get found by homeowners searching for epoxy garage floors, basement coatings, and commercial flooring. We help flooring contractors dominate local search and book high-value jobs.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/services/",
+      "h1Count": 1,
+      "og": {
+        "title": "Local SEO Services for Flooring Contractors | Floorplay Agency",
+        "description": "Get found by homeowners searching for epoxy garage floors, basement coatings, and commercial flooring. We help flooring contractors dominate local search and book high-value jobs.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/services/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Local SEO Services for Flooring Contractors | Floorplay Agency",
+        "description": "Get found by homeowners searching for epoxy garage floors, basement coatings, and commercial flooring. We help flooring contractors dominate local search and book high-value jobs.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/services/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/services/flooring-contractor-gbp-optimization/",
+      "status": 200,
+      "title": "Google Business Profile Optimization for Flooring Contractors | Floorplay",
+      "description": "Show up in Google",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/services/flooring-contractor-gbp-optimization/",
+      "h1Count": 1,
+      "og": {
+        "title": "Google Business Profile Optimization for Flooring Contractors | Floorplay",
+        "description": "Show up in Google",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/services/flooring-contractor-gbp-optimization/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Google Business Profile Optimization for Flooring Contractors | Floorplay",
+        "description": "Show up in Google",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/services/flooring-contractor-gbp-optimization/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness",
+        "FAQPage"
+      ]
+    },
+    {
+      "url": "https://floorplay.agency/services/flooring-contractors-seo/",
+      "status": 200,
+      "title": "Local SEO for Epoxy Flooring Contractors | Floorplay Marketing Agency",
+      "description": "Dominate local searches for epoxy garage flooring. Our specialized SEO gets epoxy contractors more $5k+ jobs from homeowners searching online.",
+      "robots": "index, follow",
+      "canonical": "https://floorplay.agency/services/flooring-contractors-seo/",
+      "h1Count": 1,
+      "og": {
+        "title": "Local SEO for Epoxy Flooring Contractors | Floorplay Marketing Agency",
+        "description": "Dominate local searches for epoxy garage flooring. Our specialized SEO gets epoxy contractors more $5k+ jobs from homeowners searching online.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/services/flooring-contractors-seo/",
+        "type": "website",
+        "site_name": "Floorplay Agency"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Local SEO for Epoxy Flooring Contractors | Floorplay Marketing Agency",
+        "description": "Dominate local searches for epoxy garage flooring. Our specialized SEO gets epoxy contractors more $5k+ jobs from homeowners searching online.",
+        "image": "/images/og-default.jpg",
+        "url": "https://floorplay.agency/services/flooring-contractors-seo/"
+      },
+      "jsonLdTypes": [
+        "LocalBusiness",
+        "FAQPage"
+      ]
+    }
+  ]
+}

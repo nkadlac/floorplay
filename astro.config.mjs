@@ -8,7 +8,10 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => page !== 'https://floorplay.agency/thank-you/',
+      filter: (page) => ![
+        'https://floorplay.agency/thank-you/',
+        'https://floorplay.agency/newsletter-thank-you/'
+      ].includes(page),
     })
   ]
 });
