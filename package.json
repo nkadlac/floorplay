@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "audit:crawl": "node scripts/firecrawl-lite.cjs https://floorplay.agency 200 audits/firecrawl/crawl.json",
+    "audit:dfs": "node scripts/dataforseo-audit.cjs floorplay.agency"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.2",

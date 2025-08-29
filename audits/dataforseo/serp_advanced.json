@@ -1,0 +1,131 @@
+{
+  "status": 200,
+  "body": {
+    "version": "0.1.20250828",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "0 sec.",
+    "cost": 0,
+    "tasks_count": 4,
+    "tasks_error": 4,
+    "tasks": [
+      {
+        "id": "08290658-1126-0139-0000-f6e04a4d6378",
+        "status_code": 40401,
+        "status_message": "Task Not Found.",
+        "time": "0 sec.",
+        "cost": 0,
+        "result_count": 0,
+        "path": [
+          "v3",
+          "serp",
+          "google",
+          "organic",
+          "live",
+          "advanced"
+        ],
+        "data": {
+          "api": "serp",
+          "function": "live",
+          "se": "google",
+          "se_type": "organic",
+          "language_code": "en",
+          "location_code": 2840,
+          "keyword": "epoxy flooring marketing agency",
+          "target": "floorplay.agency",
+          "depth": 50,
+          "device": "desktop",
+          "os": "windows"
+        },
+        "result": null
+      },
+      {
+        "id": "08290658-1126-0139-0000-d7c90a91d8cf",
+        "status_code": 40401,
+        "status_message": "Task Not Found.",
+        "time": "0 sec.",
+        "cost": 0,
+        "result_count": 0,
+        "path": [
+          "v3",
+          "serp",
+          "google",
+          "organic",
+          "live",
+          "advanced"
+        ],
+        "data": {
+          "api": "serp",
+          "function": "live",
+          "se": "google",
+          "se_type": "organic",
+          "language_code": "en",
+          "location_code": 2840,
+          "keyword": "flooring contractor marketing",
+          "target": "floorplay.agency",
+          "depth": 50,
+          "device": "desktop"
+        },
+        "result": null
+      },
+      {
+        "id": "08290658-1126-0139-0000-c1a6f4a9c394",
+        "status_code": 40401,
+        "status_message": "Task Not Found.",
+        "time": "0 sec.",
+        "cost": 0,
+        "result_count": 0,
+        "path": [
+          "v3",
+          "serp",
+          "google",
+          "organic",
+          "live",
+          "advanced"
+        ],
+        "data": {
+          "api": "serp",
+          "function": "live",
+          "se": "google",
+          "se_type": "organic",
+          "language_code": "en",
+          "location_code": 2840,
+          "keyword": "epoxy contractor leads",
+          "target": "floorplay.agency",
+          "depth": 50,
+          "device": "desktop"
+        },
+        "result": null
+      },
+      {
+        "id": "08290658-1126-0139-0000-4bd65c354fc0",
+        "status_code": 40401,
+        "status_message": "Task Not Found.",
+        "time": "0 sec.",
+        "cost": 0,
+        "result_count": 0,
+        "path": [
+          "v3",
+          "serp",
+          "google",
+          "organic",
+          "live",
+          "advanced"
+        ],
+        "data": {
+          "api": "serp",
+          "function": "live",
+          "se": "google",
+          "se_type": "organic",
+          "language_code": "en",
+          "location_code": 2840,
+          "keyword": "google business profile optimization epoxy",
+          "target": "floorplay.agency",
+          "depth": 50,
+          "device": "desktop"
+        },
+        "result": null
+      }
+    ]
+  }
+}
